@@ -125,11 +125,11 @@
             // 
             this.labelMensajeLogin.AutoSize = true;
             this.labelMensajeLogin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelMensajeLogin.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMensajeLogin.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMensajeLogin.ForeColor = System.Drawing.Color.Red;
             this.labelMensajeLogin.Location = new System.Drawing.Point(17, 313);
             this.labelMensajeLogin.Name = "labelMensajeLogin";
-            this.labelMensajeLogin.Size = new System.Drawing.Size(0, 15);
+            this.labelMensajeLogin.Size = new System.Drawing.Size(0, 16);
             this.labelMensajeLogin.TabIndex = 22;
             this.labelMensajeLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -206,7 +206,6 @@
             this.tbContraseña.Size = new System.Drawing.Size(165, 32);
             this.tbContraseña.TabIndex = 10;
             this.tbContraseña.TabStop = false;
-            this.tbContraseña.Text = "1234";
             this.tbContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbContraseña.UseSystemPasswordChar = true;
             // 
@@ -309,11 +308,11 @@
             // 
             this.lbMensajeRegistro.AutoSize = true;
             this.lbMensajeRegistro.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbMensajeRegistro.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMensajeRegistro.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensajeRegistro.ForeColor = System.Drawing.Color.Red;
             this.lbMensajeRegistro.Location = new System.Drawing.Point(25, 322);
             this.lbMensajeRegistro.Name = "lbMensajeRegistro";
-            this.lbMensajeRegistro.Size = new System.Drawing.Size(0, 15);
+            this.lbMensajeRegistro.Size = new System.Drawing.Size(0, 16);
             this.lbMensajeRegistro.TabIndex = 31;
             this.lbMensajeRegistro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
@@ -462,7 +461,6 @@
             this.tbNombre.Size = new System.Drawing.Size(165, 32);
             this.tbNombre.TabIndex = 11;
             this.tbNombre.TabStop = false;
-            this.tbNombre.Text = "admin";
             this.tbNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Login
@@ -484,7 +482,6 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.panelPrincipal.ResumeLayout(false);
             this.panelPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).EndInit();

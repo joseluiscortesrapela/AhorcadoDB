@@ -9,7 +9,7 @@ namespace Ahorcado
     public partial class Login : Form
     {
         private LoginModel loginModel;
-        //  private List<Jugador> jugadores;  // Array de jugadores
+        private MenuAdminModel administradorModel;
 
 
         public Login()
@@ -17,6 +17,7 @@ namespace Ahorcado
             InitializeComponent();
             // Intencio el modelo de datos que controlara las peticiones  con la base de datos.
             loginModel = new LoginModel();
+            administradorModel = new MenuAdminModel();
         }
 
 
@@ -60,7 +61,7 @@ namespace Ahorcado
                 }
                 else
                 {
-                    labelMensajeLogin.Text = "Usuario no encontrado";
+                    labelMensajeLogin.Text = "El login es incorrecto";
                 }
 
                 Console.WriteLine("LOGIN: el usuario: " + usuario + " con contraseña: " + contraseña + " ¿Existe? " + existe);
@@ -80,12 +81,16 @@ namespace Ahorcado
             string contraseña = tbPassword.Text;
 
             // Si datos formulario son correctos
-            if (siValidarFormularioRegistro(nombre, contraseña) ) {
+            if (siValidarFormularioRegistro(nombre, contraseña))
+            {   
                 // Guardo un nuevo usuario en la base de datos.
                 loginModel.registrarJugador(nombre, contraseña);
+                // Muestro mensaje al usuario
+                lbMensajeRegistro.Text = "Acabas de registrarte.";
+                // Limpio los campos del formulario de registro
+                resetearFormulario();
             }
         }
-
 
         // Valida los campos del formulario de login
         private bool siValidarFormularioLogin(string nombre, string contraseña)
@@ -121,22 +126,34 @@ namespace Ahorcado
 
         }
 
-
         // Valida los campos del formulario de registro
         private bool siValidarFormularioRegistro(string nombre, string contraseña)
         {
 
             bool valido = true;
 
-            // Si el nombre de usuario no esta vacio
+            // Si el nombre de usuario no esta vacio o tiene un valor nulo.
             if (nombre.Length == 0 || string.IsNullOrWhiteSpace(nombre))
             {
                 valido = false;
                 error.SetError(tbUsuario, "El nombre del usuario no puede estar vacio.");
             }
             else
-            {
+            { // Si el campo nombre no esta vacio
+
                 error.SetError(tbUsuario, "");
+
+                // Compruebo si existe un usuario con el mismo nombre en la base de datos.
+                if (administradorModel.isUserExist(nombre))
+                {
+                    valido = false;
+                    error.SetError(tbUsuario, "El nombre " + nombre + " ya existe."); // Muestro error al usuario
+                }
+                else
+                {
+                    error.SetError(tbUsuario, "");
+                }
+
             }
 
             // Si el campo contraseña no esta vacio
@@ -153,19 +170,16 @@ namespace Ahorcado
 
             return valido;
 
-
         }
 
-
-        // Muestro panel para registrar un nuevo usuario
+        // Muestro ventana de registro
         private void lbMostrarPanelRegistro_Click(object sender, EventArgs e)
         {
             panelLogin.Visible = false;
             panelRegistro.Visible = true;
         }
 
-
-        // Vuelvo a la vengan de login
+        // Muestro ventan de login
         private void lbVolverLogin_Click(object sender, EventArgs e)
         {
             panelRegistro.Visible = false;
@@ -173,18 +187,20 @@ namespace Ahorcado
         }
 
 
+        private void resetearFormulario()
+        {
+            tbNombre.Text = "";
+            tbContraseña.Text = "";
+        }
+
         // Se cierra el programa
         private void pbExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
 
         }
+ 
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-            // string ruta = "Sql\ahorcado.sql";
-            //OperacionesBaseDatos.importarBaseDatos(ruta);
-        }
     } // Final clase Login
 
 

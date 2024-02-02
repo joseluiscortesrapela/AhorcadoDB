@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace Ahorcado
 {
-    public partial class Halloween : Form
+    public partial class Juego : Form
     {
         // Lista de plabras de la categoria que aun no han sido jugadas.
         private List<String> palabras = new List<String>();
@@ -40,7 +40,7 @@ namespace Ahorcado
         private IWavePlayer player;
         private AudioFileReader audioFile;
 
-        public Halloween()
+        public Juego()
         {
             InitializeComponent();
 

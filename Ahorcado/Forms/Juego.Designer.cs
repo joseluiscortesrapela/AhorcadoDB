@@ -1,6 +1,6 @@
 ﻿namespace Ahorcado
 {
-    partial class Halloween
+    partial class Juego
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Halloween));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Juego));
             this.label3 = new System.Windows.Forms.Label();
             this.buttonC = new System.Windows.Forms.Button();
             this.buttonV = new System.Windows.Forms.Button();

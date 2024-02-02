@@ -70,7 +70,7 @@ namespace Ahorcado
         {
             // Oculto el menu
             this.Hide();
-            Halloween halloween = new Halloween();
+            Juego halloween = new Juego();
             // Muestro el juego
             halloween.Show();
         }
