@@ -148,13 +148,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion\ConexionBaseDatos.cs" />
+    <Compile Include="Conexion\OperacionesBaseDatos.cs" />
     <Compile Include="Forms\Halloween.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Halloween.Designer.cs">
       <DependentUpon>Halloween.cs</DependentUpon>
     </Compile>
-    <Compile Include="Jugador.cs" />
+    <Compile Include="Models\Jugador.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,8 +174,8 @@
     <Compile Include="Forms\MenuJugador.Designer.cs">
       <DependentUpon>MenuJugador.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Word.cs" />
+    <Compile Include="Consultas\LoginModel.cs" />
+    <Compile Include="Models\Word.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sesion\SesionUsuario.cs" />
@@ -241,7 +242,6 @@
     <None Include="Resources\Juegos\Halloween\dibujo_ahorcado\III.png" />
     <None Include="Resources\Juegos\Halloween\dibujo_ahorcado\IV.png" />
     <None Include="Resources\Juegos\Halloween\dibujo_ahorcado\V.png" />
-    <Content Include="Sql\ahorcado.sql" />
     <Content Include="Xml\jugadores.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -261,6 +261,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Sql\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

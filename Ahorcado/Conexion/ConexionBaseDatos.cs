@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-namespace Ahorcado
+namespace Ahorcado.Conexion
 {
     class ConexionBaseDatos
     {

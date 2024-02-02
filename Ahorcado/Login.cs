@@ -1,4 +1,5 @@
-﻿using Ahorcado.Models;
+﻿using Ahorcado.Conexion;
+using Ahorcado.Models;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -8,7 +9,7 @@ namespace Ahorcado
     public partial class Login : Form
     {
         private LoginModel loginModel;
-      //  private List<Jugador> jugadores;  // Array de jugadores
+        //  private List<Jugador> jugadores;  // Array de jugadores
 
 
         public Login()
@@ -32,14 +33,14 @@ namespace Ahorcado
             {
                 // Realizo la consulta al modelo y obtengo la respuesta.
                 bool existe = loginModel.login(usuario, contraseña);
-              
+
                 // Si usuario existe.
                 if (existe)
                 {
                     // Oculto la ventana de login
                     this.Hide();
                     // Obtengo el usuario logeado
-                    string tipoUsuario = SesionUsuario.Rol;
+                    string tipoUsuario = SesionUsuario.Tipo;
 
                     // Si quien se logia es un jugador
                     if (tipoUsuario.Equals("Jugador"))
@@ -61,11 +62,14 @@ namespace Ahorcado
                 {
                     labelMensajeLogin.Text = "Usuario no encontrado";
                 }
+
+                Console.WriteLine("LOGIN: el usuario: " + usuario + " con contraseña: " + contraseña + " ¿Existe? " + existe);
+
             }
 
 
         }
-   
+
 
         // Registra un nuevo jugador
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -73,11 +77,16 @@ namespace Ahorcado
             // Obtengo nombre y le quito los espacios en blanco a derecha e izquierda
             string nombre = tbUsuario.Text.Trim();
             // Obtengo la contraseña
-            string contraseña = tbPassword.Text; 
-        
+            string contraseña = tbPassword.Text;
+
+            // Si datos formulario son correctos
+            if (siValidarFormularioRegistro(nombre, contraseña) ) {
+                // Guardo un nuevo usuario en la base de datos.
+                loginModel.registrarJugador(nombre, contraseña);
+            }
         }
 
-   
+
         // Valida los campos del formulario de login
         private bool siValidarFormularioLogin(string nombre, string contraseña)
         {
@@ -120,7 +129,7 @@ namespace Ahorcado
             bool valido = true;
 
             // Si el nombre de usuario no esta vacio
-            if (nombre.Length == 0 || string.IsNullOrWhiteSpace(nombre) )
+            if (nombre.Length == 0 || string.IsNullOrWhiteSpace(nombre))
             {
                 valido = false;
                 error.SetError(tbUsuario, "El nombre del usuario no puede estar vacio.");
@@ -171,7 +180,11 @@ namespace Ahorcado
 
         }
 
-
+        private void Login_Load(object sender, EventArgs e)
+        {
+            // string ruta = "Sql\ahorcado.sql";
+            //OperacionesBaseDatos.importarBaseDatos(ruta);
+        }
     } // Final clase Login
 
 

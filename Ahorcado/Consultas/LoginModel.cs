@@ -5,6 +5,7 @@ using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ahorcado.Conexion;
 using System.Windows.Forms;
 
 namespace Ahorcado.Models
@@ -37,12 +38,47 @@ namespace Ahorcado.Models
                 crearSesion(reader); // Creo una sesion para el usuario, para mantener los datos en cache.
             }
 
-            // Devuelvo resultado
+            // Devuelvo resultado 
             return existe;
 
         }
 
+        // Registra un nuevo usuario
+        public int registrarJugador( string jugador, string contraseña )
+        {
+            // Creo la conexion con la base de datos.
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+            // la abro.
+            conexion.Open();
 
+            // Consulta sql
+            string sql = "INSERT INTO jugadores ( jugador, contraseña ) VALUES ( @jugador, @contraseña )";
+            // Preparo la consulta
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+           
+            // Le paso como parametro el nombre del usuario.
+            comando.Parameters.AddWithValue("@jugador", jugador);
+            // Le como parametro la contraseña
+            comando.Parameters.AddWithValue("@contraseña", contraseña);
+   
+
+            int creado;
+
+            try
+            {
+                // Return value is the number of rows affected by the SQL statement.
+                creado = comando.ExecuteNonQuery();
+                Console.WriteLine("Registrado jugador");
+            }
+            catch (Exception ex)
+            {
+                creado = 0;
+                MessageBox.Show(ex.Message);
+            }
+
+            return creado;
+
+        }
 
         // Crea la sesion del usuario
         public void crearSesion(MySqlDataReader reader)
@@ -65,13 +101,11 @@ namespace Ahorcado.Models
                 SesionUsuario.Usuario = usuario;
                 SesionUsuario.Contraseña = contraseña;
                 SesionUsuario.Puntuacion = puntuacion;
-                SesionUsuario.Rol = rol;
+                SesionUsuario.Tipo = rol;
 
             }
 
         }
-
-
 
 
     }
