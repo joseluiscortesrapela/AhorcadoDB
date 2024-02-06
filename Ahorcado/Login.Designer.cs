@@ -120,9 +120,9 @@
             this.panelRegistro.Controls.Add(this.label11);
             this.panelRegistro.Controls.Add(this.tbPassword);
             this.panelRegistro.Controls.Add(this.tbUsuario);
-            this.panelRegistro.Location = new System.Drawing.Point(332, 0);
+            this.panelRegistro.Location = new System.Drawing.Point(324, 17);
             this.panelRegistro.Name = "panelRegistro";
-            this.panelRegistro.Size = new System.Drawing.Size(595, 487);
+            this.panelRegistro.Size = new System.Drawing.Size(595, 454);
             this.panelRegistro.TabIndex = 23;
             this.panelRegistro.Visible = false;
             // 
@@ -344,9 +344,9 @@
             this.panelLogin.Controls.Add(this.buttonLogin);
             this.panelLogin.Controls.Add(this.label1);
             this.panelLogin.Controls.Add(this.label8);
-            this.panelLogin.Location = new System.Drawing.Point(324, 6);
+            this.panelLogin.Location = new System.Drawing.Point(327, 14);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(237, 484);
+            this.panelLogin.Size = new System.Drawing.Size(237, 457);
             this.panelLogin.TabIndex = 32;
             // 
             // lebel0
@@ -567,13 +567,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(964, 490);
+            this.Controls.Add(this.panelRegistro);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panelContenedor);
-            this.Controls.Add(this.panelRegistro);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";

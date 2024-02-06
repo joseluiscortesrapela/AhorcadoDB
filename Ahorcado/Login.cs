@@ -32,7 +32,7 @@ namespace Ahorcado
             // Si el formulario es valido    
             if (siValidarFormularioLogin(usuario, contraseña))
             {
-                // Realizo la consulta al modelo y obtengo la respuesta.
+                // Compruebo si existe el usaurio
                 bool existe = loginModel.login(usuario, contraseña);
 
                 // Si usuario existe.
@@ -63,11 +63,8 @@ namespace Ahorcado
                 {
                     labelMensajeLogin.Text = "El login es incorrecto";
                 }
-
                 Console.WriteLine("LOGIN: el usuario: " + usuario + " con contraseña: " + contraseña + " ¿Existe? " + existe);
-
             }
-
 
         }
 
