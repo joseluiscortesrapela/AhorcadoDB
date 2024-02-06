@@ -1,5 +1,4 @@
 ﻿using Ahorcado.Models;
-using Ahorcado.Utilidades;
 using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
 using System;
@@ -262,13 +261,6 @@ namespace Ahorcado
             }
             // Devuelvo valor
             return pista;
-        }
-
-        // Carga inicial de las palabras al cargar el juego.
-        private void añadirPalabrasDGV()
-        {
-            // Obtengo las palabras y las guardo en el dgv
-            dgvPalabras.DataSource = ProcesarFicherosXML.dameListaPalabras();
         }
 
         // Permite al jugador resolver

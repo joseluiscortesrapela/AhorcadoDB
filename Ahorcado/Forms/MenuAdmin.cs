@@ -1,5 +1,4 @@
 ﻿using Ahorcado.Models;
-using Ahorcado.Utilidades;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -119,8 +118,10 @@ namespace Ahorcado
                     tbIdJugador.Text = filaTabla.Cells[0].Value.ToString();
                     // Mombre del usuario
                     tbJugador.Text = filaTabla.Cells[1].Value.ToString();
-                    // Contraseña del uusaurio
+                    // Contraseña 
                     tbContraseña.Text = filaTabla.Cells[2].Value.ToString();
+                    // La puntuacion
+                    tbPuntuacion.Text = filaTabla.Cells[3].Value.ToString();
                     // Tipo de rol del usuario pueden ser jugador o administrador
                     cbTipoRol.Text = filaTabla.Cells[4].Value.ToString();
                     // Oculto panel
@@ -347,6 +348,8 @@ namespace Ahorcado
             string usuario = tbJugador.Text;
             // Contraseña del usuario
             string contraseña = tbContraseña.Text;
+            // La puntuaciòn
+            int puntuacion = int.Parse( tbPuntuacion.Text );
             // Tipo de rol que tiene este usurio
             string tipo = cbTipoRol.Text;
 
@@ -371,7 +374,7 @@ namespace Ahorcado
                 else if (accionARealizar.Equals("actualizar"))
                 {
                     // Actualizo los datos del jugador
-                    if (model_admin.actualizarJugador(idJugador, usuario, contraseña, tipo) == 1)
+                    if (model_admin.actualizarJugador(idJugador, usuario, contraseña, puntuacion, tipo) == 1)
                     {
                         labelMensajeJugador.Text = "Acabas de actualizar los datos del usuario.";
                     }

@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdmin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelNombreUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -84,12 +84,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.labelMensajeJugador = new System.Windows.Forms.Label();
-            this.tbPuntuacion = new System.Windows.Forms.TextBox();
             this.tbContraseña = new System.Windows.Forms.TextBox();
             this.tbJugador = new System.Windows.Forms.TextBox();
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.tbPuntuacion = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -468,37 +468,37 @@
             this.dgvTablaGenerica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTablaGenerica.BackgroundColor = System.Drawing.Color.Snow;
             this.dgvTablaGenerica.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTablaGenerica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTablaGenerica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTablaGenerica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTablaGenerica.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTablaGenerica.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTablaGenerica.EnableHeadersVisualStyles = false;
             this.dgvTablaGenerica.GridColor = System.Drawing.SystemColors.Desktop;
             this.dgvTablaGenerica.Location = new System.Drawing.Point(61, 71);
             this.dgvTablaGenerica.Name = "dgvTablaGenerica";
             this.dgvTablaGenerica.ReadOnly = true;
             this.dgvTablaGenerica.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTablaGenerica.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTablaGenerica.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTablaGenerica.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvTablaGenerica.Size = new System.Drawing.Size(798, 314);
             this.dgvTablaGenerica.TabIndex = 37;
@@ -582,6 +582,7 @@
             // panelJugador
             // 
             this.panelJugador.BackColor = System.Drawing.Color.Snow;
+            this.panelJugador.Controls.Add(this.tbPuntuacion);
             this.panelJugador.Controls.Add(this.label8);
             this.panelJugador.Controls.Add(this.tbIdJugador);
             this.panelJugador.Controls.Add(this.buttonJugadorAceptar);
@@ -594,7 +595,6 @@
             this.panelJugador.Controls.Add(this.label6);
             this.panelJugador.Controls.Add(this.label5);
             this.panelJugador.Controls.Add(this.labelMensajeJugador);
-            this.panelJugador.Controls.Add(this.tbPuntuacion);
             this.panelJugador.Controls.Add(this.tbContraseña);
             this.panelJugador.Controls.Add(this.tbJugador);
             this.panelJugador.Location = new System.Drawing.Point(238, 202);
@@ -735,18 +735,6 @@
             this.labelMensajeJugador.Size = new System.Drawing.Size(0, 24);
             this.labelMensajeJugador.TabIndex = 3;
             // 
-            // tbPuntuacion
-            // 
-            this.tbPuntuacion.Enabled = false;
-            this.tbPuntuacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPuntuacion.Location = new System.Drawing.Point(530, 111);
-            this.tbPuntuacion.Name = "tbPuntuacion";
-            this.tbPuntuacion.ReadOnly = true;
-            this.tbPuntuacion.Size = new System.Drawing.Size(142, 29);
-            this.tbPuntuacion.TabIndex = 2;
-            this.tbPuntuacion.Text = "0";
-            this.tbPuntuacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // tbContraseña
             // 
             this.tbContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -789,6 +777,14 @@
             this.pictureBox7.TabIndex = 38;
             this.pictureBox7.TabStop = false;
             // 
+            // tbPuntuacion
+            // 
+            this.tbPuntuacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPuntuacion.Location = new System.Drawing.Point(530, 111);
+            this.tbPuntuacion.Name = "tbPuntuacion";
+            this.tbPuntuacion.Size = new System.Drawing.Size(142, 29);
+            this.tbPuntuacion.TabIndex = 35;
+            // 
             // MenuAdmin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -797,12 +793,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1213, 712);
+            this.Controls.Add(this.panelJugador);
             this.Controls.Add(this.panelPalabras);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pbIconoMensaje);
             this.Controls.Add(this.labelMensaje);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.panelJugador);
             this.Controls.Add(this.panelPrincipal);
             this.Controls.Add(this.panelVertical);
             this.DoubleBuffered = true;
@@ -874,7 +870,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelMensajeJugador;
-        private System.Windows.Forms.TextBox tbPuntuacion;
         private System.Windows.Forms.TextBox tbContraseña;
         private System.Windows.Forms.TextBox tbJugador;
         private System.Windows.Forms.ErrorProvider error;
@@ -901,5 +896,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.DataGridView dgvTablaGenerica;
         private System.Windows.Forms.PictureBox pbSalir;
+        private System.Windows.Forms.TextBox tbPuntuacion;
     }
 }

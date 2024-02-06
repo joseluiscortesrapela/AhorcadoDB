@@ -253,7 +253,7 @@ namespace Ahorcado.Models
             return existe;
         }
 
-        public int actualizarJugador(int idJugador, string jugador, string contraseña, string tipo)
+        public int actualizarJugador(int idJugador, string jugador, string contraseña, int puntuacion, string tipo)
         {
             // Creo la conexion con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
@@ -270,7 +270,7 @@ namespace Ahorcado.Models
             // Le como parametro los apellidos
             comando.Parameters.AddWithValue("@contraseña", contraseña);
             // Le paso como parametro el telefono
-            comando.Parameters.AddWithValue("@puntuacion", 0);
+            comando.Parameters.AddWithValue("@puntuacion", puntuacion);
             // Le paso como parametro el dni
             comando.Parameters.AddWithValue("@tipo", tipo);
             // Le paso el identificador del jugador
