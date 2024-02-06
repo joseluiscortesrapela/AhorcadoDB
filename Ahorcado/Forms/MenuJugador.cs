@@ -14,32 +14,44 @@ namespace Ahorcado
 {
     public partial class MenuJugador : Form
     {
-        private List<Jugador> jugadores;
+        //private List<Jugador> jugadores;
+        private MenuJugadorModel model_jugador;
 
         public MenuJugador()
         {
             InitializeComponent();
+            // Peticiones a la base de datos.
+            model_jugador = new MenuJugadorModel();
             // Muestro el nombre del jugador.
             lbNombreUsuario.Text = SesionUsuario.Usuario;
             // Muestro su puntuacion
             lbPuntuacion.Text = SesionUsuario.Puntuacion.ToString();
-            // Obtengo la lista de jugadores
-            jugadores = ProcesarFicherosXML.dameListaJugadores();
+
+            // Obtengo las las puntuaciones de los jugadores
+            List<Jugador> jugadores = model_jugador.getRanking();
             // Muestro el ranking 
-            mostrarRanking();
+
+            mostrarRanking( jugadores );
         }
 
         // Muestro las siete mejores puntuaciones.
-        private void mostrarRanking()
+        private void mostrarRanking(List<Jugador> jugadores)
         {
-            // Ordena la lista de jugadores de mayor a menor puntuación
-            jugadores = jugadores.OrderByDescending(jugador => jugador.Puntuacion).ToList();
 
-            // Filtra a los jugadores con más de 0 puntos y toma los 7 mejores puntajes
-            var mejoresPuntajes = jugadores.Where(jugador => jugador.Puntuacion > 0).Take(7).ToList();
+            foreach( Jugador jugador in jugadores )
+            {
+                Console.WriteLine( jugador.Nombre + " puntuacion: " + jugador.Puntuacion );
+            }
+
+
+            // Ordena la lista de jugadores de mayor a menor puntuación
+            // jugadores = jugadores.OrderByDescending(jugador => jugador.Puntuacion).ToList();
+
+            // Filtra a los jugadores con más de 0 puntos y toma las 7 mejores puntuaciones.
+            // var mejoresPuntuaciones = jugadores.Where(jugador => jugador.Puntuacion > 0).Take(7).ToList();
 
             // Imprime los 7 mejores puntajes
-            for (int i = 0; i < mejoresPuntajes.Count; i++)
+            for (int i = 0; i < jugadores.Count; i++)
             {
                 Label labelJugador = Controls.Find("lbJugador" + (i + 1), true).FirstOrDefault() as Label;
                 Label labelScore = Controls.Find("lbScore" + (i + 1), true).FirstOrDefault() as Label;
@@ -47,18 +59,18 @@ namespace Ahorcado
                 if (labelJugador != null)
                 {
                     // Si es el jugador que esta jugadno la partida
-                    if (SesionUsuario.Usuario == mejoresPuntajes[i].Nombre)
+                    if (SesionUsuario.Usuario == jugadores[i].Nombre)
                     {
-                        labelJugador.Text = mejoresPuntajes[i].Nombre;
-                        labelScore.Text = mejoresPuntajes[i].Puntuacion.ToString();
+                        labelJugador.Text = jugadores[i].Nombre;
+                        labelScore.Text = jugadores[i].Puntuacion.ToString();
                         // Cambio de color el nombre y su puntuacion asi destaco al jugador que esta jugando
-                        labelJugador.ForeColor = Color.DarkTurquoise;
-                        labelScore.ForeColor = Color.DarkTurquoise;
+                        labelJugador.ForeColor = Color.SpringGreen;
+                        labelScore.ForeColor = Color.SpringGreen;
                     }
                     else
                     {   // Muestro el resto de jugadores que jugaron.
-                        labelJugador.Text = mejoresPuntajes[i].Nombre;
-                        labelScore.Text = mejoresPuntajes[i].Puntuacion.ToString();
+                        labelJugador.Text = jugadores[i].Nombre;
+                        labelScore.Text = jugadores[i].Puntuacion.ToString();
                     }
 
                 }

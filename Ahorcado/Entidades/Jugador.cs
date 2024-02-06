@@ -10,7 +10,11 @@ namespace Ahorcado {
         private string contraseña;
         private int puntuacion;
         private string tipo;
- 
+
+        public Jugador()
+        {
+        }
+
         public Jugador(int id, string nombre, string contraseña, int puntuacion, string rol)
         {
             this.id = id;

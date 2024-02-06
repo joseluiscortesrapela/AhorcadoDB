@@ -56,6 +56,13 @@
             this.lbScore7 = new System.Windows.Forms.Label();
             this.pbSalir = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbScore9 = new System.Windows.Forms.Label();
+            this.lbJugador9 = new System.Windows.Forms.Label();
+            this.lbScore8 = new System.Windows.Forms.Label();
+            this.lbJugador8 = new System.Windows.Forms.Label();
+            this.lbScore10 = new System.Windows.Forms.Label();
+            this.lbJugador10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -69,7 +76,7 @@
             this.lbNombreUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lbNombreUsuario.Font = new System.Drawing.Font("MV Boli", 15F, System.Drawing.FontStyle.Bold);
             this.lbNombreUsuario.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.lbNombreUsuario.Location = new System.Drawing.Point(120, 57);
+            this.lbNombreUsuario.Location = new System.Drawing.Point(132, 51);
             this.lbNombreUsuario.Name = "lbNombreUsuario";
             this.lbNombreUsuario.Size = new System.Drawing.Size(87, 26);
             this.lbNombreUsuario.TabIndex = 10;
@@ -116,7 +123,7 @@
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.label12.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label12.Location = new System.Drawing.Point(1028, 101);
+            this.label12.Location = new System.Drawing.Point(1060, 90);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(72, 29);
             this.label12.TabIndex = 30;
@@ -128,7 +135,7 @@
             this.lbPuntuacion.BackColor = System.Drawing.Color.Transparent;
             this.lbPuntuacion.Font = new System.Drawing.Font("MV Boli", 13F, System.Drawing.FontStyle.Bold);
             this.lbPuntuacion.ForeColor = System.Drawing.Color.SpringGreen;
-            this.lbPuntuacion.Location = new System.Drawing.Point(254, 86);
+            this.lbPuntuacion.Location = new System.Drawing.Point(254, 80);
             this.lbPuntuacion.Name = "lbPuntuacion";
             this.lbPuntuacion.Size = new System.Drawing.Size(24, 23);
             this.lbPuntuacion.TabIndex = 37;
@@ -138,7 +145,7 @@
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(91, 57);
+            this.pictureBox6.Location = new System.Drawing.Point(103, 51);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(23, 31);
             this.pictureBox6.TabIndex = 43;
@@ -160,7 +167,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("MV Boli", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label4.Location = new System.Drawing.Point(78, 22);
+            this.label4.Location = new System.Drawing.Point(90, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 31);
             this.label4.TabIndex = 41;
@@ -172,7 +179,7 @@
             this.lbJugador1.BackColor = System.Drawing.Color.Transparent;
             this.lbJugador1.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbJugador1.ForeColor = System.Drawing.Color.Magenta;
-            this.lbJugador1.Location = new System.Drawing.Point(852, 154);
+            this.lbJugador1.Location = new System.Drawing.Point(884, 143);
             this.lbJugador1.Name = "lbJugador1";
             this.lbJugador1.Size = new System.Drawing.Size(134, 29);
             this.lbJugador1.TabIndex = 44;
@@ -184,7 +191,7 @@
             this.lbJugador2.BackColor = System.Drawing.Color.Transparent;
             this.lbJugador2.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbJugador2.ForeColor = System.Drawing.Color.Magenta;
-            this.lbJugador2.Location = new System.Drawing.Point(852, 197);
+            this.lbJugador2.Location = new System.Drawing.Point(884, 186);
             this.lbJugador2.Name = "lbJugador2";
             this.lbJugador2.Size = new System.Drawing.Size(122, 29);
             this.lbJugador2.TabIndex = 45;
@@ -196,7 +203,7 @@
             this.lbJugador3.BackColor = System.Drawing.Color.Transparent;
             this.lbJugador3.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbJugador3.ForeColor = System.Drawing.Color.Magenta;
-            this.lbJugador3.Location = new System.Drawing.Point(852, 239);
+            this.lbJugador3.Location = new System.Drawing.Point(884, 228);
             this.lbJugador3.Name = "lbJugador3";
             this.lbJugador3.Size = new System.Drawing.Size(122, 29);
             this.lbJugador3.TabIndex = 46;
@@ -208,7 +215,7 @@
             this.lbJugador4.BackColor = System.Drawing.Color.Transparent;
             this.lbJugador4.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbJugador4.ForeColor = System.Drawing.Color.Magenta;
-            this.lbJugador4.Location = new System.Drawing.Point(852, 281);
+            this.lbJugador4.Location = new System.Drawing.Point(884, 270);
             this.lbJugador4.Name = "lbJugador4";
             this.lbJugador4.Size = new System.Drawing.Size(122, 29);
             this.lbJugador4.TabIndex = 47;
@@ -220,7 +227,7 @@
             this.lbJugador5.BackColor = System.Drawing.Color.Transparent;
             this.lbJugador5.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbJugador5.ForeColor = System.Drawing.Color.Magenta;
-            this.lbJugador5.Location = new System.Drawing.Point(852, 322);
+            this.lbJugador5.Location = new System.Drawing.Point(884, 311);
             this.lbJugador5.Name = "lbJugador5";
             this.lbJugador5.Size = new System.Drawing.Size(122, 29);
             this.lbJugador5.TabIndex = 48;
@@ -232,7 +239,7 @@
             this.lbJugador6.BackColor = System.Drawing.Color.Transparent;
             this.lbJugador6.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbJugador6.ForeColor = System.Drawing.Color.Magenta;
-            this.lbJugador6.Location = new System.Drawing.Point(852, 365);
+            this.lbJugador6.Location = new System.Drawing.Point(884, 354);
             this.lbJugador6.Name = "lbJugador6";
             this.lbJugador6.Size = new System.Drawing.Size(122, 29);
             this.lbJugador6.TabIndex = 49;
@@ -244,7 +251,7 @@
             this.lbJugador7.BackColor = System.Drawing.Color.Transparent;
             this.lbJugador7.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbJugador7.ForeColor = System.Drawing.Color.Magenta;
-            this.lbJugador7.Location = new System.Drawing.Point(852, 405);
+            this.lbJugador7.Location = new System.Drawing.Point(884, 394);
             this.lbJugador7.Name = "lbJugador7";
             this.lbJugador7.Size = new System.Drawing.Size(122, 29);
             this.lbJugador7.TabIndex = 50;
@@ -256,7 +263,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(852, 101);
+            this.label3.Location = new System.Drawing.Point(884, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(123, 29);
             this.label3.TabIndex = 51;
@@ -268,7 +275,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.label11.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label11.Location = new System.Drawing.Point(830, 130);
+            this.label11.Location = new System.Drawing.Point(862, 119);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(277, 29);
             this.label11.TabIndex = 52;
@@ -280,7 +287,7 @@
             this.lbScore1.BackColor = System.Drawing.Color.Transparent;
             this.lbScore1.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbScore1.ForeColor = System.Drawing.Color.Magenta;
-            this.lbScore1.Location = new System.Drawing.Point(1054, 154);
+            this.lbScore1.Location = new System.Drawing.Point(1086, 143);
             this.lbScore1.Name = "lbScore1";
             this.lbScore1.Size = new System.Drawing.Size(29, 29);
             this.lbScore1.TabIndex = 53;
@@ -292,7 +299,7 @@
             this.lbScore3.BackColor = System.Drawing.Color.Transparent;
             this.lbScore3.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbScore3.ForeColor = System.Drawing.Color.Magenta;
-            this.lbScore3.Location = new System.Drawing.Point(1054, 239);
+            this.lbScore3.Location = new System.Drawing.Point(1086, 228);
             this.lbScore3.Name = "lbScore3";
             this.lbScore3.Size = new System.Drawing.Size(29, 29);
             this.lbScore3.TabIndex = 54;
@@ -304,7 +311,7 @@
             this.lbScore2.BackColor = System.Drawing.Color.Transparent;
             this.lbScore2.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbScore2.ForeColor = System.Drawing.Color.Magenta;
-            this.lbScore2.Location = new System.Drawing.Point(1054, 197);
+            this.lbScore2.Location = new System.Drawing.Point(1086, 186);
             this.lbScore2.Name = "lbScore2";
             this.lbScore2.Size = new System.Drawing.Size(29, 29);
             this.lbScore2.TabIndex = 55;
@@ -316,7 +323,7 @@
             this.lbScore4.BackColor = System.Drawing.Color.Transparent;
             this.lbScore4.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbScore4.ForeColor = System.Drawing.Color.Magenta;
-            this.lbScore4.Location = new System.Drawing.Point(1054, 281);
+            this.lbScore4.Location = new System.Drawing.Point(1086, 270);
             this.lbScore4.Name = "lbScore4";
             this.lbScore4.Size = new System.Drawing.Size(29, 29);
             this.lbScore4.TabIndex = 56;
@@ -328,7 +335,7 @@
             this.lbScore5.BackColor = System.Drawing.Color.Transparent;
             this.lbScore5.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbScore5.ForeColor = System.Drawing.Color.Magenta;
-            this.lbScore5.Location = new System.Drawing.Point(1054, 322);
+            this.lbScore5.Location = new System.Drawing.Point(1086, 311);
             this.lbScore5.Name = "lbScore5";
             this.lbScore5.Size = new System.Drawing.Size(29, 29);
             this.lbScore5.TabIndex = 57;
@@ -340,7 +347,7 @@
             this.lbScore6.BackColor = System.Drawing.Color.Transparent;
             this.lbScore6.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbScore6.ForeColor = System.Drawing.Color.Magenta;
-            this.lbScore6.Location = new System.Drawing.Point(1054, 365);
+            this.lbScore6.Location = new System.Drawing.Point(1086, 354);
             this.lbScore6.Name = "lbScore6";
             this.lbScore6.Size = new System.Drawing.Size(29, 29);
             this.lbScore6.TabIndex = 58;
@@ -352,7 +359,7 @@
             this.lbScore7.BackColor = System.Drawing.Color.Transparent;
             this.lbScore7.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbScore7.ForeColor = System.Drawing.Color.Magenta;
-            this.lbScore7.Location = new System.Drawing.Point(1054, 405);
+            this.lbScore7.Location = new System.Drawing.Point(1086, 394);
             this.lbScore7.Name = "lbScore7";
             this.lbScore7.Size = new System.Drawing.Size(29, 29);
             this.lbScore7.TabIndex = 59;
@@ -362,7 +369,7 @@
             // 
             this.pbSalir.BackColor = System.Drawing.Color.Transparent;
             this.pbSalir.Image = ((System.Drawing.Image)(resources.GetObject("pbSalir.Image")));
-            this.pbSalir.Location = new System.Drawing.Point(12, 85);
+            this.pbSalir.Location = new System.Drawing.Point(19, 80);
             this.pbSalir.Name = "pbSalir";
             this.pbSalir.Size = new System.Drawing.Size(65, 63);
             this.pbSalir.TabIndex = 60;
@@ -376,11 +383,95 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("MV Boli", 13F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.SpringGreen;
-            this.label2.Location = new System.Drawing.Point(120, 86);
+            this.label2.Location = new System.Drawing.Point(132, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 23);
             this.label2.TabIndex = 62;
             this.label2.Text = "Puntuación";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Magenta;
+            this.label1.Location = new System.Drawing.Point(1087, 435);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 29);
+            this.label1.TabIndex = 64;
+            this.label1.Text = "0";
+            // 
+            // lbScore9
+            // 
+            this.lbScore9.AutoSize = true;
+            this.lbScore9.BackColor = System.Drawing.Color.Transparent;
+            this.lbScore9.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
+            this.lbScore9.ForeColor = System.Drawing.Color.Magenta;
+            this.lbScore9.Location = new System.Drawing.Point(1087, 473);
+            this.lbScore9.Name = "lbScore9";
+            this.lbScore9.Size = new System.Drawing.Size(29, 29);
+            this.lbScore9.TabIndex = 66;
+            this.lbScore9.Text = "0";
+            // 
+            // lbJugador9
+            // 
+            this.lbJugador9.AutoSize = true;
+            this.lbJugador9.BackColor = System.Drawing.Color.Transparent;
+            this.lbJugador9.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
+            this.lbJugador9.ForeColor = System.Drawing.Color.Magenta;
+            this.lbJugador9.Location = new System.Drawing.Point(885, 473);
+            this.lbJugador9.Name = "lbJugador9";
+            this.lbJugador9.Size = new System.Drawing.Size(122, 29);
+            this.lbJugador9.TabIndex = 65;
+            this.lbJugador9.Text = "Joee Luis";
+            // 
+            // lbScore8
+            // 
+            this.lbScore8.AutoSize = true;
+            this.lbScore8.BackColor = System.Drawing.Color.Transparent;
+            this.lbScore8.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
+            this.lbScore8.ForeColor = System.Drawing.Color.Magenta;
+            this.lbScore8.Location = new System.Drawing.Point(1086, 435);
+            this.lbScore8.Name = "lbScore8";
+            this.lbScore8.Size = new System.Drawing.Size(29, 29);
+            this.lbScore8.TabIndex = 68;
+            this.lbScore8.Text = "0";
+            // 
+            // lbJugador8
+            // 
+            this.lbJugador8.AutoSize = true;
+            this.lbJugador8.BackColor = System.Drawing.Color.Transparent;
+            this.lbJugador8.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
+            this.lbJugador8.ForeColor = System.Drawing.Color.Magenta;
+            this.lbJugador8.Location = new System.Drawing.Point(884, 435);
+            this.lbJugador8.Name = "lbJugador8";
+            this.lbJugador8.Size = new System.Drawing.Size(122, 29);
+            this.lbJugador8.TabIndex = 67;
+            this.lbJugador8.Text = "Joee Luis";
+            // 
+            // lbScore10
+            // 
+            this.lbScore10.AutoSize = true;
+            this.lbScore10.BackColor = System.Drawing.Color.Transparent;
+            this.lbScore10.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
+            this.lbScore10.ForeColor = System.Drawing.Color.Magenta;
+            this.lbScore10.Location = new System.Drawing.Point(1087, 513);
+            this.lbScore10.Name = "lbScore10";
+            this.lbScore10.Size = new System.Drawing.Size(29, 29);
+            this.lbScore10.TabIndex = 70;
+            this.lbScore10.Text = "0";
+            // 
+            // lbJugador10
+            // 
+            this.lbJugador10.AutoSize = true;
+            this.lbJugador10.BackColor = System.Drawing.Color.Transparent;
+            this.lbJugador10.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
+            this.lbJugador10.ForeColor = System.Drawing.Color.Magenta;
+            this.lbJugador10.Location = new System.Drawing.Point(885, 513);
+            this.lbJugador10.Name = "lbJugador10";
+            this.lbJugador10.Size = new System.Drawing.Size(122, 29);
+            this.lbJugador10.TabIndex = 69;
+            this.lbJugador10.Text = "Joee Luis";
             // 
             // MenuJugador
             // 
@@ -390,6 +481,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1188, 697);
+            this.Controls.Add(this.lbScore10);
+            this.Controls.Add(this.lbJugador10);
+            this.Controls.Add(this.lbScore8);
+            this.Controls.Add(this.lbJugador8);
+            this.Controls.Add(this.lbScore9);
+            this.Controls.Add(this.lbJugador9);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pbSalir);
             this.Controls.Add(this.lbScore7);
@@ -460,5 +558,12 @@
         private System.Windows.Forms.Label lbScore7;
         private System.Windows.Forms.PictureBox pbSalir;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbScore9;
+        private System.Windows.Forms.Label lbJugador9;
+        private System.Windows.Forms.Label lbScore8;
+        private System.Windows.Forms.Label lbJugador8;
+        private System.Windows.Forms.Label lbScore10;
+        private System.Windows.Forms.Label lbJugador10;
     }
 }
