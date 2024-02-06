@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdmin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -47,8 +44,6 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.panelVertical = new System.Windows.Forms.Panel();
             this.pbSalir = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pbGuardar = new System.Windows.Forms.PictureBox();
             this.panelVerticalMenu = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -68,17 +63,7 @@
             this.tbPista = new System.Windows.Forms.TextBox();
             this.tbPalabra = new System.Windows.Forms.TextBox();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.dgvPalabras = new System.Windows.Forms.DataGridView();
-            this.IdPalabra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Palabra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgvJugadores = new System.Windows.Forms.DataGridView();
-            this.IdJugador = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Puntuacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvTablaGenerica = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.pbMostrarPanelActualizar = new System.Windows.Forms.PictureBox();
             this.pbMostrarVentanEliminar = new System.Windows.Forms.PictureBox();
@@ -105,22 +90,19 @@
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panelVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGuardar)).BeginInit();
             this.panelVerticalMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelPalabras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconoFormularioPalabra)).BeginInit();
             this.panelPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPalabras)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTablaGenerica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelActualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarVentanEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelCrear)).BeginInit();
@@ -236,8 +218,6 @@
             // 
             this.panelVertical.BackColor = System.Drawing.Color.Transparent;
             this.panelVertical.Controls.Add(this.pbSalir);
-            this.panelVertical.Controls.Add(this.label4);
-            this.panelVertical.Controls.Add(this.pbGuardar);
             this.panelVertical.Controls.Add(this.panelVerticalMenu);
             this.panelVertical.Controls.Add(this.pictureBox6);
             this.panelVertical.Controls.Add(this.pictureBox5);
@@ -258,28 +238,7 @@
             this.pbSalir.TabIndex = 36;
             this.pbSalir.TabStop = false;
             this.pbSalir.Tag = "Sale a la vengana de login";
-            this.pbSalir.Click += new System.EventHandler(this.pbSalir_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(16, 667);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 20);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "Guardar";
-            // 
-            // pbGuardar
-            // 
-            this.pbGuardar.Image = ((System.Drawing.Image)(resources.GetObject("pbGuardar.Image")));
-            this.pbGuardar.Location = new System.Drawing.Point(20, 606);
-            this.pbGuardar.Name = "pbGuardar";
-            this.pbGuardar.Size = new System.Drawing.Size(70, 58);
-            this.pbGuardar.TabIndex = 27;
-            this.pbGuardar.TabStop = false;
-            this.pbGuardar.Click += new System.EventHandler(this.pbGuardar_Click);
+            this.pbSalir.Click += new System.EventHandler(this.pbCerrarSesion_Click);
             // 
             // panelVerticalMenu
             // 
@@ -487,8 +446,7 @@
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.Color.Transparent;
-            this.panelPrincipal.Controls.Add(this.dgvPalabras);
-            this.panelPrincipal.Controls.Add(this.dgvJugadores);
+            this.panelPrincipal.Controls.Add(this.dgvTablaGenerica);
             this.panelPrincipal.Controls.Add(this.label3);
             this.panelPrincipal.Controls.Add(this.pbMostrarPanelActualizar);
             this.panelPrincipal.Controls.Add(this.pbMostrarVentanEliminar);
@@ -500,93 +458,16 @@
             this.panelPrincipal.TabIndex = 25;
             this.panelPrincipal.Visible = false;
             // 
-            // dgvPalabras
+            // dgvTablaGenerica
             // 
-            this.dgvPalabras.AllowUserToAddRows = false;
-            this.dgvPalabras.AllowUserToDeleteRows = false;
-            this.dgvPalabras.AllowUserToOrderColumns = true;
-            this.dgvPalabras.AllowUserToResizeColumns = false;
-            this.dgvPalabras.AllowUserToResizeRows = false;
-            this.dgvPalabras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvPalabras.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvPalabras.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPalabras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPalabras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPalabras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdPalabra,
-            this.Palabra,
-            this.Pista,
-            this.Categoria});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPalabras.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPalabras.EnableHeadersVisualStyles = false;
-            this.dgvPalabras.GridColor = System.Drawing.SystemColors.Desktop;
-            this.dgvPalabras.Location = new System.Drawing.Point(61, 71);
-            this.dgvPalabras.Name = "dgvPalabras";
-            this.dgvPalabras.ReadOnly = true;
-            this.dgvPalabras.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPalabras.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPalabras.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dgvPalabras.Size = new System.Drawing.Size(798, 314);
-            this.dgvPalabras.TabIndex = 38;
-            this.dgvPalabras.Tag = "";
-            this.dgvPalabras.Visible = false;
-            this.dgvPalabras.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPalabras_CellClick);
-            // 
-            // IdPalabra
-            // 
-            this.IdPalabra.HeaderText = "id";
-            this.IdPalabra.Name = "IdPalabra";
-            this.IdPalabra.ReadOnly = true;
-            // 
-            // Palabra
-            // 
-            this.Palabra.HeaderText = "Palabra";
-            this.Palabra.Name = "Palabra";
-            this.Palabra.ReadOnly = true;
-            // 
-            // Pista
-            // 
-            this.Pista.HeaderText = "Pista";
-            this.Pista.Name = "Pista";
-            this.Pista.ReadOnly = true;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            // 
-            // dgvJugadores
-            // 
-            this.dgvJugadores.AllowUserToAddRows = false;
-            this.dgvJugadores.AllowUserToDeleteRows = false;
-            this.dgvJugadores.AllowUserToOrderColumns = true;
-            this.dgvJugadores.AllowUserToResizeColumns = false;
-            this.dgvJugadores.AllowUserToResizeRows = false;
-            this.dgvJugadores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvJugadores.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvJugadores.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTablaGenerica.AllowUserToAddRows = false;
+            this.dgvTablaGenerica.AllowUserToDeleteRows = false;
+            this.dgvTablaGenerica.AllowUserToOrderColumns = true;
+            this.dgvTablaGenerica.AllowUserToResizeColumns = false;
+            this.dgvTablaGenerica.AllowUserToResizeRows = false;
+            this.dgvTablaGenerica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTablaGenerica.BackgroundColor = System.Drawing.Color.Snow;
+            this.dgvTablaGenerica.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -594,14 +475,8 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvJugadores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvJugadores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJugadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdJugador,
-            this.Nombre,
-            this.Contraseña,
-            this.Puntuacion,
-            this.Rol});
+            this.dgvTablaGenerica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvTablaGenerica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -609,13 +484,13 @@
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvJugadores.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvJugadores.EnableHeadersVisualStyles = false;
-            this.dgvJugadores.GridColor = System.Drawing.SystemColors.Desktop;
-            this.dgvJugadores.Location = new System.Drawing.Point(61, 71);
-            this.dgvJugadores.Name = "dgvJugadores";
-            this.dgvJugadores.ReadOnly = true;
-            this.dgvJugadores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvTablaGenerica.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvTablaGenerica.EnableHeadersVisualStyles = false;
+            this.dgvTablaGenerica.GridColor = System.Drawing.SystemColors.Desktop;
+            this.dgvTablaGenerica.Location = new System.Drawing.Point(61, 71);
+            this.dgvTablaGenerica.Name = "dgvTablaGenerica";
+            this.dgvTablaGenerica.ReadOnly = true;
+            this.dgvTablaGenerica.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -623,42 +498,12 @@
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvJugadores.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvJugadores.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dgvJugadores.Size = new System.Drawing.Size(798, 314);
-            this.dgvJugadores.TabIndex = 37;
-            this.dgvJugadores.Tag = "";
-            this.dgvJugadores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJugadores_CellClick);
-            // 
-            // IdJugador
-            // 
-            this.IdJugador.HeaderText = "id";
-            this.IdJugador.Name = "IdJugador";
-            this.IdJugador.ReadOnly = true;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Contraseña
-            // 
-            this.Contraseña.HeaderText = "Contraseña";
-            this.Contraseña.Name = "Contraseña";
-            this.Contraseña.ReadOnly = true;
-            // 
-            // Puntuacion
-            // 
-            this.Puntuacion.HeaderText = "Puntuacion";
-            this.Puntuacion.Name = "Puntuacion";
-            this.Puntuacion.ReadOnly = true;
-            // 
-            // Rol
-            // 
-            this.Rol.HeaderText = "Rol";
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
+            this.dgvTablaGenerica.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvTablaGenerica.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvTablaGenerica.Size = new System.Drawing.Size(798, 314);
+            this.dgvTablaGenerica.TabIndex = 37;
+            this.dgvTablaGenerica.Tag = "";
+            this.dgvTablaGenerica.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTablaGenerica_CellClick);
             // 
             // label3
             // 
@@ -944,18 +789,6 @@
             this.pictureBox7.TabIndex = 38;
             this.pictureBox7.TabStop = false;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Brown;
-            this.label9.Location = new System.Drawing.Point(238, 686);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(514, 17);
-            this.label9.TabIndex = 40;
-            this.label9.Text = "Para guardar los cambios de forma permanente, haga click en el boton guardar.";
-            // 
             // MenuAdmin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -964,7 +797,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1213, 712);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.panelPalabras);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pbIconoMensaje);
@@ -987,7 +819,6 @@
             this.panelVertical.ResumeLayout(false);
             this.panelVertical.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGuardar)).EndInit();
             this.panelVerticalMenu.ResumeLayout(false);
             this.panelVerticalMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
@@ -997,8 +828,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconoFormularioPalabra)).EndInit();
             this.panelPrincipal.ResumeLayout(false);
             this.panelPrincipal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPalabras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJugadores)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTablaGenerica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelActualizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarVentanEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelCrear)).EndInit();
@@ -1069,20 +899,7 @@
         private System.Windows.Forms.Label labelMensajePalabra;
         private System.Windows.Forms.Panel panelVerticalMenu;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.DataGridView dgvPalabras;
-        private System.Windows.Forms.DataGridView dgvJugadores;
-        private System.Windows.Forms.PictureBox pbGuardar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdJugador;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contraseña;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Puntuacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dgvTablaGenerica;
         private System.Windows.Forms.PictureBox pbSalir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdPalabra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Palabra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
     }
 }

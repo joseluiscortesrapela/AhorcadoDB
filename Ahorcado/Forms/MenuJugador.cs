@@ -38,22 +38,12 @@ namespace Ahorcado
         private void mostrarRanking(List<Jugador> jugadores)
         {
 
-            foreach( Jugador jugador in jugadores )
-            {
-                Console.WriteLine( jugador.Nombre + " puntuacion: " + jugador.Puntuacion );
-            }
-
-
-            // Ordena la lista de jugadores de mayor a menor puntuación
-            // jugadores = jugadores.OrderByDescending(jugador => jugador.Puntuacion).ToList();
-
-            // Filtra a los jugadores con más de 0 puntos y toma las 7 mejores puntuaciones.
-            // var mejoresPuntuaciones = jugadores.Where(jugador => jugador.Puntuacion > 0).Take(7).ToList();
-
-            // Imprime los 7 mejores puntajes
+            // Recorro lista jugadores
             for (int i = 0; i < jugadores.Count; i++)
             {
+                // Muestra el nombre del jugador
                 Label labelJugador = Controls.Find("lbJugador" + (i + 1), true).FirstOrDefault() as Label;
+                // Muestra la puntuacion
                 Label labelScore = Controls.Find("lbScore" + (i + 1), true).FirstOrDefault() as Label;
 
                 if (labelJugador != null)

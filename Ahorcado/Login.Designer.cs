@@ -387,7 +387,7 @@
             this.tbNombre.Size = new System.Drawing.Size(165, 32);
             this.tbNombre.TabIndex = 11;
             this.tbNombre.TabStop = false;
-            this.tbNombre.Text = "serena";
+            this.tbNombre.Text = "jose";
             this.tbNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbContraseña
@@ -402,7 +402,7 @@
             this.tbContraseña.Size = new System.Drawing.Size(165, 32);
             this.tbContraseña.TabIndex = 10;
             this.tbContraseña.TabStop = false;
-            this.tbContraseña.Text = "1234";
+            this.tbContraseña.Text = "admin";
             this.tbContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbContraseña.UseSystemPasswordChar = true;
             // 
