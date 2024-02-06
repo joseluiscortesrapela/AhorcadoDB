@@ -39,6 +39,37 @@ namespace Ahorcado.Models
             return table;
         }
 
+
+        // Filtra la busqueda de los jugadores que coincidan por nombre.
+        public DataTable buscadorJugadores(string nombre)
+        {
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+            // la abro.
+            conexion.Open();
+            // Mi consulta 
+            string sql = "SELECT * FROM jugadores WHERE jugador LIKE '%" + nombre + "%'";
+
+            // creo el adaptador
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
+            // Instancio una tabla vacia.
+            DataTable table = new DataTable();
+
+            try
+            {
+                adapter.Fill(table); // Relleno la tabla con el resulatado de la consulta.
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return table;
+        }
+
+
+
         public DataTable getPalabras()
         {
             // Creo la conexion con la base de datos.
@@ -357,7 +388,7 @@ namespace Ahorcado.Models
             return table;
         }
 
-        
+
 
 
 

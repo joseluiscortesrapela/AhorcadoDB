@@ -62,13 +62,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.tbPista = new System.Windows.Forms.TextBox();
             this.tbPalabra = new System.Windows.Forms.TextBox();
-            this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.dgvTablaGenerica = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pbMostrarPanelActualizar = new System.Windows.Forms.PictureBox();
-            this.pbMostrarVentanEliminar = new System.Windows.Forms.PictureBox();
-            this.pbMostrarPanelCrear = new System.Windows.Forms.PictureBox();
-            this.lbNombreTabla = new System.Windows.Forms.Label();
             this.pbIconoMensaje = new System.Windows.Forms.PictureBox();
             this.labelMensaje = new System.Windows.Forms.Label();
             this.panelJugador = new System.Windows.Forms.Panel();
@@ -90,6 +83,15 @@
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.tbPuntuacion = new System.Windows.Forms.TextBox();
+            this.panelBuscador = new System.Windows.Forms.Panel();
+            this.lbNombreTabla = new System.Windows.Forms.Label();
+            this.pbMostrarPanelCrear = new System.Windows.Forms.PictureBox();
+            this.pbMostrarVentanEliminar = new System.Windows.Forms.PictureBox();
+            this.pbMostrarPanelActualizar = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgvTablaGenerica = new System.Windows.Forms.DataGridView();
+            this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.tbBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -101,16 +103,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelPalabras.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconoFormularioPalabra)).BeginInit();
-            this.panelPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTablaGenerica)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelActualizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarVentanEliminar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelCrear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconoMensaje)).BeginInit();
             this.panelJugador.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconoFormularioJugador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.panelBuscador.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelCrear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarVentanEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelActualizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTablaGenerica)).BeginInit();
+            this.panelPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelNombreUsuario
@@ -443,120 +446,6 @@
             this.tbPalabra.Size = new System.Drawing.Size(142, 29);
             this.tbPalabra.TabIndex = 0;
             // 
-            // panelPrincipal
-            // 
-            this.panelPrincipal.BackColor = System.Drawing.Color.Transparent;
-            this.panelPrincipal.Controls.Add(this.dgvTablaGenerica);
-            this.panelPrincipal.Controls.Add(this.label3);
-            this.panelPrincipal.Controls.Add(this.pbMostrarPanelActualizar);
-            this.panelPrincipal.Controls.Add(this.pbMostrarVentanEliminar);
-            this.panelPrincipal.Controls.Add(this.pbMostrarPanelCrear);
-            this.panelPrincipal.Controls.Add(this.lbNombreTabla);
-            this.panelPrincipal.Location = new System.Drawing.Point(255, 111);
-            this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(920, 444);
-            this.panelPrincipal.TabIndex = 25;
-            this.panelPrincipal.Visible = false;
-            // 
-            // dgvTablaGenerica
-            // 
-            this.dgvTablaGenerica.AllowUserToAddRows = false;
-            this.dgvTablaGenerica.AllowUserToDeleteRows = false;
-            this.dgvTablaGenerica.AllowUserToOrderColumns = true;
-            this.dgvTablaGenerica.AllowUserToResizeColumns = false;
-            this.dgvTablaGenerica.AllowUserToResizeRows = false;
-            this.dgvTablaGenerica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTablaGenerica.BackgroundColor = System.Drawing.Color.Snow;
-            this.dgvTablaGenerica.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTablaGenerica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.dgvTablaGenerica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTablaGenerica.DefaultCellStyle = dataGridViewCellStyle14;
-            this.dgvTablaGenerica.EnableHeadersVisualStyles = false;
-            this.dgvTablaGenerica.GridColor = System.Drawing.SystemColors.Desktop;
-            this.dgvTablaGenerica.Location = new System.Drawing.Point(61, 71);
-            this.dgvTablaGenerica.Name = "dgvTablaGenerica";
-            this.dgvTablaGenerica.ReadOnly = true;
-            this.dgvTablaGenerica.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTablaGenerica.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvTablaGenerica.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.dgvTablaGenerica.Size = new System.Drawing.Size(798, 314);
-            this.dgvTablaGenerica.TabIndex = 37;
-            this.dgvTablaGenerica.Tag = "";
-            this.dgvTablaGenerica.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTablaGenerica_CellClick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label3.Location = new System.Drawing.Point(51, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 29);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "TABLA:";
-            // 
-            // pbMostrarPanelActualizar
-            // 
-            this.pbMostrarPanelActualizar.Image = ((System.Drawing.Image)(resources.GetObject("pbMostrarPanelActualizar.Image")));
-            this.pbMostrarPanelActualizar.Location = new System.Drawing.Point(865, 116);
-            this.pbMostrarPanelActualizar.Name = "pbMostrarPanelActualizar";
-            this.pbMostrarPanelActualizar.Size = new System.Drawing.Size(50, 54);
-            this.pbMostrarPanelActualizar.TabIndex = 30;
-            this.pbMostrarPanelActualizar.TabStop = false;
-            this.pbMostrarPanelActualizar.Visible = false;
-            this.pbMostrarPanelActualizar.Click += new System.EventHandler(this.pbMostrarPanelActualizar_Click);
-            // 
-            // pbMostrarVentanEliminar
-            // 
-            this.pbMostrarVentanEliminar.Image = ((System.Drawing.Image)(resources.GetObject("pbMostrarVentanEliminar.Image")));
-            this.pbMostrarVentanEliminar.Location = new System.Drawing.Point(865, 190);
-            this.pbMostrarVentanEliminar.Name = "pbMostrarVentanEliminar";
-            this.pbMostrarVentanEliminar.Size = new System.Drawing.Size(57, 54);
-            this.pbMostrarVentanEliminar.TabIndex = 29;
-            this.pbMostrarVentanEliminar.TabStop = false;
-            this.pbMostrarVentanEliminar.Visible = false;
-            this.pbMostrarVentanEliminar.Click += new System.EventHandler(this.pbEliminar_Click);
-            // 
-            // pbMostrarPanelCrear
-            // 
-            this.pbMostrarPanelCrear.Location = new System.Drawing.Point(784, 10);
-            this.pbMostrarPanelCrear.Name = "pbMostrarPanelCrear";
-            this.pbMostrarPanelCrear.Size = new System.Drawing.Size(65, 65);
-            this.pbMostrarPanelCrear.TabIndex = 28;
-            this.pbMostrarPanelCrear.TabStop = false;
-            this.pbMostrarPanelCrear.Click += new System.EventHandler(this.pbMostrarPanelCrear_Click);
-            // 
-            // lbNombreTabla
-            // 
-            this.lbNombreTabla.AutoSize = true;
-            this.lbNombreTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombreTabla.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbNombreTabla.Location = new System.Drawing.Point(151, 44);
-            this.lbNombreTabla.Name = "lbNombreTabla";
-            this.lbNombreTabla.Size = new System.Drawing.Size(0, 29);
-            this.lbNombreTabla.TabIndex = 26;
-            // 
             // pbIconoMensaje
             // 
             this.pbIconoMensaje.Image = ((System.Drawing.Image)(resources.GetObject("pbIconoMensaje.Image")));
@@ -786,6 +675,138 @@
             this.tbPuntuacion.TabIndex = 35;
             this.tbPuntuacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // panelBuscador
+            // 
+            this.panelBuscador.Controls.Add(this.tbBuscar);
+            this.panelBuscador.Location = new System.Drawing.Point(449, 5);
+            this.panelBuscador.Name = "panelBuscador";
+            this.panelBuscador.Size = new System.Drawing.Size(612, 100);
+            this.panelBuscador.TabIndex = 39;
+            // 
+            // lbNombreTabla
+            // 
+            this.lbNombreTabla.AutoSize = true;
+            this.lbNombreTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombreTabla.ForeColor = System.Drawing.Color.SeaGreen;
+            this.lbNombreTabla.Location = new System.Drawing.Point(151, 44);
+            this.lbNombreTabla.Name = "lbNombreTabla";
+            this.lbNombreTabla.Size = new System.Drawing.Size(0, 29);
+            this.lbNombreTabla.TabIndex = 26;
+            // 
+            // pbMostrarPanelCrear
+            // 
+            this.pbMostrarPanelCrear.Location = new System.Drawing.Point(784, 10);
+            this.pbMostrarPanelCrear.Name = "pbMostrarPanelCrear";
+            this.pbMostrarPanelCrear.Size = new System.Drawing.Size(65, 65);
+            this.pbMostrarPanelCrear.TabIndex = 28;
+            this.pbMostrarPanelCrear.TabStop = false;
+            this.pbMostrarPanelCrear.Click += new System.EventHandler(this.pbMostrarPanelCrear_Click);
+            // 
+            // pbMostrarVentanEliminar
+            // 
+            this.pbMostrarVentanEliminar.Image = ((System.Drawing.Image)(resources.GetObject("pbMostrarVentanEliminar.Image")));
+            this.pbMostrarVentanEliminar.Location = new System.Drawing.Point(865, 190);
+            this.pbMostrarVentanEliminar.Name = "pbMostrarVentanEliminar";
+            this.pbMostrarVentanEliminar.Size = new System.Drawing.Size(57, 54);
+            this.pbMostrarVentanEliminar.TabIndex = 29;
+            this.pbMostrarVentanEliminar.TabStop = false;
+            this.pbMostrarVentanEliminar.Visible = false;
+            this.pbMostrarVentanEliminar.Click += new System.EventHandler(this.pbEliminar_Click);
+            // 
+            // pbMostrarPanelActualizar
+            // 
+            this.pbMostrarPanelActualizar.Image = ((System.Drawing.Image)(resources.GetObject("pbMostrarPanelActualizar.Image")));
+            this.pbMostrarPanelActualizar.Location = new System.Drawing.Point(865, 116);
+            this.pbMostrarPanelActualizar.Name = "pbMostrarPanelActualizar";
+            this.pbMostrarPanelActualizar.Size = new System.Drawing.Size(50, 54);
+            this.pbMostrarPanelActualizar.TabIndex = 30;
+            this.pbMostrarPanelActualizar.TabStop = false;
+            this.pbMostrarPanelActualizar.Visible = false;
+            this.pbMostrarPanelActualizar.Click += new System.EventHandler(this.pbMostrarPanelActualizar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label3.Location = new System.Drawing.Point(51, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 29);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "TABLA:";
+            // 
+            // dgvTablaGenerica
+            // 
+            this.dgvTablaGenerica.AllowUserToAddRows = false;
+            this.dgvTablaGenerica.AllowUserToDeleteRows = false;
+            this.dgvTablaGenerica.AllowUserToOrderColumns = true;
+            this.dgvTablaGenerica.AllowUserToResizeColumns = false;
+            this.dgvTablaGenerica.AllowUserToResizeRows = false;
+            this.dgvTablaGenerica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTablaGenerica.BackgroundColor = System.Drawing.Color.Snow;
+            this.dgvTablaGenerica.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTablaGenerica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvTablaGenerica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTablaGenerica.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvTablaGenerica.EnableHeadersVisualStyles = false;
+            this.dgvTablaGenerica.GridColor = System.Drawing.SystemColors.Desktop;
+            this.dgvTablaGenerica.Location = new System.Drawing.Point(61, 71);
+            this.dgvTablaGenerica.Name = "dgvTablaGenerica";
+            this.dgvTablaGenerica.ReadOnly = true;
+            this.dgvTablaGenerica.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTablaGenerica.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvTablaGenerica.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.dgvTablaGenerica.Size = new System.Drawing.Size(798, 314);
+            this.dgvTablaGenerica.TabIndex = 37;
+            this.dgvTablaGenerica.Tag = "";
+            this.dgvTablaGenerica.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTablaGenerica_CellClick);
+            // 
+            // panelPrincipal
+            // 
+            this.panelPrincipal.BackColor = System.Drawing.Color.Transparent;
+            this.panelPrincipal.Controls.Add(this.dgvTablaGenerica);
+            this.panelPrincipal.Controls.Add(this.label3);
+            this.panelPrincipal.Controls.Add(this.pbMostrarPanelActualizar);
+            this.panelPrincipal.Controls.Add(this.pbMostrarVentanEliminar);
+            this.panelPrincipal.Controls.Add(this.pbMostrarPanelCrear);
+            this.panelPrincipal.Controls.Add(this.lbNombreTabla);
+            this.panelPrincipal.Location = new System.Drawing.Point(255, 111);
+            this.panelPrincipal.Name = "panelPrincipal";
+            this.panelPrincipal.Size = new System.Drawing.Size(920, 444);
+            this.panelPrincipal.TabIndex = 25;
+            this.panelPrincipal.Visible = false;
+            // 
+            // tbBuscar
+            // 
+            this.tbBuscar.BackColor = System.Drawing.Color.Snow;
+            this.tbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuscar.Location = new System.Drawing.Point(165, 52);
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(265, 29);
+            this.tbBuscar.TabIndex = 0;
+            this.tbBuscar.TextChanged += new System.EventHandler(this.tbBuscar_TextChanged);
+            // 
             // MenuAdmin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -794,6 +815,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1213, 712);
+            this.Controls.Add(this.panelBuscador);
             this.Controls.Add(this.panelJugador);
             this.Controls.Add(this.panelPalabras);
             this.Controls.Add(this.pictureBox7);
@@ -823,18 +845,20 @@
             this.panelPalabras.ResumeLayout(false);
             this.panelPalabras.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconoFormularioPalabra)).EndInit();
-            this.panelPrincipal.ResumeLayout(false);
-            this.panelPrincipal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTablaGenerica)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelActualizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarVentanEliminar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelCrear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbIconoMensaje)).EndInit();
             this.panelJugador.ResumeLayout(false);
             this.panelJugador.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconoFormularioJugador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.panelBuscador.ResumeLayout(false);
+            this.panelBuscador.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelCrear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarVentanEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelActualizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTablaGenerica)).EndInit();
+            this.panelPrincipal.ResumeLayout(false);
+            this.panelPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -852,12 +876,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panelVertical;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Panel panelPrincipal;
-        private System.Windows.Forms.PictureBox pbMostrarPanelCrear;
-        private System.Windows.Forms.Label lbNombreTabla;
-        private System.Windows.Forms.PictureBox pbMostrarVentanEliminar;
-        private System.Windows.Forms.PictureBox pbMostrarPanelActualizar;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbIconoMensaje;
         private System.Windows.Forms.Label labelMensaje;
         private System.Windows.Forms.PictureBox pictureBox3;
@@ -895,8 +913,16 @@
         private System.Windows.Forms.Label labelMensajePalabra;
         private System.Windows.Forms.Panel panelVerticalMenu;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.DataGridView dgvTablaGenerica;
         private System.Windows.Forms.PictureBox pbSalir;
         private System.Windows.Forms.TextBox tbPuntuacion;
+        private System.Windows.Forms.Panel panelBuscador;
+        private System.Windows.Forms.Panel panelPrincipal;
+        private System.Windows.Forms.DataGridView dgvTablaGenerica;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pbMostrarPanelActualizar;
+        private System.Windows.Forms.PictureBox pbMostrarVentanEliminar;
+        private System.Windows.Forms.PictureBox pbMostrarPanelCrear;
+        private System.Windows.Forms.Label lbNombreTabla;
+        private System.Windows.Forms.TextBox tbBuscar;
     }
 }

@@ -663,8 +663,9 @@ namespace Ahorcado
 
         }
 
-
-
-
+        private void tbBuscar_TextChanged(object sender, EventArgs e)
+        {
+           dgvTablaGenerica.DataSource =  model_admin.buscadorJugadores( tbBuscar.Text );
+        }
     }
 }
