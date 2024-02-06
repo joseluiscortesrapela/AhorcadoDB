@@ -11,7 +11,7 @@
     <id>2</id>
     <nombre>serena</nombre>
     <contraseña>1234</contraseña>
-    <puntuacion>24</puntuacion>
+    <puntuacion>-1</puntuacion>
     <rol>Jugador</rol>
   </Jugador>
   <Jugador>

@@ -1,4 +1,5 @@
-﻿using Ahorcado.Utilidades;
+﻿using Ahorcado.Models;
+using Ahorcado.Utilidades;
 using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
 using System;
@@ -39,32 +40,35 @@ namespace Ahorcado
         // Clases para reproducir musica
         private IWavePlayer player;
         private AudioFileReader audioFile;
+        private juegoModel model_juego;
 
         public Juego()
         {
             InitializeComponent();
+            // Instancio la calse para hacer consutlas a la base de datos.
+            model_juego = new juegoModel();
+        }
 
-            // Los sonidos que utilizare en el juego
-            // Sonido de fondo
+        private void Juego_Load(object sender, EventArgs e)
+        {
+            inicializarJuego();
+        }
+
+        private void inicializarJuego()
+        {
+            activarMusica();
+            cargarPalabras();
+            cargarCategorias();
+        }
+
+
+        private void activarMusica()
+        {
             player = new WaveOut(); ;
             string rutaRelativa = @"..\..\Resources\Juegos\Halloween\Sonidos\halloween.mp3";
             audioFile = new AudioFileReader(rutaRelativa);
-
-            // Añado las palabras al dgv
-            añadirPalabrasDGV();
-
-            // Compruebo si el dgv se cargo con la lista de palabras
-            if (dgvPalabras != null)
-            {   // Obtengo las categorias.
-                cargarCategorias(); // Cargo las categorias
-
-            }
-            else
-            {
-                Console.WriteLine("No se han ecnontrado palabras en el dgv, tabla vacia.");
-            }
-
         }
+
 
         // Obtengo la categoria 
         private void comboBoxCategorias_SelectedIndexChanged(object sender, EventArgs e)
@@ -73,7 +77,7 @@ namespace Ahorcado
             categoria = cbCategorias.GetItemText(cbCategorias.Text);
             // Muestro al jugador la categoria.
             labelCategoria.Text = categoria;
-            // Obtengo la lista de palabras que pertenecen a la categoria.
+            // Obtengo la lista de palabras del dataGridView, que pertenecen a la categoria que ha sido seleccionada.
             palabras = dameListaPalabras(categoria);
             // Preparo la partida
             prepararPartida();
@@ -84,7 +88,6 @@ namespace Ahorcado
         {
 
             mostrarPresentacionJuego();
-
             // La palabra a jugar.
             palabra = damePalabra();
             // Convierto la palabra a un array de caractres.
@@ -230,7 +233,6 @@ namespace Ahorcado
             // Recorro por la columna categorias.
             foreach (DataGridViewRow fila in dgvPalabras.Rows)
             {
-
                 // Si la palabra NO EXISTE
                 if (!lista.Contains(fila.Cells["categoria"].Value))
                 {
@@ -376,7 +378,7 @@ namespace Ahorcado
                 else
                 {
                     // Si ha fallado, le resto uno, sino no hago nada, no quiero un score con resultados negativos.
-                   // puntuacion -= (puntuacion > 0) ? 1 : puntuacion;               
+                    // puntuacion -= (puntuacion > 0) ? 1 : puntuacion;               
                 }
 
             }
@@ -472,10 +474,8 @@ namespace Ahorcado
             // Actualizo la puntuacion para la sesion del jugador
             SesionUsuario.Puntuacion = puntuacion;
             // Guardo la puntuacion del jugador
-            ProcesarFicherosXML.ActualizarPuntuacionJugador(SesionUsuario.Id, puntuacion);
-
-            Console.WriteLine("Actualizo puntuacion jugador " + SesionUsuario.Usuario + " id: " + SesionUsuario.Id +
-                             " puntuacion: " + SesionUsuario.Puntuacion);
+            model_juego.updatePuntuacion(SesionUsuario.Id, puntuacion);
+            
         }
 
         // Jugar otra partida
@@ -537,9 +537,6 @@ namespace Ahorcado
         }
 
 
-
-
-
         // Muestro la vengana de presentacion del juego
         private void mostrarPresentacionJuego()
         {
@@ -553,7 +550,6 @@ namespace Ahorcado
             // Pongo la musica de fondo del juego
             ponerMusicaFondo();
         }
-
 
         // El timer acaba de terminar.
         private void timer_Tick(object sender, EventArgs e)
@@ -601,7 +597,6 @@ namespace Ahorcado
 
         }
 
-
         // Se cierra el juego
         private void pbExit_Click(object sender, EventArgs e)
         {
@@ -625,6 +620,16 @@ namespace Ahorcado
             // Detiene el Timer para que no siga ejecutándose
             timerResolver.Stop();
         }
+
+        // Carga inicial de las palabras al cargar el juego.
+        private void cargarPalabras()
+        {
+            // Obtengo las palabras de la base de datos.
+            dgvPalabras.DataSource = model_juego.getPalabras();
+        }
+
+
+
     }
 
 

@@ -1327,7 +1327,7 @@
             this.timerResolver.Interval = 10000;
             this.timerResolver.Tick += new System.EventHandler(this.timerResolver_Tick);
             // 
-            // Halloween
+            // Juego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1356,10 +1356,11 @@
             this.Controls.Add(this.panelLetras);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Halloween";
+            this.Name = "Juego";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Halloween";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Juego_Load);
             this.panelGameOver.ResumeLayout(false);
             this.panelGameOver.PerformLayout();
             this.panelLetras.ResumeLayout(false);
