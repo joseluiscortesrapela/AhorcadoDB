@@ -17,7 +17,7 @@ namespace Ahorcado
     public partial class MenuAdmin : Form
     {
 
-       
+
         private MenuAdminModel model_admin;
         private DataGridViewRow filaTabla;
         private String nombreTabla;
@@ -39,7 +39,7 @@ namespace Ahorcado
             cargarCategorias();
         }
 
-
+        // Fila seleccionada del dgv 
         private void dgvTablaGenerica_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Obtengo la fila que ha sido seleccionada en el dataGridView
@@ -128,6 +128,8 @@ namespace Ahorcado
                     panelPalabras.Visible = false;
                     // Muestro el panel
                     panelJugador.Visible = true;
+                    // Permito que se escriba en el campo puntuacion.
+                    tbPuntuacion.Enabled = true;
                 }
                 else if (nombreTabla.Equals("palabras"))
                 {
@@ -186,6 +188,8 @@ namespace Ahorcado
                 panelPalabras.Visible = false;
                 // Muestro el panel
                 panelJugador.Visible = true;
+                // Impido que se pueda añadir puntuacion, por defecto sera cero.
+                tbPuntuacion.Enabled = false;
 
             } // Muestro el panel palabras para crear y actualizarlas.
             else if (nombreTabla.Equals("palabras"))
@@ -302,6 +306,10 @@ namespace Ahorcado
             panelPalabras.Visible = false;
             // Mostrar panel menu
             panelVerticalMenu.Visible = true;
+            // Oculta mensaje de informacion
+            pbIconoMensaje.Visible = false;
+            labelMensaje.Text = "";
+            
             // Muestro el numero de filas que tiene la tabla
             mostrarNumeroFilasTabla();
 
@@ -317,24 +325,6 @@ namespace Ahorcado
 
             // Muestro el panel menu principal
             panelPrincipal.Visible = true;
-        }
-
-        // Actualiza los datos del dgv
-        private void pbRefrescarTabla_Click(object sender, EventArgs e)
-        {
-            if (nombreTabla.Equals("jugadores"))
-            {
-                dgvTablaGenerica.DataSource = model_admin.getJugadores();
-            }
-            else if (nombreTabla.Equals("palabras"))
-            {
-                dgvTablaGenerica.DataSource = model_admin.getPalabras();
-            }
-
-            // Mensaje que quiero mostrar tras actualizar el dgv
-            String mensaje = "Acabas de refrestar datos tabla: " + nombreTabla;
-            // Muestro mensaje
-            mostrarMensaje(mensaje);
 
         }
 
@@ -349,7 +339,7 @@ namespace Ahorcado
             // Contraseña del usuario
             string contraseña = tbContraseña.Text;
             // La puntuaciòn
-            int puntuacion = int.Parse( tbPuntuacion.Text );
+            int puntuacion = int.Parse(tbPuntuacion.Text);
             // Tipo de rol que tiene este usurio
             string tipo = cbTipoRol.Text;
 
@@ -363,11 +353,15 @@ namespace Ahorcado
                     if (model_admin.registrarJugador(idJugador, usuario, contraseña, tipo) == 1)
                     {
                         // Muestro mensaje 
-                        labelMensajeJugador.Text = "Acabas de crear un nuevo usuario.";
+                        labelMensajeJugador.Text = "Acabas de crear un nuevo jugador";
                         // Actualizo la dgv con el nuevo registro que acabo de insertar en la base de datos.
-                        dgvTablaGenerica.DataSource = model_admin.getJugadores();
-                        // Muestro el nuevo identificador que se utilizara en el caso de seguir creando usuarios.
+                        dgvTablaGenerica.DataSource = model_admin.getJugadores();                      
+                        // Obtengo el siguiente id de jugador por si el usuario quisiera seguire creado nuevos jugadores.
                         tbIdJugador.Text = dameSiguienteID().ToString();
+                        // Limpio campos formulario
+                        tbJugador.Text = "";
+                        tbContraseña.Text = "";
+                        cbTipoRol.Text = "";
                     }
 
                 } // Si quiere actulizar los datos de un jugador
@@ -661,7 +655,6 @@ namespace Ahorcado
             Login login = new Login();
             login.Show();
         }
-
 
         // Cierra la aplicacion
         private void pbExit_Click(object sender, EventArgs e)
