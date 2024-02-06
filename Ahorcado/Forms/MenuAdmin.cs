@@ -72,6 +72,8 @@ namespace Ahorcado
             pbMostrarPanelCrear.Image = imageList.Images[4];
             // Muestro el panel principal
             panelPrincipal.Visible = true;
+            // Muestro la barra de busqueda
+            panelBuscador.Visible = true;
         }
 
         // Muestra la tabla con las palabras  
@@ -89,6 +91,8 @@ namespace Ahorcado
             mostrarTituloTablaEnUso(nombreTabla);
             // Muestro el panel principal
             panelPrincipal.Visible = true;
+            // Muestro la barra de busqueda
+            panelBuscador.Visible = true;
         }
 
         // Muestra el panel para actulizar un usuario o una palabra
@@ -309,7 +313,7 @@ namespace Ahorcado
             // Oculta mensaje de informacion
             pbIconoMensaje.Visible = false;
             labelMensaje.Text = "";
-            
+
             // Muestro el numero de filas que tiene la tabla
             mostrarNumeroFilasTabla();
 
@@ -355,7 +359,7 @@ namespace Ahorcado
                         // Muestro mensaje 
                         labelMensajeJugador.Text = "Acabas de crear un nuevo jugador";
                         // Actualizo la dgv con el nuevo registro que acabo de insertar en la base de datos.
-                        dgvTablaGenerica.DataSource = model_admin.getJugadores();                      
+                        dgvTablaGenerica.DataSource = model_admin.getJugadores();
                         // Obtengo el siguiente id de jugador por si el usuario quisiera seguire creado nuevos jugadores.
                         tbIdJugador.Text = dameSiguienteID().ToString();
                         // Limpio campos formulario
@@ -663,9 +667,24 @@ namespace Ahorcado
 
         }
 
-        private void tbBuscar_TextChanged(object sender, EventArgs e)
+
+        private void tbRealizarBusqueda(object sender, EventArgs e)
         {
-           dgvTablaGenerica.DataSource =  model_admin.buscadorJugadores( tbBuscar.Text );
+
+            string texto = tbBuscar.Text;
+
+            if (nombreTabla.Equals("jugadores"))
+            {
+                dgvTablaGenerica.DataSource = model_admin.buscadorJugadores( texto );
+            }
+            else if (nombreTabla.Equals("palabras"))
+            {
+                Console.WriteLine("buscar palabras por filtrado");
+                dgvTablaGenerica.DataSource = model_admin.buscadorPalabras( texto );
+
+            }
+
+
         }
     }
 }

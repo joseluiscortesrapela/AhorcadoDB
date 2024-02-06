@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdmin));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelNombreUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -65,6 +65,7 @@
             this.pbIconoMensaje = new System.Windows.Forms.PictureBox();
             this.labelMensaje = new System.Windows.Forms.Label();
             this.panelJugador = new System.Windows.Forms.Panel();
+            this.tbPuntuacion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.tbIdJugador = new System.Windows.Forms.TextBox();
             this.buttonJugadorAceptar = new System.Windows.Forms.Button();
@@ -82,8 +83,9 @@
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.imageList = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.tbPuntuacion = new System.Windows.Forms.TextBox();
             this.panelBuscador = new System.Windows.Forms.Panel();
+            this.tbBuscar = new System.Windows.Forms.TextBox();
+            this.pbBarraBusqueda = new System.Windows.Forms.PictureBox();
             this.lbNombreTabla = new System.Windows.Forms.Label();
             this.pbMostrarPanelCrear = new System.Windows.Forms.PictureBox();
             this.pbMostrarVentanEliminar = new System.Windows.Forms.PictureBox();
@@ -91,7 +93,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dgvTablaGenerica = new System.Windows.Forms.DataGridView();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.tbBuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -109,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panelBuscador.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBarraBusqueda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelCrear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarVentanEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelActualizar)).BeginInit();
@@ -492,6 +494,15 @@
             this.panelJugador.TabIndex = 36;
             this.panelJugador.Visible = false;
             // 
+            // tbPuntuacion
+            // 
+            this.tbPuntuacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPuntuacion.Location = new System.Drawing.Point(530, 111);
+            this.tbPuntuacion.Name = "tbPuntuacion";
+            this.tbPuntuacion.Size = new System.Drawing.Size(142, 29);
+            this.tbPuntuacion.TabIndex = 35;
+            this.tbPuntuacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -666,22 +677,36 @@
             this.pictureBox7.TabIndex = 38;
             this.pictureBox7.TabStop = false;
             // 
-            // tbPuntuacion
-            // 
-            this.tbPuntuacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPuntuacion.Location = new System.Drawing.Point(530, 111);
-            this.tbPuntuacion.Name = "tbPuntuacion";
-            this.tbPuntuacion.Size = new System.Drawing.Size(142, 29);
-            this.tbPuntuacion.TabIndex = 35;
-            this.tbPuntuacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // panelBuscador
             // 
             this.panelBuscador.Controls.Add(this.tbBuscar);
-            this.panelBuscador.Location = new System.Drawing.Point(449, 5);
+            this.panelBuscador.Controls.Add(this.pbBarraBusqueda);
+            this.panelBuscador.Location = new System.Drawing.Point(436, 5);
             this.panelBuscador.Name = "panelBuscador";
-            this.panelBuscador.Size = new System.Drawing.Size(612, 100);
+            this.panelBuscador.Size = new System.Drawing.Size(433, 100);
             this.panelBuscador.TabIndex = 39;
+            this.panelBuscador.Visible = false;
+            // 
+            // tbBuscar
+            // 
+            this.tbBuscar.BackColor = System.Drawing.Color.Snow;
+            this.tbBuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbBuscar.Location = new System.Drawing.Point(39, 48);
+            this.tbBuscar.Name = "tbBuscar";
+            this.tbBuscar.Size = new System.Drawing.Size(322, 22);
+            this.tbBuscar.TabIndex = 41;
+            this.tbBuscar.TextChanged += new System.EventHandler(this.tbRealizarBusqueda);
+            // 
+            // pbBarraBusqueda
+            // 
+            this.pbBarraBusqueda.Image = ((System.Drawing.Image)(resources.GetObject("pbBarraBusqueda.Image")));
+            this.pbBarraBusqueda.InitialImage = null;
+            this.pbBarraBusqueda.Location = new System.Drawing.Point(7, 19);
+            this.pbBarraBusqueda.Name = "pbBarraBusqueda";
+            this.pbBarraBusqueda.Size = new System.Drawing.Size(410, 68);
+            this.pbBarraBusqueda.TabIndex = 40;
+            this.pbBarraBusqueda.TabStop = false;
             // 
             // lbNombreTabla
             // 
@@ -745,37 +770,37 @@
             this.dgvTablaGenerica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTablaGenerica.BackgroundColor = System.Drawing.Color.Snow;
             this.dgvTablaGenerica.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTablaGenerica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTablaGenerica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTablaGenerica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTablaGenerica.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTablaGenerica.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTablaGenerica.EnableHeadersVisualStyles = false;
             this.dgvTablaGenerica.GridColor = System.Drawing.SystemColors.Desktop;
             this.dgvTablaGenerica.Location = new System.Drawing.Point(61, 71);
             this.dgvTablaGenerica.Name = "dgvTablaGenerica";
             this.dgvTablaGenerica.ReadOnly = true;
             this.dgvTablaGenerica.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTablaGenerica.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTablaGenerica.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvTablaGenerica.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvTablaGenerica.Size = new System.Drawing.Size(798, 314);
             this.dgvTablaGenerica.TabIndex = 37;
@@ -796,16 +821,6 @@
             this.panelPrincipal.Size = new System.Drawing.Size(920, 444);
             this.panelPrincipal.TabIndex = 25;
             this.panelPrincipal.Visible = false;
-            // 
-            // tbBuscar
-            // 
-            this.tbBuscar.BackColor = System.Drawing.Color.Snow;
-            this.tbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbBuscar.Location = new System.Drawing.Point(165, 52);
-            this.tbBuscar.Name = "tbBuscar";
-            this.tbBuscar.Size = new System.Drawing.Size(265, 29);
-            this.tbBuscar.TabIndex = 0;
-            this.tbBuscar.TextChanged += new System.EventHandler(this.tbBuscar_TextChanged);
             // 
             // MenuAdmin
             // 
@@ -853,6 +868,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panelBuscador.ResumeLayout(false);
             this.panelBuscador.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBarraBusqueda)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelCrear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarVentanEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelActualizar)).EndInit();
@@ -923,6 +939,7 @@
         private System.Windows.Forms.PictureBox pbMostrarVentanEliminar;
         private System.Windows.Forms.PictureBox pbMostrarPanelCrear;
         private System.Windows.Forms.Label lbNombreTabla;
+        private System.Windows.Forms.PictureBox pbBarraBusqueda;
         private System.Windows.Forms.TextBox tbBuscar;
     }
 }

@@ -68,7 +68,33 @@ namespace Ahorcado.Models
             return table;
         }
 
+        // Filtra la busqueda de los jugadores que coincidan por nombre.
+        public DataTable buscadorPalabras(string palabra)
+        {
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+            // la abro.
+            conexion.Open();
+            // Mi consulta 
+            string sql = "SELECT * FROM palabras WHERE palabra LIKE '%" + palabra + "%'";
 
+            // creo el adaptador
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
+            // Instancio una tabla vacia.
+            DataTable table = new DataTable();
+
+            try
+            {
+                adapter.Fill(table); // Relleno la tabla con el resulatado de la consulta.
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return table;
+        }
 
         public DataTable getPalabras()
         {
