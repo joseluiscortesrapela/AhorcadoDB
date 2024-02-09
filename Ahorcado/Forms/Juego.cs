@@ -465,8 +465,8 @@ namespace Ahorcado
             panelGameOver.BackColor = System.Drawing.Color.FromArgb(128, 0, 0, 0);
             // Actualizo la puntuacion para la sesion del jugador
             SesionUsuario.Puntuacion = puntuacion;
-            // Guardo la puntuacion del jugador
-            model_juego.updatePuntuacion(SesionUsuario.Id, puntuacion);
+            // Guardo la partida
+            model_juego.guardarPartida(SesionUsuario.Id, puntuacion);
             
         }
 
@@ -551,7 +551,7 @@ namespace Ahorcado
             // Detengo el timer
             timer.Enabled = false;
 
-            Console.WriteLine("Temporizador ha finalizado");
+            Console.WriteLine("El temporizador ha finalizado");
         }
 
         private void ponerMusicaFondo()

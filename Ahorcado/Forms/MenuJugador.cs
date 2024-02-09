@@ -29,7 +29,6 @@ namespace Ahorcado
             // Obtengo las las puntuaciones de los jugadores
             List<Jugador> jugadores = model_jugador.getRanking();
             // Muestro el ranking 
-
             mostrarRanking( jugadores );
         }
 

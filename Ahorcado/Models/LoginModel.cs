@@ -68,7 +68,6 @@ namespace Ahorcado.Models
             {
                 // Return value is the number of rows affected by the SQL statement.
                 creado = comando.ExecuteNonQuery();
-                Console.WriteLine("Acabas de registrar un nuevo usuario en la base de datos.");
             }
             catch (Exception ex)
             {

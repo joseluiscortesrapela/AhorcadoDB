@@ -80,6 +80,40 @@ namespace Ahorcado.Models
 
         }
 
+        // Guarda la puntuacion de la partida.
+        public int guardarPartida(int idJugador, int puntuacion)
+        {
+            // Creo la conexion con la base de datos.
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+            // la abro.
+            conexion.Open();
+
+            // Consulta sql
+            string sql = "INSERT INTO partidas ( puntuacion, idJugador ) VALUES  ( @puntuacion, @idJugador )";
+
+            // Preparo la consulta
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            // Le paso como parametro el nombre 
+            comando.Parameters.AddWithValue("@puntuacion", puntuacion);
+            // Le como parametro la pista de la palabra
+            comando.Parameters.AddWithValue("@idJugador", idJugador);
+
+            int actualizado;
+
+            try
+            {
+                actualizado = comando.ExecuteNonQuery(); // Return value is the number of rows affected by the SQL statement.
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                actualizado = 0;
+            }
+
+            return actualizado;
+
+        }
+
 
 
     }
