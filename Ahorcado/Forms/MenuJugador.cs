@@ -18,11 +18,7 @@ namespace Ahorcado
         {
             InitializeComponent();
             // Peticiones a la base de datos.
-            model_jugador = new MenuJugadorModel();
-            // Muestro el nombre del jugador.
-            lbNombreUsuario.Text = SesionUsuario.Usuario;
-            // Muestro su puntuacion
-            lbPuntuacion.Text = SesionUsuario.Puntuacion.ToString();
+            model_jugador = new MenuJugadorModel();     
             // Obtengo las las puntuaciones de los jugadores
             jugadores = model_jugador.getRanking();
             // Muestro el ranking 
@@ -88,5 +84,14 @@ namespace Ahorcado
             Application.Exit();
         }
 
+        // El formulario se carga, muestro el nombre del jugador y la puntuacion
+        private void MenuJugador_Load(object sender, EventArgs e)
+        {
+            // Muestro el nombre del jugador.
+            lbNombreUsuario.Text = SesionUsuario.Usuario;
+            // Muestro su puntuacion
+            lbPuntuacion.Text = SesionUsuario.Puntuacion.ToString();
+
+        }
     }
 }

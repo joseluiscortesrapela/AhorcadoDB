@@ -10,7 +10,7 @@ namespace Ahorcado.Models
     internal class juegoModel
     {
 
-
+        // Obtengo todas las palabras
         public DataTable getPalabras()
         {
             // Creo la conexion con la base de datos.
@@ -52,7 +52,7 @@ namespace Ahorcado.Models
                             SELECT idJugador, SUM(puntuacion) AS total_puntuacion
                             FROM partidas
                             GROUP BY idJugador
-                        ) subconsulta ON j.id = subconsulta.idJugador
+                        ) subconsulta ON j.idJugador = subconsulta.idJugador
                         SET j.puntuacion = subconsulta.total_puntuacion;
                         ";
 

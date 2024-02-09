@@ -457,8 +457,6 @@ namespace Ahorcado
             panelGameOver.Show();
             // Configura el valor alfa para hacer que el Panel sea semi-transparente
             panelGameOver.BackColor = System.Drawing.Color.FromArgb(128, 0, 0, 0);
-            // Actualizo la puntuacion para la sesion del jugador
-            SesionUsuario.Puntuacion = puntuacion;
             // Guardo la partida del jugador
             model_juego.guardarPartida(SesionUsuario.Id, puntuacion);
             // Actualiza el total puntuaciones en base a las puntuaciones obtenidas en cada una de las partidas.
@@ -499,13 +497,20 @@ namespace Ahorcado
 
         }
 
+        // Regresa al menu jugador
         private void buttonNoJugarOtra_Click(object sender, EventArgs e)
         {
-
             // Oculto la ventana de login
             this.Hide();
             // Intancia
             MenuJugador menuJugador = new MenuJugador();
+            // Actualizo la puntuacion del jugador tras finalizar la partida, solamente para que se muestre en el menu jugador.
+            Console.WriteLine("Puntuacion sesion: " + SesionUsuario.Puntuacion + " puntuacion: " + puntuacion);
+            int puntuacionPartida = SesionUsuario.Puntuacion + puntuacion;
+            Console.WriteLine("puntuacion partida " + puntuacionPartida);
+            
+            SesionUsuario.Puntuacion = puntuacionPartida;
+         
             // Muestro la ventana del jugador
             menuJugador.Show();
             // Detengo la musica.
