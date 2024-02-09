@@ -62,16 +62,16 @@
             this.lbScore8 = new System.Windows.Forms.Label();
             this.lbJugador10 = new System.Windows.Forms.Label();
             this.lbScore10 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panelRanking = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panelRanking.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbNombreUsuario
@@ -465,50 +465,38 @@
             this.lbScore10.TabIndex = 93;
             this.lbScore10.Text = "0";
             // 
-            // panel1
+            // panelRanking
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lbScore10);
-            this.panel1.Controls.Add(this.lbJugador10);
-            this.panel1.Controls.Add(this.lbScore8);
-            this.panel1.Controls.Add(this.lbJugador8);
-            this.panel1.Controls.Add(this.lbScore9);
-            this.panel1.Controls.Add(this.lbJugador9);
-            this.panel1.Controls.Add(this.lbScore7);
-            this.panel1.Controls.Add(this.lbScore6);
-            this.panel1.Controls.Add(this.lbScore5);
-            this.panel1.Controls.Add(this.lbScore4);
-            this.panel1.Controls.Add(this.lbScore2);
-            this.panel1.Controls.Add(this.lbScore3);
-            this.panel1.Controls.Add(this.lbScore1);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.lbJugador7);
-            this.panel1.Controls.Add(this.lbJugador6);
-            this.panel1.Controls.Add(this.lbJugador5);
-            this.panel1.Controls.Add(this.lbJugador4);
-            this.panel1.Controls.Add(this.lbJugador3);
-            this.panel1.Controls.Add(this.lbJugador2);
-            this.panel1.Controls.Add(this.lbJugador1);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Location = new System.Drawing.Point(721, 32);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(430, 597);
-            this.panel1.TabIndex = 71;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Thistle;
-            this.label1.Location = new System.Drawing.Point(345, 82);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 29);
-            this.label1.TabIndex = 94;
-            this.label1.Text = "Fecha";
+            this.panelRanking.BackColor = System.Drawing.Color.Transparent;
+            this.panelRanking.Controls.Add(this.label5);
+            this.panelRanking.Controls.Add(this.label1);
+            this.panelRanking.Controls.Add(this.lbScore10);
+            this.panelRanking.Controls.Add(this.lbJugador10);
+            this.panelRanking.Controls.Add(this.lbScore8);
+            this.panelRanking.Controls.Add(this.lbJugador8);
+            this.panelRanking.Controls.Add(this.lbScore9);
+            this.panelRanking.Controls.Add(this.lbJugador9);
+            this.panelRanking.Controls.Add(this.lbScore7);
+            this.panelRanking.Controls.Add(this.lbScore6);
+            this.panelRanking.Controls.Add(this.lbScore5);
+            this.panelRanking.Controls.Add(this.lbScore4);
+            this.panelRanking.Controls.Add(this.lbScore2);
+            this.panelRanking.Controls.Add(this.lbScore3);
+            this.panelRanking.Controls.Add(this.lbScore1);
+            this.panelRanking.Controls.Add(this.label11);
+            this.panelRanking.Controls.Add(this.label3);
+            this.panelRanking.Controls.Add(this.lbJugador7);
+            this.panelRanking.Controls.Add(this.lbJugador6);
+            this.panelRanking.Controls.Add(this.lbJugador5);
+            this.panelRanking.Controls.Add(this.lbJugador4);
+            this.panelRanking.Controls.Add(this.lbJugador3);
+            this.panelRanking.Controls.Add(this.lbJugador2);
+            this.panelRanking.Controls.Add(this.lbJugador1);
+            this.panelRanking.Controls.Add(this.label12);
+            this.panelRanking.Location = new System.Drawing.Point(721, 32);
+            this.panelRanking.Name = "panelRanking";
+            this.panelRanking.Size = new System.Drawing.Size(430, 597);
+            this.panelRanking.TabIndex = 71;
             // 
             // label5
             // 
@@ -521,6 +509,18 @@
             this.label5.Size = new System.Drawing.Size(117, 34);
             this.label5.TabIndex = 95;
             this.label5.Text = "Ranking";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Thistle;
+            this.label1.Location = new System.Drawing.Point(345, 82);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 29);
+            this.label1.TabIndex = 94;
+            this.label1.Text = "Fecha";
             // 
             // textBox1
             // 
@@ -542,7 +542,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1188, 697);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelRanking);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pbSalir);
             this.Controls.Add(this.pictureBox6);
@@ -563,8 +563,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelRanking.ResumeLayout(false);
+            this.panelRanking.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -604,7 +604,7 @@
         private System.Windows.Forms.Label lbScore8;
         private System.Windows.Forms.Label lbJugador10;
         private System.Windows.Forms.Label lbScore10;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelRanking;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;

@@ -1,7 +1,5 @@
-﻿using Ahorcado.Conexion;
-using Ahorcado.Models;
+﻿using Ahorcado.Models;
 using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Ahorcado

@@ -1,21 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.Common;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Ahorcado.Conexion;
-using Google.Protobuf.Collections;
 using MySql.Data.MySqlClient;
 
 namespace Ahorcado.Models
 {
     internal class juegoModel
     {
-    
+
 
         public DataTable getPalabras()
         {
@@ -45,42 +39,31 @@ namespace Ahorcado.Models
 
         }
 
-
-        // Actuliza la puntuacion del jugador
-        public int updatePuntuacion(int idJugador, int puntuacion)
+        // Actualiza las puntuaciones de todos todos lo jugadores.
+        public void actualizarPuntuaciones()
         {
-            // Creo la conexion con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
             // la abro.
             conexion.Open();
+            // Mi consulta
+            string sql = @"
+                        UPDATE jugadores j
+                        JOIN (
+                            SELECT idJugador, SUM(puntuacion) AS total_puntuacion
+                            FROM partidas
+                            GROUP BY idJugador
+                        ) subconsulta ON j.id = subconsulta.idJugador
+                        SET j.puntuacion = subconsulta.total_puntuacion;
+                        ";
 
-            // Consulta sql
-            string sql = "UPDATE jugadores SET puntuacion = @puntuacion  WHERE idJugador = @idJugador";
 
-            // Preparo la consulta
-            MySqlCommand comando = new MySqlCommand(sql, conexion);
-            // Le paso como parametro el nombre 
-            comando.Parameters.AddWithValue("@puntuacion", puntuacion);
-            // Le como parametro la pista de la palabra
-            comando.Parameters.AddWithValue("@idJugador", idJugador);
-
-            int actualizado;
-
-            try
-            {
-                actualizado = comando.ExecuteNonQuery(); // Return value is the number of rows affected by the SQL statement.
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                actualizado = 0;
-            }
-
-            return actualizado;
-
+            MySqlCommand command = new MySqlCommand(sql, conexion);
+            MySqlDataReader reader = command.ExecuteReader();
+            reader.Close();
+            conexion.Close();
         }
 
-        // Guarda la puntuacion de la partida.
+        // Guarda la puntuacion del jugador
         public int guardarPartida(int idJugador, int puntuacion)
         {
             // Creo la conexion con la base de datos.

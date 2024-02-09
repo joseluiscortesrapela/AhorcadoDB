@@ -1,14 +1,8 @@
 ﻿using Ahorcado.Models;
 using NAudio.Wave;
-using NAudio.Wave.SampleProviders;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -465,9 +459,12 @@ namespace Ahorcado
             panelGameOver.BackColor = System.Drawing.Color.FromArgb(128, 0, 0, 0);
             // Actualizo la puntuacion para la sesion del jugador
             SesionUsuario.Puntuacion = puntuacion;
-            // Guardo la partida
+            // Guardo la partida del jugador
             model_juego.guardarPartida(SesionUsuario.Id, puntuacion);
-            
+            // Actualiza el total puntuaciones en base a las puntuaciones obtenidas en cada una de las partidas.
+            model_juego.actualizarPuntuaciones();
+          
+            Console.WriteLine("Partida guarda y puntuaciones actualizadas.");
         }
 
         // Jugar otra partida

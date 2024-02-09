@@ -1,12 +1,8 @@
 ﻿using Ahorcado.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ahorcado
@@ -15,6 +11,8 @@ namespace Ahorcado
     {
         //private List<Jugador> jugadores;
         private MenuJugadorModel model_jugador;
+        // Array jugadores
+        private List<Jugador> jugadores;
 
         public MenuJugador()
         {
@@ -25,9 +23,8 @@ namespace Ahorcado
             lbNombreUsuario.Text = SesionUsuario.Usuario;
             // Muestro su puntuacion
             lbPuntuacion.Text = SesionUsuario.Puntuacion.ToString();
-
             // Obtengo las las puntuaciones de los jugadores
-            List<Jugador> jugadores = model_jugador.getRanking();
+            jugadores = model_jugador.getRanking();
             // Muestro el ranking 
             mostrarRanking( jugadores );
         }
