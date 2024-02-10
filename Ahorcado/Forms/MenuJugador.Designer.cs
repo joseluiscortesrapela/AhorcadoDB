@@ -82,6 +82,7 @@
             this.lbFecha2 = new System.Windows.Forms.Label();
             this.lbFecha3 = new System.Windows.Forms.Label();
             this.lbFecha1 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.lbPartida7 = new System.Windows.Forms.Label();
             this.lbPartida6 = new System.Windows.Forms.Label();
@@ -97,7 +98,6 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tbContraseña = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
             this.timerContraseña = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
@@ -207,7 +207,7 @@
             // 
             this.pbSalir.BackColor = System.Drawing.Color.Transparent;
             this.pbSalir.Image = ((System.Drawing.Image)(resources.GetObject("pbSalir.Image")));
-            this.pbSalir.Location = new System.Drawing.Point(12, 113);
+            this.pbSalir.Location = new System.Drawing.Point(12, 97);
             this.pbSalir.Name = "pbSalir";
             this.pbSalir.Size = new System.Drawing.Size(65, 63);
             this.pbSalir.TabIndex = 60;
@@ -744,6 +744,18 @@
             this.lbFecha1.Size = new System.Drawing.Size(0, 29);
             this.lbFecha1.TabIndex = 81;
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
+            this.label22.ForeColor = System.Drawing.Color.Teal;
+            this.label22.Location = new System.Drawing.Point(78, 111);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(310, 29);
+            this.label22.TabIndex = 80;
+            this.label22.Text = "---------------------------";
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -913,18 +925,6 @@
             this.tbContraseña.Text = "1234";
             this.tbContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbContraseña.UseSystemPasswordChar = true;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
-            this.label22.ForeColor = System.Drawing.Color.Teal;
-            this.label22.Location = new System.Drawing.Point(78, 111);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(310, 29);
-            this.label22.TabIndex = 80;
-            this.label22.Text = "---------------------------";
             // 
             // timerContraseña
             // 
