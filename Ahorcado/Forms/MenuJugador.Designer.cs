@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuJugador));
             this.lbNombreUsuario = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -65,7 +66,6 @@
             this.panelRanking = new System.Windows.Forms.Panel();
             this.lbMostrarPanelPartidas = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panelPartidas = new System.Windows.Forms.Panel();
             this.lbMostrarPanelRanking = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -82,7 +82,6 @@
             this.lbFecha2 = new System.Windows.Forms.Label();
             this.lbFecha3 = new System.Windows.Forms.Label();
             this.lbFecha1 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.lbPartida7 = new System.Windows.Forms.Label();
             this.lbPartida6 = new System.Windows.Forms.Label();
@@ -92,6 +91,14 @@
             this.lbPartida2 = new System.Windows.Forms.Label();
             this.lbPartida1 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panelContraseña = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbContraseña = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.timerContraseña = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -99,17 +106,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbSalir)).BeginInit();
             this.panelRanking.SuspendLayout();
             this.panelPartidas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panelContraseña.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // lbNombreUsuario
             // 
             this.lbNombreUsuario.AutoSize = true;
             this.lbNombreUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.lbNombreUsuario.Font = new System.Drawing.Font("MV Boli", 15F, System.Drawing.FontStyle.Bold);
+            this.lbNombreUsuario.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Bold);
             this.lbNombreUsuario.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.lbNombreUsuario.Location = new System.Drawing.Point(126, 54);
             this.lbNombreUsuario.Name = "lbNombreUsuario";
-            this.lbNombreUsuario.Size = new System.Drawing.Size(87, 26);
+            this.lbNombreUsuario.Size = new System.Drawing.Size(102, 31);
             this.lbNombreUsuario.TabIndex = 10;
             this.lbNombreUsuario.Text = "Usuario";
             // 
@@ -186,17 +197,17 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("MV Boli", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Cornsilk;
-            this.label4.Location = new System.Drawing.Point(90, 16);
+            this.label4.Location = new System.Drawing.Point(91, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(172, 40);
+            this.label4.Size = new System.Drawing.Size(204, 40);
             this.label4.TabIndex = 41;
-            this.label4.Text = "Bienvenido";
+            this.label4.Text = "Bienvenido/a";
             // 
             // pbSalir
             // 
             this.pbSalir.BackColor = System.Drawing.Color.Transparent;
             this.pbSalir.Image = ((System.Drawing.Image)(resources.GetObject("pbSalir.Image")));
-            this.pbSalir.Location = new System.Drawing.Point(12, 114);
+            this.pbSalir.Location = new System.Drawing.Point(12, 113);
             this.pbSalir.Name = "pbSalir";
             this.pbSalir.Size = new System.Drawing.Size(65, 63);
             this.pbSalir.TabIndex = 60;
@@ -531,17 +542,6 @@
             this.label5.TabIndex = 95;
             this.label5.Text = "Ranking";
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.CadetBlue;
-            this.textBox1.Location = new System.Drawing.Point(12, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(65, 20);
-            this.textBox1.TabIndex = 72;
-            this.textBox1.Text = "1234";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox1.UseSystemPasswordChar = true;
-            // 
             // panelPartidas
             // 
             this.panelPartidas.BackColor = System.Drawing.Color.Transparent;
@@ -582,7 +582,7 @@
             this.lbMostrarPanelRanking.BackColor = System.Drawing.Color.Transparent;
             this.lbMostrarPanelRanking.Font = new System.Drawing.Font("MV Boli", 10F, System.Drawing.FontStyle.Bold);
             this.lbMostrarPanelRanking.ForeColor = System.Drawing.Color.PaleGoldenrod;
-            this.lbMostrarPanelRanking.Location = new System.Drawing.Point(185, 564);
+            this.lbMostrarPanelRanking.Location = new System.Drawing.Point(163, 564);
             this.lbMostrarPanelRanking.Name = "lbMostrarPanelRanking";
             this.lbMostrarPanelRanking.Size = new System.Drawing.Size(116, 18);
             this.lbMostrarPanelRanking.TabIndex = 96;
@@ -595,7 +595,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("MV Boli", 20F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.Tomato;
-            this.label6.Location = new System.Drawing.Point(147, 15);
+            this.label6.Location = new System.Drawing.Point(137, 15);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(183, 34);
             this.label6.TabIndex = 95;
@@ -607,7 +607,7 @@
             this.lbFecha10.BackColor = System.Drawing.Color.Transparent;
             this.lbFecha10.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbFecha10.ForeColor = System.Drawing.Color.Magenta;
-            this.lbFecha10.Location = new System.Drawing.Point(245, 505);
+            this.lbFecha10.Location = new System.Drawing.Point(222, 505);
             this.lbFecha10.Name = "lbFecha10";
             this.lbFecha10.Size = new System.Drawing.Size(0, 29);
             this.lbFecha10.TabIndex = 93;
@@ -618,7 +618,7 @@
             this.lbPartida10.BackColor = System.Drawing.Color.Transparent;
             this.lbPartida10.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbPartida10.ForeColor = System.Drawing.Color.Magenta;
-            this.lbPartida10.Location = new System.Drawing.Point(124, 505);
+            this.lbPartida10.Location = new System.Drawing.Point(101, 505);
             this.lbPartida10.Name = "lbPartida10";
             this.lbPartida10.Size = new System.Drawing.Size(0, 29);
             this.lbPartida10.TabIndex = 92;
@@ -629,7 +629,7 @@
             this.lbFecha8.BackColor = System.Drawing.Color.Transparent;
             this.lbFecha8.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbFecha8.ForeColor = System.Drawing.Color.Magenta;
-            this.lbFecha8.Location = new System.Drawing.Point(244, 427);
+            this.lbFecha8.Location = new System.Drawing.Point(221, 427);
             this.lbFecha8.Name = "lbFecha8";
             this.lbFecha8.Size = new System.Drawing.Size(0, 29);
             this.lbFecha8.TabIndex = 91;
@@ -640,7 +640,7 @@
             this.lbPartida8.BackColor = System.Drawing.Color.Transparent;
             this.lbPartida8.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbPartida8.ForeColor = System.Drawing.Color.Magenta;
-            this.lbPartida8.Location = new System.Drawing.Point(123, 427);
+            this.lbPartida8.Location = new System.Drawing.Point(100, 427);
             this.lbPartida8.Name = "lbPartida8";
             this.lbPartida8.Size = new System.Drawing.Size(0, 29);
             this.lbPartida8.TabIndex = 90;
@@ -651,7 +651,7 @@
             this.lbFecha9.BackColor = System.Drawing.Color.Transparent;
             this.lbFecha9.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbFecha9.ForeColor = System.Drawing.Color.Magenta;
-            this.lbFecha9.Location = new System.Drawing.Point(245, 465);
+            this.lbFecha9.Location = new System.Drawing.Point(222, 465);
             this.lbFecha9.Name = "lbFecha9";
             this.lbFecha9.Size = new System.Drawing.Size(0, 29);
             this.lbFecha9.TabIndex = 89;
@@ -662,7 +662,7 @@
             this.lbPartida9.BackColor = System.Drawing.Color.Transparent;
             this.lbPartida9.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbPartida9.ForeColor = System.Drawing.Color.Magenta;
-            this.lbPartida9.Location = new System.Drawing.Point(124, 465);
+            this.lbPartida9.Location = new System.Drawing.Point(101, 465);
             this.lbPartida9.Name = "lbPartida9";
             this.lbPartida9.Size = new System.Drawing.Size(0, 29);
             this.lbPartida9.TabIndex = 88;
@@ -673,7 +673,7 @@
             this.lbFecha7.BackColor = System.Drawing.Color.Transparent;
             this.lbFecha7.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbFecha7.ForeColor = System.Drawing.Color.Magenta;
-            this.lbFecha7.Location = new System.Drawing.Point(244, 386);
+            this.lbFecha7.Location = new System.Drawing.Point(221, 386);
             this.lbFecha7.Name = "lbFecha7";
             this.lbFecha7.Size = new System.Drawing.Size(0, 29);
             this.lbFecha7.TabIndex = 87;
@@ -684,7 +684,7 @@
             this.lbFecha6.BackColor = System.Drawing.Color.Transparent;
             this.lbFecha6.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbFecha6.ForeColor = System.Drawing.Color.Magenta;
-            this.lbFecha6.Location = new System.Drawing.Point(244, 346);
+            this.lbFecha6.Location = new System.Drawing.Point(221, 346);
             this.lbFecha6.Name = "lbFecha6";
             this.lbFecha6.Size = new System.Drawing.Size(0, 29);
             this.lbFecha6.TabIndex = 86;
@@ -695,7 +695,7 @@
             this.lbFecha5.BackColor = System.Drawing.Color.Transparent;
             this.lbFecha5.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbFecha5.ForeColor = System.Drawing.Color.Magenta;
-            this.lbFecha5.Location = new System.Drawing.Point(244, 303);
+            this.lbFecha5.Location = new System.Drawing.Point(221, 303);
             this.lbFecha5.Name = "lbFecha5";
             this.lbFecha5.Size = new System.Drawing.Size(0, 29);
             this.lbFecha5.TabIndex = 85;
@@ -706,7 +706,7 @@
             this.lbFecha4.BackColor = System.Drawing.Color.Transparent;
             this.lbFecha4.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbFecha4.ForeColor = System.Drawing.Color.Magenta;
-            this.lbFecha4.Location = new System.Drawing.Point(244, 262);
+            this.lbFecha4.Location = new System.Drawing.Point(221, 262);
             this.lbFecha4.Name = "lbFecha4";
             this.lbFecha4.Size = new System.Drawing.Size(0, 29);
             this.lbFecha4.TabIndex = 84;
@@ -717,7 +717,7 @@
             this.lbFecha2.BackColor = System.Drawing.Color.Transparent;
             this.lbFecha2.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbFecha2.ForeColor = System.Drawing.Color.Magenta;
-            this.lbFecha2.Location = new System.Drawing.Point(244, 178);
+            this.lbFecha2.Location = new System.Drawing.Point(221, 178);
             this.lbFecha2.Name = "lbFecha2";
             this.lbFecha2.Size = new System.Drawing.Size(0, 29);
             this.lbFecha2.TabIndex = 83;
@@ -728,7 +728,7 @@
             this.lbFecha3.BackColor = System.Drawing.Color.Transparent;
             this.lbFecha3.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbFecha3.ForeColor = System.Drawing.Color.Magenta;
-            this.lbFecha3.Location = new System.Drawing.Point(244, 220);
+            this.lbFecha3.Location = new System.Drawing.Point(221, 220);
             this.lbFecha3.Name = "lbFecha3";
             this.lbFecha3.Size = new System.Drawing.Size(0, 29);
             this.lbFecha3.TabIndex = 82;
@@ -739,22 +739,10 @@
             this.lbFecha1.BackColor = System.Drawing.Color.Transparent;
             this.lbFecha1.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbFecha1.ForeColor = System.Drawing.Color.Magenta;
-            this.lbFecha1.Location = new System.Drawing.Point(244, 135);
+            this.lbFecha1.Location = new System.Drawing.Point(221, 135);
             this.lbFecha1.Name = "lbFecha1";
             this.lbFecha1.Size = new System.Drawing.Size(0, 29);
             this.lbFecha1.TabIndex = 81;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.BackColor = System.Drawing.Color.Transparent;
-            this.label22.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
-            this.label22.ForeColor = System.Drawing.Color.Teal;
-            this.label22.Location = new System.Drawing.Point(101, 111);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(310, 29);
-            this.label22.TabIndex = 80;
-            this.label22.Text = "---------------------------";
             // 
             // label23
             // 
@@ -762,7 +750,7 @@
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.label23.ForeColor = System.Drawing.Color.Thistle;
-            this.label23.Location = new System.Drawing.Point(113, 82);
+            this.label23.Location = new System.Drawing.Point(90, 82);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(90, 29);
             this.label23.TabIndex = 79;
@@ -774,7 +762,7 @@
             this.lbPartida7.BackColor = System.Drawing.Color.Transparent;
             this.lbPartida7.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbPartida7.ForeColor = System.Drawing.Color.Magenta;
-            this.lbPartida7.Location = new System.Drawing.Point(123, 386);
+            this.lbPartida7.Location = new System.Drawing.Point(100, 386);
             this.lbPartida7.Name = "lbPartida7";
             this.lbPartida7.Size = new System.Drawing.Size(0, 29);
             this.lbPartida7.TabIndex = 78;
@@ -785,7 +773,7 @@
             this.lbPartida6.BackColor = System.Drawing.Color.Transparent;
             this.lbPartida6.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbPartida6.ForeColor = System.Drawing.Color.Magenta;
-            this.lbPartida6.Location = new System.Drawing.Point(123, 346);
+            this.lbPartida6.Location = new System.Drawing.Point(100, 346);
             this.lbPartida6.Name = "lbPartida6";
             this.lbPartida6.Size = new System.Drawing.Size(0, 29);
             this.lbPartida6.TabIndex = 77;
@@ -796,7 +784,7 @@
             this.lbPartida5.BackColor = System.Drawing.Color.Transparent;
             this.lbPartida5.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbPartida5.ForeColor = System.Drawing.Color.Magenta;
-            this.lbPartida5.Location = new System.Drawing.Point(123, 303);
+            this.lbPartida5.Location = new System.Drawing.Point(100, 303);
             this.lbPartida5.Name = "lbPartida5";
             this.lbPartida5.Size = new System.Drawing.Size(0, 29);
             this.lbPartida5.TabIndex = 76;
@@ -807,7 +795,7 @@
             this.lbPartida4.BackColor = System.Drawing.Color.Transparent;
             this.lbPartida4.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbPartida4.ForeColor = System.Drawing.Color.Magenta;
-            this.lbPartida4.Location = new System.Drawing.Point(123, 262);
+            this.lbPartida4.Location = new System.Drawing.Point(100, 262);
             this.lbPartida4.Name = "lbPartida4";
             this.lbPartida4.Size = new System.Drawing.Size(0, 29);
             this.lbPartida4.TabIndex = 75;
@@ -818,7 +806,7 @@
             this.lbPartida3.BackColor = System.Drawing.Color.Transparent;
             this.lbPartida3.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbPartida3.ForeColor = System.Drawing.Color.Magenta;
-            this.lbPartida3.Location = new System.Drawing.Point(123, 220);
+            this.lbPartida3.Location = new System.Drawing.Point(100, 220);
             this.lbPartida3.Name = "lbPartida3";
             this.lbPartida3.Size = new System.Drawing.Size(0, 29);
             this.lbPartida3.TabIndex = 74;
@@ -829,7 +817,7 @@
             this.lbPartida2.BackColor = System.Drawing.Color.Transparent;
             this.lbPartida2.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbPartida2.ForeColor = System.Drawing.Color.Magenta;
-            this.lbPartida2.Location = new System.Drawing.Point(123, 178);
+            this.lbPartida2.Location = new System.Drawing.Point(100, 178);
             this.lbPartida2.Name = "lbPartida2";
             this.lbPartida2.Size = new System.Drawing.Size(0, 29);
             this.lbPartida2.TabIndex = 73;
@@ -840,7 +828,7 @@
             this.lbPartida1.BackColor = System.Drawing.Color.Transparent;
             this.lbPartida1.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbPartida1.ForeColor = System.Drawing.Color.Magenta;
-            this.lbPartida1.Location = new System.Drawing.Point(123, 135);
+            this.lbPartida1.Location = new System.Drawing.Point(100, 135);
             this.lbPartida1.Name = "lbPartida1";
             this.lbPartida1.Size = new System.Drawing.Size(0, 29);
             this.lbPartida1.TabIndex = 72;
@@ -851,11 +839,97 @@
             this.label31.BackColor = System.Drawing.Color.Transparent;
             this.label31.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.label31.ForeColor = System.Drawing.Color.Thistle;
-            this.label31.Location = new System.Drawing.Point(289, 82);
+            this.label31.Location = new System.Drawing.Point(266, 82);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(73, 29);
             this.label31.TabIndex = 71;
             this.label31.Text = "Fecha";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 59);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(30, 32);
+            this.pictureBox1.TabIndex = 99;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.mostrarPanelContraseña);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(79, 66);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(279, 198);
+            this.pictureBox3.TabIndex = 100;
+            this.pictureBox3.TabStop = false;
+            // 
+            // panelContraseña
+            // 
+            this.panelContraseña.BackColor = System.Drawing.Color.Transparent;
+            this.panelContraseña.Controls.Add(this.pictureBox4);
+            this.panelContraseña.Controls.Add(this.label1);
+            this.panelContraseña.Controls.Add(this.tbContraseña);
+            this.panelContraseña.Controls.Add(this.pictureBox3);
+            this.panelContraseña.Location = new System.Drawing.Point(210, 324);
+            this.panelContraseña.Name = "panelContraseña";
+            this.panelContraseña.Size = new System.Drawing.Size(405, 273);
+            this.panelContraseña.TabIndex = 104;
+            this.panelContraseña.Visible = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(335, 213);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(50, 51);
+            this.pictureBox4.TabIndex = 104;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.cambiarContraseña);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DarkKhaki;
+            this.label1.Location = new System.Drawing.Point(123, 138);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 31);
+            this.label1.TabIndex = 101;
+            this.label1.Text = "Contraseña";
+            // 
+            // tbContraseña
+            // 
+            this.tbContraseña.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tbContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbContraseña.Location = new System.Drawing.Point(117, 185);
+            this.tbContraseña.Name = "tbContraseña";
+            this.tbContraseña.Size = new System.Drawing.Size(203, 38);
+            this.tbContraseña.TabIndex = 103;
+            this.tbContraseña.Text = "1234";
+            this.tbContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbContraseña.UseSystemPasswordChar = true;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
+            this.label22.ForeColor = System.Drawing.Color.Teal;
+            this.label22.Location = new System.Drawing.Point(78, 111);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(310, 29);
+            this.label22.TabIndex = 80;
+            this.label22.Text = "---------------------------";
+            // 
+            // timerContraseña
+            // 
+            this.timerContraseña.Interval = 10000;
+            this.timerContraseña.Tick += new System.EventHandler(this.ocultarPanelContraseña);
             // 
             // MenuJugador
             // 
@@ -865,7 +939,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1188, 697);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.panelContraseña);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pbSalir);
             this.Controls.Add(this.pictureBox6);
@@ -876,8 +951,8 @@
             this.Controls.Add(this.labelJugar);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lbNombreUsuario);
-            this.Controls.Add(this.panelRanking);
             this.Controls.Add(this.panelPartidas);
+            this.Controls.Add(this.panelRanking);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuJugador";
@@ -893,6 +968,11 @@
             this.panelRanking.PerformLayout();
             this.panelPartidas.ResumeLayout(false);
             this.panelPartidas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panelContraseña.ResumeLayout(false);
+            this.panelContraseña.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -934,7 +1014,6 @@
         private System.Windows.Forms.Label lbScore10;
         private System.Windows.Forms.Panel panelRanking;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbMostrarPanelPartidas;
         private System.Windows.Forms.Panel panelPartidas;
         private System.Windows.Forms.Label lbMostrarPanelRanking;
@@ -952,7 +1031,6 @@
         private System.Windows.Forms.Label lbFecha2;
         private System.Windows.Forms.Label lbFecha3;
         private System.Windows.Forms.Label lbFecha1;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label lbPartida7;
         private System.Windows.Forms.Label lbPartida6;
@@ -962,5 +1040,13 @@
         private System.Windows.Forms.Label lbPartida2;
         private System.Windows.Forms.Label lbPartida1;
         private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panelContraseña;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbContraseña;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Timer timerContraseña;
     }
 }

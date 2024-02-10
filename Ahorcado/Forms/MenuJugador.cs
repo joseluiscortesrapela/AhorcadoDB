@@ -11,20 +11,49 @@ namespace Ahorcado
 {
     public partial class MenuJugador : Form
     {
-        //private List<Jugador> jugadores;
-        private MenuJugadorModel model_jugador;
 
+        private MenuJugadorModel model_jugador;
+        private List<Jugador> jugadores;
+        private List<Partida> partidas;
+        private string nombreJugador;
+        private int idJugador, puntuacion;
+        private string contraseña;
+
+
+        // Constructor
         public MenuJugador()
         {
             InitializeComponent();
             // Peticiones a la base de datos.
             model_jugador = new MenuJugadorModel();
-            // Obtengo las puntuaciones de todos los jugadores
-            List<Jugador> jugadores = model_jugador.getRanking();
-            // Obtengo las partidas del jugador
-            List<Partida> partidas = model_jugador.getPartidas(SesionUsuario.Id);
+        }
 
-            if ( partidas.Count > 0 )
+        // Ventana de autoload
+        private void MenuJugador_Load(object sender, EventArgs e)
+        {
+            // Obtengo de la sesion el nombre del jugador
+            nombreJugador = SesionUsuario.Usuario;
+            // Puntuacion del jugador
+            puntuacion = SesionUsuario.Puntuacion;
+            // Obtengo de la sesion la contraseña
+            contraseña = SesionUsuario.Contraseña;
+            // Obtengo de la sesion el id del jugador
+            idJugador = SesionUsuario.Id;
+
+            // Muestro el nombre del jugador.
+            lbNombreUsuario.Text = nombreJugador;
+            // Muestro la puntuacion del jugador
+            lbPuntuacion.Text = puntuacion.ToString();
+            // Guardo el valor de la contraseña en el textbox
+            tbContraseña.Text = contraseña;
+
+            // Obtengo las puntuaciones de todos los jugadores
+            jugadores = model_jugador.getRanking();
+            // Obtengo las partidas del jugador
+            partidas = model_jugador.getPartidas(idJugador);
+
+
+            if (partidas.Count > 0)
             {
                 lbMostrarPanelPartidas.Visible = true;
                 mostrarPartidas(partidas);
@@ -32,7 +61,7 @@ namespace Ahorcado
 
             // Muestro el ranking 
             mostrarRanking(jugadores);
-         
+
         }
 
         // Muestro las siete mejores puntuaciones.
@@ -47,7 +76,7 @@ namespace Ahorcado
                 Label labelScore = Controls.Find("lbScore" + (i + 1), true).FirstOrDefault() as Label;
 
                 // Si es el jugador que esta jugadno la partida
-                if (SesionUsuario.Usuario == jugadores[i].Nombre)
+                if (nombreJugador == jugadores[i].Nombre)
                 {
                     labelJugador.Text = jugadores[i].Nombre;
                     labelScore.Text = jugadores[i].Puntuacion.ToString();
@@ -77,9 +106,53 @@ namespace Ahorcado
                 // Guardo la puntuacion en el label
                 labelPuntuacionPartida.Text = partidas[i].Puntuacion.ToString();
                 // Guardo la fecha con el formato dia/mes/año en el label.
-                labelFecha.Text = partidas[i].Fecha.ToString("dd/MM/yyyy");     
+                labelFecha.Text = partidas[i].Fecha.ToString("dd/MM/yyyy");
             }
         }
+
+        // Muestra el panel partidas
+        private void lbMostrarPanelPartidas_Click(object sender, EventArgs e)
+        {
+            panelRanking.Visible = false;
+            panelPartidas.Visible = true;
+        }
+
+        // Muestra el panel ranking  
+        private void lbMostrarPanelRanking_Click(object sender, EventArgs e)
+        {
+            // Oculto panel de las partidas
+            panelPartidas.Visible = false;
+            // Muestro panel del ranking
+            panelRanking.Visible = true;
+        }
+
+        // Muestro el panel donde se podra cambiar la contraseña
+        private void mostrarPanelContraseña(object sender, EventArgs e)
+        {
+            panelContraseña.Visible = true;
+            timerContraseña.Start();
+        }
+
+        // Cambio la contraseña del jugador
+        private void cambiarContraseña(object sender, EventArgs e)
+        {
+            // Obtengo la contraseña
+            string nuevaContraseña = tbContraseña.Text;
+
+            Console.WriteLine("Intento cambiar " + contraseña + " del jugador: " + nombreJugador + " con id: " + idJugador);
+
+            // Si ha la peticon de cambio de contraseña se ha realizado con exito
+            if (model_jugador.cambiarContraseña(nuevaContraseña, idJugador) == 1)
+            {
+                Console.WriteLine("Acabas de cambiar la contraseña del jugador");
+                // Oculto panel
+                timerContraseña.Stop();
+                panelContraseña.Visible = false;
+            }
+
+
+        }
+
 
         // Vamos a la ventana para jugar
         private void labelJugar_Click(object sender, EventArgs e)
@@ -100,36 +173,18 @@ namespace Ahorcado
             login.Show();
         }
 
+        // Al terminar el contador de timepo oculto la ventana para cambiar la contraeña del jugador
+        private void ocultarPanelContraseña(object sender, EventArgs e)
+        {
+            panelContraseña.Visible = false;
+        }
+
         // Sales del programa
         private void pbExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        // El formulario se carga, muestro el nombre del jugador y la puntuacion
-        private void MenuJugador_Load(object sender, EventArgs e)
-        {
-            // Muestro el nombre del jugador.
-            lbNombreUsuario.Text = SesionUsuario.Usuario;
-            // Muestro la puntuacion del jugador
-            lbPuntuacion.Text = SesionUsuario.Puntuacion.ToString();
 
-        }
-
-        // Muestra el panel partidas
-        private void lbMostrarPanelPartidas_Click(object sender, EventArgs e)
-        {
-            panelRanking.Visible = false;
-            panelPartidas.Visible = true;
-        }
-
-        // Muestra el panel ranking  
-        private void lbMostrarPanelRanking_Click(object sender, EventArgs e)
-        {
-            // Oculto panel de las partidas
-            panelPartidas.Visible = false;
-            // Muestro panel del ranking
-            panelRanking.Visible = true;
-        }
     }
 }
