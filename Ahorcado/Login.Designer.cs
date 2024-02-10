@@ -33,13 +33,6 @@
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelRegistro = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label15 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.lbVolverLogin = new System.Windows.Forms.Label();
             this.lbMensajeRegistro = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -71,9 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelRegistro.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelLogin.SuspendLayout();
             this.panelContenedor.SuspendLayout();
             this.panelPrincipal.SuspendLayout();
@@ -103,13 +93,6 @@
             // panelRegistro
             // 
             this.panelRegistro.BackColor = System.Drawing.Color.Transparent;
-            this.panelRegistro.Controls.Add(this.radioButton2);
-            this.panelRegistro.Controls.Add(this.radioButton4);
-            this.panelRegistro.Controls.Add(this.radioButton1);
-            this.panelRegistro.Controls.Add(this.label15);
-            this.panelRegistro.Controls.Add(this.pictureBox6);
-            this.panelRegistro.Controls.Add(this.pictureBox5);
-            this.panelRegistro.Controls.Add(this.pictureBox4);
             this.panelRegistro.Controls.Add(this.lbVolverLogin);
             this.panelRegistro.Controls.Add(this.lbMensajeRegistro);
             this.panelRegistro.Controls.Add(this.label6);
@@ -122,87 +105,9 @@
             this.panelRegistro.Controls.Add(this.tbUsuario);
             this.panelRegistro.Location = new System.Drawing.Point(324, 17);
             this.panelRegistro.Name = "panelRegistro";
-            this.panelRegistro.Size = new System.Drawing.Size(595, 454);
+            this.panelRegistro.Size = new System.Drawing.Size(224, 461);
             this.panelRegistro.TabIndex = 23;
             this.panelRegistro.Visible = false;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("OCR A Extended", 12F);
-            this.radioButton2.ForeColor = System.Drawing.Color.Coral;
-            this.radioButton2.Location = new System.Drawing.Point(481, 223);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(76, 21);
-            this.radioButton2.TabIndex = 46;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Goash";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("OCR A Extended", 12F);
-            this.radioButton4.ForeColor = System.Drawing.Color.Coral;
-            this.radioButton4.Location = new System.Drawing.Point(375, 223);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(76, 21);
-            this.radioButton4.TabIndex = 45;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Jason";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("OCR A Extended", 12F);
-            this.radioButton1.ForeColor = System.Drawing.Color.Coral;
-            this.radioButton1.Location = new System.Drawing.Point(259, 226);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(86, 21);
-            this.radioButton1.TabIndex = 42;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Darion";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("MingLiU_HKSCS-ExtB", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label15.Location = new System.Drawing.Point(255, 109);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(98, 22);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "Avatares";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(481, 142);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(82, 75);
-            this.pictureBox6.TabIndex = 37;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(376, 145);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(75, 75);
-            this.pictureBox5.TabIndex = 36;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(259, 145);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(90, 75);
-            this.pictureBox4.TabIndex = 35;
-            this.pictureBox4.TabStop = false;
             // 
             // lbVolverLogin
             // 
@@ -346,7 +251,7 @@
             this.panelLogin.Controls.Add(this.label8);
             this.panelLogin.Location = new System.Drawing.Point(327, 14);
             this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(237, 457);
+            this.panelLogin.Size = new System.Drawing.Size(221, 464);
             this.panelLogin.TabIndex = 32;
             // 
             // lebel0
@@ -583,9 +488,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelRegistro.ResumeLayout(false);
             this.panelRegistro.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
             this.panelContenedor.ResumeLayout(false);
@@ -630,13 +532,6 @@
         private System.Windows.Forms.PictureBox pbExit;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton4;
     }
 }

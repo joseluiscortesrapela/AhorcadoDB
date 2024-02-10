@@ -149,6 +149,7 @@
   <ItemGroup>
     <Compile Include="Conexion\ConexionBaseDatos.cs" />
     <Compile Include="Conexion\OperacionesBaseDatos.cs" />
+    <Compile Include="Entidades\Partida.cs" />
     <Compile Include="Models\juegoModel.cs" />
     <Compile Include="Models\MenuAdminModel.cs" />
     <Compile Include="Models\MenuJugadorModel.cs" />
