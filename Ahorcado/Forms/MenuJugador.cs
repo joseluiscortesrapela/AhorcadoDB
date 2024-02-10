@@ -24,9 +24,15 @@ namespace Ahorcado
             // Obtengo las partidas del jugador
             List<Partida> partidas = model_jugador.getPartidas(SesionUsuario.Id);
 
+            if ( partidas.Count > 0 )
+            {
+                lbMostrarPanelPartidas.Visible = true;
+                mostrarPartidas(partidas);
+            }
+
             // Muestro el ranking 
             mostrarRanking(jugadores);
-            mostrarPartidas(partidas);
+         
         }
 
         // Muestro las siete mejores puntuaciones.

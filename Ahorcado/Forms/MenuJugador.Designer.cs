@@ -236,9 +236,8 @@
             this.lbJugador1.ForeColor = System.Drawing.Color.Magenta;
             this.lbJugador1.Location = new System.Drawing.Point(101, 135);
             this.lbJugador1.Name = "lbJugador1";
-            this.lbJugador1.Size = new System.Drawing.Size(101, 29);
+            this.lbJugador1.Size = new System.Drawing.Size(0, 29);
             this.lbJugador1.TabIndex = 72;
-            this.lbJugador1.Text = "Jugador";
             // 
             // lbJugador2
             // 
@@ -248,9 +247,8 @@
             this.lbJugador2.ForeColor = System.Drawing.Color.Magenta;
             this.lbJugador2.Location = new System.Drawing.Point(101, 178);
             this.lbJugador2.Name = "lbJugador2";
-            this.lbJugador2.Size = new System.Drawing.Size(101, 29);
+            this.lbJugador2.Size = new System.Drawing.Size(0, 29);
             this.lbJugador2.TabIndex = 73;
-            this.lbJugador2.Text = "Jugador";
             // 
             // lbJugador3
             // 
@@ -260,9 +258,8 @@
             this.lbJugador3.ForeColor = System.Drawing.Color.Magenta;
             this.lbJugador3.Location = new System.Drawing.Point(101, 220);
             this.lbJugador3.Name = "lbJugador3";
-            this.lbJugador3.Size = new System.Drawing.Size(101, 29);
+            this.lbJugador3.Size = new System.Drawing.Size(0, 29);
             this.lbJugador3.TabIndex = 74;
-            this.lbJugador3.Text = "Jugador";
             // 
             // lbJugador4
             // 
@@ -272,9 +269,8 @@
             this.lbJugador4.ForeColor = System.Drawing.Color.Magenta;
             this.lbJugador4.Location = new System.Drawing.Point(101, 262);
             this.lbJugador4.Name = "lbJugador4";
-            this.lbJugador4.Size = new System.Drawing.Size(101, 29);
+            this.lbJugador4.Size = new System.Drawing.Size(0, 29);
             this.lbJugador4.TabIndex = 75;
-            this.lbJugador4.Text = "Jugador";
             // 
             // lbJugador5
             // 
@@ -284,9 +280,8 @@
             this.lbJugador5.ForeColor = System.Drawing.Color.Magenta;
             this.lbJugador5.Location = new System.Drawing.Point(101, 303);
             this.lbJugador5.Name = "lbJugador5";
-            this.lbJugador5.Size = new System.Drawing.Size(101, 29);
+            this.lbJugador5.Size = new System.Drawing.Size(0, 29);
             this.lbJugador5.TabIndex = 76;
-            this.lbJugador5.Text = "Jugador";
             // 
             // lbJugador6
             // 
@@ -296,9 +291,8 @@
             this.lbJugador6.ForeColor = System.Drawing.Color.Magenta;
             this.lbJugador6.Location = new System.Drawing.Point(101, 346);
             this.lbJugador6.Name = "lbJugador6";
-            this.lbJugador6.Size = new System.Drawing.Size(101, 29);
+            this.lbJugador6.Size = new System.Drawing.Size(0, 29);
             this.lbJugador6.TabIndex = 77;
-            this.lbJugador6.Text = "Jugador";
             // 
             // lbJugador7
             // 
@@ -308,9 +302,8 @@
             this.lbJugador7.ForeColor = System.Drawing.Color.Magenta;
             this.lbJugador7.Location = new System.Drawing.Point(101, 386);
             this.lbJugador7.Name = "lbJugador7";
-            this.lbJugador7.Size = new System.Drawing.Size(101, 29);
+            this.lbJugador7.Size = new System.Drawing.Size(0, 29);
             this.lbJugador7.TabIndex = 78;
-            this.lbJugador7.Text = "Jugador";
             // 
             // label3
             // 
@@ -344,9 +337,8 @@
             this.lbScore1.ForeColor = System.Drawing.Color.Magenta;
             this.lbScore1.Location = new System.Drawing.Point(303, 135);
             this.lbScore1.Name = "lbScore1";
-            this.lbScore1.Size = new System.Drawing.Size(29, 29);
+            this.lbScore1.Size = new System.Drawing.Size(0, 29);
             this.lbScore1.TabIndex = 81;
-            this.lbScore1.Text = "0";
             // 
             // lbScore3
             // 
@@ -356,9 +348,8 @@
             this.lbScore3.ForeColor = System.Drawing.Color.Magenta;
             this.lbScore3.Location = new System.Drawing.Point(303, 220);
             this.lbScore3.Name = "lbScore3";
-            this.lbScore3.Size = new System.Drawing.Size(29, 29);
+            this.lbScore3.Size = new System.Drawing.Size(0, 29);
             this.lbScore3.TabIndex = 82;
-            this.lbScore3.Text = "0";
             // 
             // lbScore2
             // 
@@ -368,9 +359,8 @@
             this.lbScore2.ForeColor = System.Drawing.Color.Magenta;
             this.lbScore2.Location = new System.Drawing.Point(303, 178);
             this.lbScore2.Name = "lbScore2";
-            this.lbScore2.Size = new System.Drawing.Size(29, 29);
+            this.lbScore2.Size = new System.Drawing.Size(0, 29);
             this.lbScore2.TabIndex = 83;
-            this.lbScore2.Text = "0";
             // 
             // lbScore4
             // 
@@ -380,9 +370,8 @@
             this.lbScore4.ForeColor = System.Drawing.Color.Magenta;
             this.lbScore4.Location = new System.Drawing.Point(303, 262);
             this.lbScore4.Name = "lbScore4";
-            this.lbScore4.Size = new System.Drawing.Size(29, 29);
+            this.lbScore4.Size = new System.Drawing.Size(0, 29);
             this.lbScore4.TabIndex = 84;
-            this.lbScore4.Text = "0";
             // 
             // lbScore5
             // 
@@ -392,9 +381,8 @@
             this.lbScore5.ForeColor = System.Drawing.Color.Magenta;
             this.lbScore5.Location = new System.Drawing.Point(303, 303);
             this.lbScore5.Name = "lbScore5";
-            this.lbScore5.Size = new System.Drawing.Size(29, 29);
+            this.lbScore5.Size = new System.Drawing.Size(0, 29);
             this.lbScore5.TabIndex = 85;
-            this.lbScore5.Text = "0";
             // 
             // lbScore6
             // 
@@ -404,9 +392,8 @@
             this.lbScore6.ForeColor = System.Drawing.Color.Magenta;
             this.lbScore6.Location = new System.Drawing.Point(303, 346);
             this.lbScore6.Name = "lbScore6";
-            this.lbScore6.Size = new System.Drawing.Size(29, 29);
+            this.lbScore6.Size = new System.Drawing.Size(0, 29);
             this.lbScore6.TabIndex = 86;
-            this.lbScore6.Text = "0";
             // 
             // lbScore7
             // 
@@ -416,9 +403,8 @@
             this.lbScore7.ForeColor = System.Drawing.Color.Magenta;
             this.lbScore7.Location = new System.Drawing.Point(303, 386);
             this.lbScore7.Name = "lbScore7";
-            this.lbScore7.Size = new System.Drawing.Size(29, 29);
+            this.lbScore7.Size = new System.Drawing.Size(0, 29);
             this.lbScore7.TabIndex = 87;
-            this.lbScore7.Text = "0";
             // 
             // lbJugador9
             // 
@@ -428,9 +414,8 @@
             this.lbJugador9.ForeColor = System.Drawing.Color.Magenta;
             this.lbJugador9.Location = new System.Drawing.Point(102, 465);
             this.lbJugador9.Name = "lbJugador9";
-            this.lbJugador9.Size = new System.Drawing.Size(101, 29);
+            this.lbJugador9.Size = new System.Drawing.Size(0, 29);
             this.lbJugador9.TabIndex = 88;
-            this.lbJugador9.Text = "Jugador";
             // 
             // lbScore9
             // 
@@ -440,9 +425,8 @@
             this.lbScore9.ForeColor = System.Drawing.Color.Magenta;
             this.lbScore9.Location = new System.Drawing.Point(304, 465);
             this.lbScore9.Name = "lbScore9";
-            this.lbScore9.Size = new System.Drawing.Size(29, 29);
+            this.lbScore9.Size = new System.Drawing.Size(0, 29);
             this.lbScore9.TabIndex = 89;
-            this.lbScore9.Text = "0";
             // 
             // lbJugador8
             // 
@@ -452,9 +436,8 @@
             this.lbJugador8.ForeColor = System.Drawing.Color.Magenta;
             this.lbJugador8.Location = new System.Drawing.Point(101, 427);
             this.lbJugador8.Name = "lbJugador8";
-            this.lbJugador8.Size = new System.Drawing.Size(101, 29);
+            this.lbJugador8.Size = new System.Drawing.Size(0, 29);
             this.lbJugador8.TabIndex = 90;
-            this.lbJugador8.Text = "Jugador";
             // 
             // lbScore8
             // 
@@ -464,9 +447,8 @@
             this.lbScore8.ForeColor = System.Drawing.Color.Magenta;
             this.lbScore8.Location = new System.Drawing.Point(303, 427);
             this.lbScore8.Name = "lbScore8";
-            this.lbScore8.Size = new System.Drawing.Size(29, 29);
+            this.lbScore8.Size = new System.Drawing.Size(0, 29);
             this.lbScore8.TabIndex = 91;
-            this.lbScore8.Text = "0";
             // 
             // lbJugador10
             // 
@@ -476,9 +458,8 @@
             this.lbJugador10.ForeColor = System.Drawing.Color.Magenta;
             this.lbJugador10.Location = new System.Drawing.Point(102, 505);
             this.lbJugador10.Name = "lbJugador10";
-            this.lbJugador10.Size = new System.Drawing.Size(101, 29);
+            this.lbJugador10.Size = new System.Drawing.Size(0, 29);
             this.lbJugador10.TabIndex = 92;
-            this.lbJugador10.Text = "Jugador";
             // 
             // lbScore10
             // 
@@ -488,9 +469,8 @@
             this.lbScore10.ForeColor = System.Drawing.Color.Magenta;
             this.lbScore10.Location = new System.Drawing.Point(304, 505);
             this.lbScore10.Name = "lbScore10";
-            this.lbScore10.Size = new System.Drawing.Size(29, 29);
+            this.lbScore10.Size = new System.Drawing.Size(0, 29);
             this.lbScore10.TabIndex = 93;
-            this.lbScore10.Text = "0";
             // 
             // panelRanking
             // 
@@ -536,6 +516,7 @@
             this.lbMostrarPanelPartidas.Size = new System.Drawing.Size(134, 18);
             this.lbMostrarPanelPartidas.TabIndex = 96;
             this.lbMostrarPanelPartidas.Text = "Ver tus partidas";
+            this.lbMostrarPanelPartidas.Visible = false;
             this.lbMostrarPanelPartidas.Click += new System.EventHandler(this.lbMostrarPanelPartidas_Click);
             // 
             // label5
@@ -593,6 +574,7 @@
             this.panelPartidas.Name = "panelPartidas";
             this.panelPartidas.Size = new System.Drawing.Size(430, 597);
             this.panelPartidas.TabIndex = 97;
+            this.panelPartidas.Visible = false;
             // 
             // lbMostrarPanelRanking
             // 
@@ -627,9 +609,8 @@
             this.lbFecha10.ForeColor = System.Drawing.Color.Magenta;
             this.lbFecha10.Location = new System.Drawing.Point(245, 505);
             this.lbFecha10.Name = "lbFecha10";
-            this.lbFecha10.Size = new System.Drawing.Size(29, 29);
+            this.lbFecha10.Size = new System.Drawing.Size(0, 29);
             this.lbFecha10.TabIndex = 93;
-            this.lbFecha10.Text = "0";
             // 
             // lbPartida10
             // 
@@ -639,9 +620,8 @@
             this.lbPartida10.ForeColor = System.Drawing.Color.Magenta;
             this.lbPartida10.Location = new System.Drawing.Point(124, 505);
             this.lbPartida10.Name = "lbPartida10";
-            this.lbPartida10.Size = new System.Drawing.Size(29, 29);
+            this.lbPartida10.Size = new System.Drawing.Size(0, 29);
             this.lbPartida10.TabIndex = 92;
-            this.lbPartida10.Text = "0";
             // 
             // lbFecha8
             // 
@@ -651,9 +631,8 @@
             this.lbFecha8.ForeColor = System.Drawing.Color.Magenta;
             this.lbFecha8.Location = new System.Drawing.Point(244, 427);
             this.lbFecha8.Name = "lbFecha8";
-            this.lbFecha8.Size = new System.Drawing.Size(29, 29);
+            this.lbFecha8.Size = new System.Drawing.Size(0, 29);
             this.lbFecha8.TabIndex = 91;
-            this.lbFecha8.Text = "0";
             // 
             // lbPartida8
             // 
@@ -663,9 +642,8 @@
             this.lbPartida8.ForeColor = System.Drawing.Color.Magenta;
             this.lbPartida8.Location = new System.Drawing.Point(123, 427);
             this.lbPartida8.Name = "lbPartida8";
-            this.lbPartida8.Size = new System.Drawing.Size(29, 29);
+            this.lbPartida8.Size = new System.Drawing.Size(0, 29);
             this.lbPartida8.TabIndex = 90;
-            this.lbPartida8.Text = "0";
             // 
             // lbFecha9
             // 
@@ -675,9 +653,8 @@
             this.lbFecha9.ForeColor = System.Drawing.Color.Magenta;
             this.lbFecha9.Location = new System.Drawing.Point(245, 465);
             this.lbFecha9.Name = "lbFecha9";
-            this.lbFecha9.Size = new System.Drawing.Size(29, 29);
+            this.lbFecha9.Size = new System.Drawing.Size(0, 29);
             this.lbFecha9.TabIndex = 89;
-            this.lbFecha9.Text = "0";
             // 
             // lbPartida9
             // 
@@ -687,9 +664,8 @@
             this.lbPartida9.ForeColor = System.Drawing.Color.Magenta;
             this.lbPartida9.Location = new System.Drawing.Point(124, 465);
             this.lbPartida9.Name = "lbPartida9";
-            this.lbPartida9.Size = new System.Drawing.Size(29, 29);
+            this.lbPartida9.Size = new System.Drawing.Size(0, 29);
             this.lbPartida9.TabIndex = 88;
-            this.lbPartida9.Text = "0";
             // 
             // lbFecha7
             // 
@@ -699,9 +675,8 @@
             this.lbFecha7.ForeColor = System.Drawing.Color.Magenta;
             this.lbFecha7.Location = new System.Drawing.Point(244, 386);
             this.lbFecha7.Name = "lbFecha7";
-            this.lbFecha7.Size = new System.Drawing.Size(29, 29);
+            this.lbFecha7.Size = new System.Drawing.Size(0, 29);
             this.lbFecha7.TabIndex = 87;
-            this.lbFecha7.Text = "0";
             // 
             // lbFecha6
             // 
@@ -711,9 +686,8 @@
             this.lbFecha6.ForeColor = System.Drawing.Color.Magenta;
             this.lbFecha6.Location = new System.Drawing.Point(244, 346);
             this.lbFecha6.Name = "lbFecha6";
-            this.lbFecha6.Size = new System.Drawing.Size(29, 29);
+            this.lbFecha6.Size = new System.Drawing.Size(0, 29);
             this.lbFecha6.TabIndex = 86;
-            this.lbFecha6.Text = "0";
             // 
             // lbFecha5
             // 
@@ -723,9 +697,8 @@
             this.lbFecha5.ForeColor = System.Drawing.Color.Magenta;
             this.lbFecha5.Location = new System.Drawing.Point(244, 303);
             this.lbFecha5.Name = "lbFecha5";
-            this.lbFecha5.Size = new System.Drawing.Size(29, 29);
+            this.lbFecha5.Size = new System.Drawing.Size(0, 29);
             this.lbFecha5.TabIndex = 85;
-            this.lbFecha5.Text = "0";
             // 
             // lbFecha4
             // 
@@ -735,9 +708,8 @@
             this.lbFecha4.ForeColor = System.Drawing.Color.Magenta;
             this.lbFecha4.Location = new System.Drawing.Point(244, 262);
             this.lbFecha4.Name = "lbFecha4";
-            this.lbFecha4.Size = new System.Drawing.Size(29, 29);
+            this.lbFecha4.Size = new System.Drawing.Size(0, 29);
             this.lbFecha4.TabIndex = 84;
-            this.lbFecha4.Text = "0";
             // 
             // lbFecha2
             // 
@@ -747,9 +719,8 @@
             this.lbFecha2.ForeColor = System.Drawing.Color.Magenta;
             this.lbFecha2.Location = new System.Drawing.Point(244, 178);
             this.lbFecha2.Name = "lbFecha2";
-            this.lbFecha2.Size = new System.Drawing.Size(29, 29);
+            this.lbFecha2.Size = new System.Drawing.Size(0, 29);
             this.lbFecha2.TabIndex = 83;
-            this.lbFecha2.Text = "0";
             // 
             // lbFecha3
             // 
@@ -759,9 +730,8 @@
             this.lbFecha3.ForeColor = System.Drawing.Color.Magenta;
             this.lbFecha3.Location = new System.Drawing.Point(244, 220);
             this.lbFecha3.Name = "lbFecha3";
-            this.lbFecha3.Size = new System.Drawing.Size(29, 29);
+            this.lbFecha3.Size = new System.Drawing.Size(0, 29);
             this.lbFecha3.TabIndex = 82;
-            this.lbFecha3.Text = "0";
             // 
             // lbFecha1
             // 
@@ -771,9 +741,8 @@
             this.lbFecha1.ForeColor = System.Drawing.Color.Magenta;
             this.lbFecha1.Location = new System.Drawing.Point(244, 135);
             this.lbFecha1.Name = "lbFecha1";
-            this.lbFecha1.Size = new System.Drawing.Size(29, 29);
+            this.lbFecha1.Size = new System.Drawing.Size(0, 29);
             this.lbFecha1.TabIndex = 81;
-            this.lbFecha1.Text = "0";
             // 
             // label22
             // 
@@ -807,9 +776,8 @@
             this.lbPartida7.ForeColor = System.Drawing.Color.Magenta;
             this.lbPartida7.Location = new System.Drawing.Point(123, 386);
             this.lbPartida7.Name = "lbPartida7";
-            this.lbPartida7.Size = new System.Drawing.Size(29, 29);
+            this.lbPartida7.Size = new System.Drawing.Size(0, 29);
             this.lbPartida7.TabIndex = 78;
-            this.lbPartida7.Text = "0";
             // 
             // lbPartida6
             // 
@@ -819,9 +787,8 @@
             this.lbPartida6.ForeColor = System.Drawing.Color.Magenta;
             this.lbPartida6.Location = new System.Drawing.Point(123, 346);
             this.lbPartida6.Name = "lbPartida6";
-            this.lbPartida6.Size = new System.Drawing.Size(29, 29);
+            this.lbPartida6.Size = new System.Drawing.Size(0, 29);
             this.lbPartida6.TabIndex = 77;
-            this.lbPartida6.Text = "0";
             // 
             // lbPartida5
             // 
@@ -831,9 +798,8 @@
             this.lbPartida5.ForeColor = System.Drawing.Color.Magenta;
             this.lbPartida5.Location = new System.Drawing.Point(123, 303);
             this.lbPartida5.Name = "lbPartida5";
-            this.lbPartida5.Size = new System.Drawing.Size(29, 29);
+            this.lbPartida5.Size = new System.Drawing.Size(0, 29);
             this.lbPartida5.TabIndex = 76;
-            this.lbPartida5.Text = "0";
             // 
             // lbPartida4
             // 
@@ -843,9 +809,8 @@
             this.lbPartida4.ForeColor = System.Drawing.Color.Magenta;
             this.lbPartida4.Location = new System.Drawing.Point(123, 262);
             this.lbPartida4.Name = "lbPartida4";
-            this.lbPartida4.Size = new System.Drawing.Size(29, 29);
+            this.lbPartida4.Size = new System.Drawing.Size(0, 29);
             this.lbPartida4.TabIndex = 75;
-            this.lbPartida4.Text = "0";
             // 
             // lbPartida3
             // 
@@ -855,9 +820,8 @@
             this.lbPartida3.ForeColor = System.Drawing.Color.Magenta;
             this.lbPartida3.Location = new System.Drawing.Point(123, 220);
             this.lbPartida3.Name = "lbPartida3";
-            this.lbPartida3.Size = new System.Drawing.Size(29, 29);
+            this.lbPartida3.Size = new System.Drawing.Size(0, 29);
             this.lbPartida3.TabIndex = 74;
-            this.lbPartida3.Text = "0";
             // 
             // lbPartida2
             // 
@@ -867,9 +831,8 @@
             this.lbPartida2.ForeColor = System.Drawing.Color.Magenta;
             this.lbPartida2.Location = new System.Drawing.Point(123, 178);
             this.lbPartida2.Name = "lbPartida2";
-            this.lbPartida2.Size = new System.Drawing.Size(29, 29);
+            this.lbPartida2.Size = new System.Drawing.Size(0, 29);
             this.lbPartida2.TabIndex = 73;
-            this.lbPartida2.Text = "0";
             // 
             // lbPartida1
             // 
@@ -879,9 +842,8 @@
             this.lbPartida1.ForeColor = System.Drawing.Color.Magenta;
             this.lbPartida1.Location = new System.Drawing.Point(123, 135);
             this.lbPartida1.Name = "lbPartida1";
-            this.lbPartida1.Size = new System.Drawing.Size(29, 29);
+            this.lbPartida1.Size = new System.Drawing.Size(0, 29);
             this.lbPartida1.TabIndex = 72;
-            this.lbPartida1.Text = "0";
             // 
             // label31
             // 
@@ -914,8 +876,8 @@
             this.Controls.Add(this.labelJugar);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lbNombreUsuario);
-            this.Controls.Add(this.panelPartidas);
             this.Controls.Add(this.panelRanking);
+            this.Controls.Add(this.panelPartidas);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuJugador";
