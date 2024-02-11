@@ -734,18 +734,17 @@ namespace Ahorcado
             {
                 // Para guardar el resultado de la consulta, numero de filas afectadas.
                 if (model_admin.eliminarPartida(idPartida) == 1)
-                {
-                    // Muestro el dgv partida actualizado tras eliminar una partida.
-                    dgvPartidas.DataSource = model_admin.getPartidasJugador(idJugador);
+                {                 
                     // ACtualizo puntuaciones dgv jugadores
                     actualizarPuntuacionesJugadores();
+                    // Muestro el dgv partida actualizado tras eliminar una partida.
+                    dgvPartidas.DataSource = model_admin.getPartidasJugador(idJugador);
                     // Oculto botones accion
                     ocultarBotonesAccionPartida();
                     // Muestro mensaje
                     var mensaje = "Acabas de eliminar una partida y actulizada las puntuaciones.";
                     // Muestro mensaje
                     mostrarMensaje(mensaje);
-
                     // Actualizo la puntuacion del dgv de jugadores
                     Console.WriteLine("partida " + idPartida + " del jugador " + idJugador + " eliminada");
                 }
