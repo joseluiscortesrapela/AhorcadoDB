@@ -30,9 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdmin));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelNombreUsuario = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -90,9 +94,11 @@
             this.pbMostrarPanelCrear = new System.Windows.Forms.PictureBox();
             this.pbMostrarVentanEliminar = new System.Windows.Forms.PictureBox();
             this.pbMostrarPanelActualizar = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgvTablaGenerica = new System.Windows.Forms.DataGridView();
             this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.dgvPartidas = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbNombreJugadorPartidas = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -116,17 +122,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelActualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaGenerica)).BeginInit();
             this.panelPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPartidas)).BeginInit();
             this.SuspendLayout();
             // 
             // labelNombreUsuario
             // 
             this.labelNombreUsuario.AutoSize = true;
             this.labelNombreUsuario.BackColor = System.Drawing.Color.Transparent;
-            this.labelNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.labelNombreUsuario.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.labelNombreUsuario.Location = new System.Drawing.Point(99, 52);
+            this.labelNombreUsuario.Font = new System.Drawing.Font("MV Boli", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.labelNombreUsuario.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.labelNombreUsuario.Location = new System.Drawing.Point(99, 62);
             this.labelNombreUsuario.Name = "labelNombreUsuario";
-            this.labelNombreUsuario.Size = new System.Drawing.Size(86, 25);
+            this.labelNombreUsuario.Size = new System.Drawing.Size(87, 26);
             this.labelNombreUsuario.TabIndex = 7;
             this.labelNombreUsuario.Text = "Usuario";
             // 
@@ -134,11 +141,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("MV Boli", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("MV Boli", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Cornsilk;
             this.label1.Location = new System.Drawing.Point(69, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 31);
+            this.label1.Size = new System.Drawing.Size(172, 40);
             this.label1.TabIndex = 9;
             this.label1.Text = "Bienvenido";
             // 
@@ -155,11 +162,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Coral;
             this.label2.Location = new System.Drawing.Point(51, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 29);
+            this.label2.Size = new System.Drawing.Size(123, 31);
             this.label2.TabIndex = 12;
             this.label2.Text = "Ahorcado";
             // 
@@ -187,11 +194,11 @@
             // 
             this.lbJugadores.AutoSize = true;
             this.lbJugadores.BackColor = System.Drawing.Color.Transparent;
-            this.lbJugadores.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbJugadores.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbJugadores.ForeColor = System.Drawing.Color.DarkGreen;
             this.lbJugadores.Location = new System.Drawing.Point(102, 96);
             this.lbJugadores.Name = "lbJugadores";
-            this.lbJugadores.Size = new System.Drawing.Size(99, 24);
+            this.lbJugadores.Size = new System.Drawing.Size(99, 25);
             this.lbJugadores.TabIndex = 16;
             this.lbJugadores.Text = "Jugadores";
             this.lbJugadores.Click += new System.EventHandler(this.lbJugadores_Click);
@@ -200,11 +207,11 @@
             // 
             this.lbPalabras.AutoSize = true;
             this.lbPalabras.BackColor = System.Drawing.Color.Transparent;
-            this.lbPalabras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPalabras.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPalabras.ForeColor = System.Drawing.Color.DarkGreen;
             this.lbPalabras.Location = new System.Drawing.Point(103, 161);
             this.lbPalabras.Name = "lbPalabras";
-            this.lbPalabras.Size = new System.Drawing.Size(82, 24);
+            this.lbPalabras.Size = new System.Drawing.Size(83, 25);
             this.lbPalabras.TabIndex = 18;
             this.lbPalabras.Text = "Palabras";
             this.lbPalabras.Click += new System.EventHandler(this.lbPalabras_Click);
@@ -230,7 +237,7 @@
             this.panelVertical.Controls.Add(this.labelNombreUsuario);
             this.panelVertical.Location = new System.Drawing.Point(2, 1);
             this.panelVertical.Name = "panelVertical";
-            this.panelVertical.Size = new System.Drawing.Size(230, 695);
+            this.panelVertical.Size = new System.Drawing.Size(230, 609);
             this.panelVertical.TabIndex = 20;
             // 
             // pbSalir
@@ -261,7 +268,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(82, 56);
+            this.pictureBox6.Location = new System.Drawing.Point(82, 66);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(23, 31);
             this.pictureBox6.TabIndex = 20;
@@ -451,7 +458,7 @@
             // pbIconoMensaje
             // 
             this.pbIconoMensaje.Image = ((System.Drawing.Image)(resources.GetObject("pbIconoMensaje.Image")));
-            this.pbIconoMensaje.Location = new System.Drawing.Point(323, 580);
+            this.pbIconoMensaje.Location = new System.Drawing.Point(436, 675);
             this.pbIconoMensaje.Name = "pbIconoMensaje";
             this.pbIconoMensaje.Size = new System.Drawing.Size(33, 35);
             this.pbIconoMensaje.TabIndex = 34;
@@ -461,11 +468,11 @@
             // labelMensaje
             // 
             this.labelMensaje.AutoSize = true;
-            this.labelMensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMensaje.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMensaje.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.labelMensaje.Location = new System.Drawing.Point(362, 584);
+            this.labelMensaje.Location = new System.Drawing.Point(475, 679);
             this.labelMensaje.Name = "labelMensaje";
-            this.labelMensaje.Size = new System.Drawing.Size(278, 24);
+            this.labelMensaje.Size = new System.Drawing.Size(286, 25);
             this.labelMensaje.TabIndex = 33;
             this.labelMensaje.Text = "Aqui iran los mensajes genrales";
             this.labelMensaje.Visible = false;
@@ -506,11 +513,11 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.BurlyWood;
             this.label8.Location = new System.Drawing.Point(7, 84);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(25, 24);
+            this.label8.Size = new System.Drawing.Size(28, 25);
             this.label8.TabIndex = 34;
             this.label8.Text = "Id";
             // 
@@ -560,22 +567,22 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.BurlyWood;
             this.label10.Location = new System.Drawing.Point(703, 81);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 24);
+            this.label10.Size = new System.Drawing.Size(40, 25);
             this.label10.TabIndex = 29;
             this.label10.Text = "Rol";
             // 
             // labelNombrePanelJugador
             // 
             this.labelNombrePanelJugador.AutoSize = true;
-            this.labelNombrePanelJugador.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNombrePanelJugador.Font = new System.Drawing.Font("Microsoft Sans Serif", 23F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel);
             this.labelNombrePanelJugador.ForeColor = System.Drawing.Color.Gray;
             this.labelNombrePanelJugador.Location = new System.Drawing.Point(330, 40);
             this.labelNombrePanelJugador.Name = "labelNombrePanelJugador";
-            this.labelNombrePanelJugador.Size = new System.Drawing.Size(348, 29);
+            this.labelNombrePanelJugador.Size = new System.Drawing.Size(380, 29);
             this.labelNombrePanelJugador.TabIndex = 27;
             this.labelNombrePanelJugador.Text = "Panel jugador crear y actualizar";
             // 
@@ -595,33 +602,33 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.BurlyWood;
             this.label7.Location = new System.Drawing.Point(526, 83);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 24);
+            this.label7.Size = new System.Drawing.Size(111, 25);
             this.label7.TabIndex = 6;
             this.label7.Text = "Puntuacion";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.BurlyWood;
             this.label6.Location = new System.Drawing.Point(351, 83);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 24);
+            this.label6.Size = new System.Drawing.Size(108, 25);
             this.label6.TabIndex = 5;
             this.label6.Text = "Contraseña";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.BurlyWood;
             this.label5.Location = new System.Drawing.Point(171, 83);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 24);
+            this.label5.Size = new System.Drawing.Size(82, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Jugador";
             // 
@@ -671,9 +678,9 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(878, 598);
+            this.pictureBox7.Location = new System.Drawing.Point(5, 639);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(314, 67);
+            this.pictureBox7.Size = new System.Drawing.Size(315, 71);
             this.pictureBox7.TabIndex = 38;
             this.pictureBox7.TabStop = false;
             // 
@@ -711,9 +718,9 @@
             // lbNombreTabla
             // 
             this.lbNombreTabla.AutoSize = true;
-            this.lbNombreTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombreTabla.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbNombreTabla.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbNombreTabla.Location = new System.Drawing.Point(151, 44);
+            this.lbNombreTabla.Location = new System.Drawing.Point(41, 40);
             this.lbNombreTabla.Name = "lbNombreTabla";
             this.lbNombreTabla.Size = new System.Drawing.Size(0, 29);
             this.lbNombreTabla.TabIndex = 26;
@@ -749,17 +756,6 @@
             this.pbMostrarPanelActualizar.Visible = false;
             this.pbMostrarPanelActualizar.Click += new System.EventHandler(this.pbMostrarPanelActualizar_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label3.Location = new System.Drawing.Point(51, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 29);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "TABLA:";
-            // 
             // dgvTablaGenerica
             // 
             this.dgvTablaGenerica.AllowUserToAddRows = false;
@@ -770,37 +766,37 @@
             this.dgvTablaGenerica.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTablaGenerica.BackgroundColor = System.Drawing.Color.Snow;
             this.dgvTablaGenerica.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.Info;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTablaGenerica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTablaGenerica.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTablaGenerica.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.CornflowerBlue;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTablaGenerica.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTablaGenerica.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTablaGenerica.EnableHeadersVisualStyles = false;
             this.dgvTablaGenerica.GridColor = System.Drawing.SystemColors.Desktop;
             this.dgvTablaGenerica.Location = new System.Drawing.Point(61, 71);
             this.dgvTablaGenerica.Name = "dgvTablaGenerica";
             this.dgvTablaGenerica.ReadOnly = true;
             this.dgvTablaGenerica.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTablaGenerica.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTablaGenerica.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTablaGenerica.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dgvTablaGenerica.Size = new System.Drawing.Size(798, 314);
             this.dgvTablaGenerica.TabIndex = 37;
@@ -810,17 +806,88 @@
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.Color.Transparent;
+            this.panelPrincipal.Controls.Add(this.lbNombreJugadorPartidas);
+            this.panelPrincipal.Controls.Add(this.label4);
+            this.panelPrincipal.Controls.Add(this.dgvPartidas);
             this.panelPrincipal.Controls.Add(this.dgvTablaGenerica);
-            this.panelPrincipal.Controls.Add(this.label3);
             this.panelPrincipal.Controls.Add(this.pbMostrarPanelActualizar);
             this.panelPrincipal.Controls.Add(this.pbMostrarVentanEliminar);
             this.panelPrincipal.Controls.Add(this.pbMostrarPanelCrear);
             this.panelPrincipal.Controls.Add(this.lbNombreTabla);
             this.panelPrincipal.Location = new System.Drawing.Point(255, 111);
             this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(920, 444);
+            this.panelPrincipal.Size = new System.Drawing.Size(920, 558);
             this.panelPrincipal.TabIndex = 25;
             this.panelPrincipal.Visible = false;
+            // 
+            // dgvPartidas
+            // 
+            this.dgvPartidas.AllowUserToAddRows = false;
+            this.dgvPartidas.AllowUserToDeleteRows = false;
+            this.dgvPartidas.AllowUserToOrderColumns = true;
+            this.dgvPartidas.AllowUserToResizeColumns = false;
+            this.dgvPartidas.AllowUserToResizeRows = false;
+            this.dgvPartidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPartidas.BackgroundColor = System.Drawing.Color.Snow;
+            this.dgvPartidas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPartidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPartidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.CornflowerBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPartidas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPartidas.EnableHeadersVisualStyles = false;
+            this.dgvPartidas.GridColor = System.Drawing.SystemColors.Desktop;
+            this.dgvPartidas.Location = new System.Drawing.Point(61, 439);
+            this.dgvPartidas.Name = "dgvPartidas";
+            this.dgvPartidas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPartidas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPartidas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Green;
+            this.dgvPartidas.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvPartidas.Size = new System.Drawing.Size(801, 116);
+            this.dgvPartidas.TabIndex = 38;
+            this.dgvPartidas.Tag = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label4.Location = new System.Drawing.Point(56, 407);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 31);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Partidas de ";
+            // 
+            // lbNombreJugadorPartidas
+            // 
+            this.lbNombreJugadorPartidas.AutoSize = true;
+            this.lbNombreJugadorPartidas.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombreJugadorPartidas.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.lbNombreJugadorPartidas.Location = new System.Drawing.Point(201, 407);
+            this.lbNombreJugadorPartidas.Name = "lbNombreJugadorPartidas";
+            this.lbNombreJugadorPartidas.Size = new System.Drawing.Size(186, 31);
+            this.lbNombreJugadorPartidas.TabIndex = 40;
+            this.lbNombreJugadorPartidas.Text = "nombre jugador";
             // 
             // MenuAdmin
             // 
@@ -875,6 +942,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaGenerica)).EndInit();
             this.panelPrincipal.ResumeLayout(false);
             this.panelPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPartidas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -934,12 +1002,14 @@
         private System.Windows.Forms.Panel panelBuscador;
         private System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.DataGridView dgvTablaGenerica;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbMostrarPanelActualizar;
         private System.Windows.Forms.PictureBox pbMostrarVentanEliminar;
         private System.Windows.Forms.PictureBox pbMostrarPanelCrear;
         private System.Windows.Forms.Label lbNombreTabla;
         private System.Windows.Forms.PictureBox pbBarraBusqueda;
         private System.Windows.Forms.TextBox tbBuscar;
+        private System.Windows.Forms.DataGridView dgvPartidas;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbNombreJugadorPartidas;
     }
 }

@@ -34,15 +34,34 @@ namespace Ahorcado
         {
             // Obtengo la fila que ha sido seleccionada en el dataGridView
             if (e.RowIndex >= 0)
-            {
+            {   // Obtengo la que ha sido seleccionada en el dgv
                 filaTabla = dgvTablaGenerica.Rows[e.RowIndex];
+
+                // Si la tabla en uso es la de jugadores.
+                if (nombreTabla == "jugadores")
+                {
+                    // Obtengo el id del jugador.
+                    int idJugador = int.Parse(filaTabla.Cells["idJugador"].Value.ToString());
+                    // Obtengo el nombre 
+                    string nombre = filaTabla.Cells["jugador"].Value.ToString();
+                    // Muestro nombre jugador
+                    lbNombreJugadorPartidas.Text = nombre;
+                    // Muestro las partidas del jugador.
+                    mostraPartidas(idJugador);
+                }
+
                 // Muestro los botones de eliminar y modificar fila.
-                pbMostrarVentanEliminar.Visible = true;
-                pbMostrarPanelActualizar.Visible = true;
+                mostrarBotonesAccion();
                 pbIconoMensaje.Visible = false;
                 labelMensaje.Text = "";
             }
 
+        }
+
+        // Muestra todas las partidas del jugador
+        private void mostraPartidas(int idJugador)
+        {
+            dgvPartidas.DataSource = model_admin.getPartidasJugador(idJugador);
         }
 
         // Muestra la tabla con los jugadores
@@ -277,7 +296,7 @@ namespace Ahorcado
                     mostrarMensaje("Error, la fila no ha podido ser eliminada");
                 }
 
-                ocultarBotonesActualizarYEliminar();
+                ocultarBotonesAccion();
 
             }
 
@@ -370,7 +389,7 @@ namespace Ahorcado
             }
 
             // Oculto los botones de accion update y edit
-            ocultarBotonesActualizarYEliminar();
+            ocultarBotonesAccion();
 
         }
 
@@ -427,8 +446,14 @@ namespace Ahorcado
 
         }
 
+        private void mostrarBotonesAccion()
+        {
+            pbMostrarPanelActualizar.Visible = true;
+            pbMostrarVentanEliminar.Visible = true;
+        }
+
         // Oculta los botones edit y update
-        private void ocultarBotonesActualizarYEliminar()
+        private void ocultarBotonesAccion()
         {
             pbMostrarPanelActualizar.Visible = false;
             pbMostrarVentanEliminar.Visible = false;
@@ -650,6 +675,26 @@ namespace Ahorcado
             login.Show();
         }
 
+        // Buscador jugadores o palabras
+        private void tbRealizarBusqueda(object sender, EventArgs e)
+        {
+
+            string texto = tbBuscar.Text;
+
+            if (nombreTabla.Equals("jugadores"))
+            {
+                dgvTablaGenerica.DataSource = model_admin.buscadorJugadores(texto);
+            }
+            else if (nombreTabla.Equals("palabras"))
+            {
+                Console.WriteLine("buscar palabras por filtrado");
+                dgvTablaGenerica.DataSource = model_admin.buscadorPalabras(texto);
+
+            }
+
+
+        }
+
         // Cierra la aplicacion
         private void pbExit_Click(object sender, EventArgs e)
         {
@@ -658,23 +703,5 @@ namespace Ahorcado
         }
 
 
-        private void tbRealizarBusqueda(object sender, EventArgs e)
-        {
-
-            string texto = tbBuscar.Text;
-
-            if (nombreTabla.Equals("jugadores"))
-            {
-                dgvTablaGenerica.DataSource = model_admin.buscadorJugadores( texto );
-            }
-            else if (nombreTabla.Equals("palabras"))
-            {
-                Console.WriteLine("buscar palabras por filtrado");
-                dgvTablaGenerica.DataSource = model_admin.buscadorPalabras( texto );
-
-            }
-
-
-        }
     }
 }

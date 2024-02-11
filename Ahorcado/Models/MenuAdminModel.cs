@@ -9,6 +9,7 @@ namespace Ahorcado.Models
     internal class MenuAdminModel
     {
 
+        // Obtengo todos los jugaores.
         public DataTable getJugadores()
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
@@ -34,6 +35,31 @@ namespace Ahorcado.Models
             return table;
         }
 
+        // Obtengo las partidas de un jugador
+        public DataTable getPartidasJugador(int idJugador)
+        {
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+            // la abro.
+            conexion.Open();
+            // Consulta sql
+            string sql = "SELECT * FROM partidas WHERE idJugador = " + idJugador;
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
+            DataTable table = new DataTable();
+
+            try
+            {
+                adapter.Fill(table);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return table;
+        }
 
         // Filtra la busqueda de los jugadores que coincidan por nombre.
         public DataTable buscadorJugadores(string nombre)
@@ -91,6 +117,7 @@ namespace Ahorcado.Models
             return table;
         }
 
+        // Obtengo todas las palabras
         public DataTable getPalabras()
         {
             // Creo la conexion con la base de datos.
@@ -119,6 +146,7 @@ namespace Ahorcado.Models
 
         }
 
+        // Elimino a un jugador
         public int eliminarJugador(int id)
         {
             // Creo la conexion con la base de datos.
@@ -151,6 +179,7 @@ namespace Ahorcado.Models
 
         }
 
+        // Elimino una palabra
         public int eliminarPalabra(int id)
         {
             // Creo la conexion con la base de datos.
@@ -262,6 +291,7 @@ namespace Ahorcado.Models
 
         }
 
+        // Compruebo si existe el usuario
         public bool isUserExist(string jugador)
         {
             // Creo la conexion con la base de datos.
@@ -284,6 +314,7 @@ namespace Ahorcado.Models
 
         }
 
+        // Compruebo si existe la palabra.
         public bool isWordExist(string palabra)
         {
             // Creo la conexion con la base de datos.
@@ -305,6 +336,7 @@ namespace Ahorcado.Models
             return existe;
         }
 
+        // Actualiza datos jugador
         public int actualizarJugador(int idJugador, string jugador, string contraseña, int puntuacion, string tipo)
         {
             // Creo la conexion con la base de datos.
@@ -346,6 +378,7 @@ namespace Ahorcado.Models
 
         }
 
+        // Actualiza la palabra
         public int actualizarPalabra(int idPalabra, string palabra, string pista, string categoria)
         {
             // Creo la conexion con la base de datos.
@@ -384,6 +417,7 @@ namespace Ahorcado.Models
 
         }
 
+        // Obtengo todas las categorias.
         public DataTable getCategorias()
         {
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
@@ -408,10 +442,6 @@ namespace Ahorcado.Models
 
             return table;
         }
-
-
-
-
 
 
     }

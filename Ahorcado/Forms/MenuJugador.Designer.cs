@@ -885,9 +885,9 @@
             this.panelContraseña.Controls.Add(this.label1);
             this.panelContraseña.Controls.Add(this.tbContraseña);
             this.panelContraseña.Controls.Add(this.pictureBox3);
-            this.panelContraseña.Location = new System.Drawing.Point(210, 324);
+            this.panelContraseña.Location = new System.Drawing.Point(331, 152);
             this.panelContraseña.Name = "panelContraseña";
-            this.panelContraseña.Size = new System.Drawing.Size(405, 273);
+            this.panelContraseña.Size = new System.Drawing.Size(405, 299);
             this.panelContraseña.TabIndex = 104;
             this.panelContraseña.Visible = false;
             // 
@@ -907,11 +907,11 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkKhaki;
-            this.label1.Location = new System.Drawing.Point(123, 138);
+            this.label1.Location = new System.Drawing.Point(88, 124);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 31);
+            this.label1.Size = new System.Drawing.Size(254, 31);
             this.label1.TabIndex = 101;
-            this.label1.Text = "Contraseña";
+            this.label1.Text = "Cambiar Contraseña";
             // 
             // tbContraseña
             // 
