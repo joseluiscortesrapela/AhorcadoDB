@@ -146,37 +146,61 @@ namespace Ahorcado.Models
 
         }
 
-        // Elimino a un jugador
-        public int eliminarJugador(int id)
+        // Elimina un jugador y todas sus partidas
+        public int eliminarJugador(int idJugador)
         {
             // Creo la conexion con la base de datos.
             MySqlConnection conexion = ConexionBaseDatos.getConexion();
             // la abro.
             conexion.Open();
 
-            // Consulta sql
-            string sql = "DELETE FROM jugadores WHERE idJugador = @idJugador";
-            // Preparo la consulta
-            MySqlCommand comando = new MySqlCommand(sql, conexion);
-            // Nombre del jugador
-            comando.Parameters.AddWithValue("@idJugador", id);
+            int eliminado = 0;
 
-
-            int eliminado;
+            // Inicio una transacción
+            MySqlTransaction transaccion = null;
 
             try
             {
-                // Return value is the number of rows affected by the SQL statement.
-                eliminado = comando.ExecuteNonQuery();
+                transaccion = conexion.BeginTransaction();
+
+                // Consulta sql para eliminar todas las partidas del jugador
+                string sqlEliminarPartidas = "DELETE FROM partidas WHERE idJugador = @idJugador";
+                MySqlCommand comandoEliminarPartidas = new MySqlCommand(sqlEliminarPartidas, conexion);
+                comandoEliminarPartidas.Parameters.AddWithValue("@idJugador", idJugador);
+                comandoEliminarPartidas.Transaction = transaccion;
+
+                // Ejecutar la consulta para eliminar las partidas
+                comandoEliminarPartidas.ExecuteNonQuery();
+
+                // Consulta sql para eliminar al jugador
+                string sqlEliminarJugador = "DELETE FROM jugadores WHERE idJugador = @idJugador";
+                MySqlCommand comandoEliminarJugador = new MySqlCommand(sqlEliminarJugador, conexion);
+                comandoEliminarJugador.Parameters.AddWithValue("@idJugador", idJugador);
+                comandoEliminarJugador.Transaction = transaccion;
+
+                // Ejecutar la consulta para eliminar al jugador
+                eliminado = comandoEliminarJugador.ExecuteNonQuery();
+
+                // Confirmar la transacción
+                transaccion.Commit();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                // Si ocurre algún error, se realiza un rollback de la transacción
+                if (transaccion != null)
+                {
+                    transaccion.Rollback();
+                }
                 eliminado = 0;
+            }
+            finally
+            {
+                // Cierro la conexión
+                conexion.Close();
             }
 
             return eliminado;
-
         }
 
         // Elimino una palabra
@@ -244,7 +268,6 @@ namespace Ahorcado.Models
             return eliminado;
 
         }
-
 
         // Registra un nuevo usuario
         public int registrarJugador(int idJugador, string jugador, string contraseña, string tipo)

@@ -151,7 +151,7 @@ namespace Ahorcado
                     // Permito que se escriba en el campo puntuacion.
                     tbPuntuacion.Enabled = true;
                     // Oculto las partidas.
-                     panelPartidas.Visible = false;
+                    panelPartidas.Visible = false;
                 }
                 else if (nombreTabla.Equals("palabras"))
                 {
@@ -256,11 +256,11 @@ namespace Ahorcado
         // Elimina un jugador o una palabra
         private void pbEliminar_Click(object sender, EventArgs e)
         {
-            // Obtengo el identificador
+            // Obtengo el identificador de la fila
             int id = int.Parse(filaTablaGenerica.Cells[0].Value.ToString());
             // Obtengo el nombre
             String nombre = filaTablaGenerica.Cells[1].Value.ToString();
-            // Mensaje que le aparecera al administrador.
+            // Mensaje que vera el usuario
             String message = "estas seguro de que quieres eliminar  " + nombre + " ?";
             // Titulo de la ventana emergente.
             String caption = "Eliminar " + nombreTabla;
@@ -286,18 +286,23 @@ namespace Ahorcado
 
                 // Si resultado de la sentencia sql es igual a uno,  quiere decir que se ha realizado con exito.
                 if (registroEliminado == 1)
-                {   // Muestro mensaje al administrador.       
-                    mostrarMensaje("Acabas de eliminar la fila de la tabla " + nombreTabla);
+                {
                     // Actualizo el dataGridView
                     if (nombreTabla.Equals("jugadores"))
-                    {   // Actualizo la el dgv con el resto de jugadores que no han sido eliminados.
+                    {
+                        // Actualizo la el dgv con el resto de jugadores que no han sido eliminados.
                         dgvTablaGenerica.DataSource = model_admin.getJugadores();
+                        // Muestro mensaj
+                        mostrarMensaje("Acabas de eliminar al usuario y todas sus partidas");
+
                     }
                     else
                     {   // Actualizo el dgv con el resto de palabras de la base de datos.
                         dgvTablaGenerica.DataSource = model_admin.getPalabras();
                     }
 
+                    // Muestro mensaje al administrador.       
+                    mostrarMensaje("Acabas de eliminar la fila de la tabla " + nombreTabla);
                     // Muestro el numero de filas del dgv
                     mostrarNumeroFilasTabla();
 
