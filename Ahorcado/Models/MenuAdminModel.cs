@@ -212,6 +212,40 @@ namespace Ahorcado.Models
 
         }
 
+        // Eliminar partida
+        public int eliminarPartida(int idPartida)
+        {
+            // Creo la conexion con la base de datos.
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+            // la abro.
+            conexion.Open();
+
+            // Consulta sql
+            string sql = "DELETE FROM partidas WHERE id = @idPartida";
+            // Preparo la consulta
+            MySqlCommand comando = new MySqlCommand(sql, conexion);
+            // Le paso el parametro
+            comando.Parameters.AddWithValue("@idPartida", idPartida);
+
+
+            int eliminado;
+
+            try
+            {
+                // Return value is the number of rows affected by the SQL statement.
+                eliminado = comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                eliminado = 0;
+            }
+
+            return eliminado;
+
+        }
+
+
         // Registra un nuevo usuario
         public int registrarJugador(int idJugador, string jugador, string contraseña, string tipo)
         {
@@ -425,6 +459,43 @@ namespace Ahorcado.Models
             conexion.Open();
             // Consulta sql
             string sql = "SELECT DISTINCT categoria FROM palabras";
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
+            DataTable table = new DataTable();
+
+            try
+            {
+                adapter.Fill(table);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return table;
+        }
+
+        // Actualiza las puntuaciones de todos todos lo jugadores.
+        public DataTable actualizarPuntuaciones()
+        {
+            MySqlConnection conexion = ConexionBaseDatos.getConexion();
+            // la abro.
+            conexion.Open();
+            // Mi consulta
+            string sql = @"
+                        UPDATE jugadores j
+                        JOIN (
+                            SELECT idJugador, SUM(puntuacion) AS total_puntuacion
+                            FROM partidas
+                            GROUP BY idJugador
+                        ) subconsulta ON j.idJugador = subconsulta.idJugador
+                        SET j.puntuacion = subconsulta.total_puntuacion;
+                       
+                        SELECT *
+                        FROM jugadores";
+
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
             DataTable table = new DataTable();

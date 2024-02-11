@@ -59,8 +59,6 @@ namespace Ahorcado.Models
 
             MySqlCommand command = new MySqlCommand(sql, conexion);
             MySqlDataReader reader = command.ExecuteReader();
-            reader.Close();
-            conexion.Close();
         }
 
         // Guarda la puntuacion del jugador

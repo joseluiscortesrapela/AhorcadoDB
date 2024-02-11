@@ -96,9 +96,11 @@
             this.pbMostrarPanelActualizar = new System.Windows.Forms.PictureBox();
             this.dgvTablaGenerica = new System.Windows.Forms.DataGridView();
             this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.dgvPartidas = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.lbNombreJugadorPartidas = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dgvPartidas = new System.Windows.Forms.DataGridView();
+            this.panelPartidas = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -122,7 +124,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbMostrarPanelActualizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaGenerica)).BeginInit();
             this.panelPrincipal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartidas)).BeginInit();
+            this.panelPartidas.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelNombreUsuario
@@ -163,7 +167,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Coral;
+            this.label2.ForeColor = System.Drawing.Color.DarkBlue;
             this.label2.Location = new System.Drawing.Point(51, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(123, 31);
@@ -195,7 +199,7 @@
             this.lbJugadores.AutoSize = true;
             this.lbJugadores.BackColor = System.Drawing.Color.Transparent;
             this.lbJugadores.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbJugadores.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbJugadores.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lbJugadores.Location = new System.Drawing.Point(102, 96);
             this.lbJugadores.Name = "lbJugadores";
             this.lbJugadores.Size = new System.Drawing.Size(99, 25);
@@ -208,7 +212,7 @@
             this.lbPalabras.AutoSize = true;
             this.lbPalabras.BackColor = System.Drawing.Color.Transparent;
             this.lbPalabras.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPalabras.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lbPalabras.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lbPalabras.Location = new System.Drawing.Point(103, 161);
             this.lbPalabras.Name = "lbPalabras";
             this.lbPalabras.Size = new System.Drawing.Size(83, 25);
@@ -458,7 +462,7 @@
             // pbIconoMensaje
             // 
             this.pbIconoMensaje.Image = ((System.Drawing.Image)(resources.GetObject("pbIconoMensaje.Image")));
-            this.pbIconoMensaje.Location = new System.Drawing.Point(436, 675);
+            this.pbIconoMensaje.Location = new System.Drawing.Point(178, 678);
             this.pbIconoMensaje.Name = "pbIconoMensaje";
             this.pbIconoMensaje.Size = new System.Drawing.Size(33, 35);
             this.pbIconoMensaje.TabIndex = 34;
@@ -470,7 +474,7 @@
             this.labelMensaje.AutoSize = true;
             this.labelMensaje.Font = new System.Drawing.Font("MV Boli", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelMensaje.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.labelMensaje.Location = new System.Drawing.Point(475, 679);
+            this.labelMensaje.Location = new System.Drawing.Point(217, 682);
             this.labelMensaje.Name = "labelMensaje";
             this.labelMensaje.Size = new System.Drawing.Size(286, 25);
             this.labelMensaje.TabIndex = 33;
@@ -678,7 +682,7 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(5, 639);
+            this.pictureBox7.Location = new System.Drawing.Point(631, 507);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(315, 71);
             this.pictureBox7.TabIndex = 38;
@@ -720,7 +724,7 @@
             this.lbNombreTabla.AutoSize = true;
             this.lbNombreTabla.Font = new System.Drawing.Font("MV Boli", 16F, System.Drawing.FontStyle.Bold);
             this.lbNombreTabla.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbNombreTabla.Location = new System.Drawing.Point(41, 40);
+            this.lbNombreTabla.Location = new System.Drawing.Point(67, 39);
             this.lbNombreTabla.Name = "lbNombreTabla";
             this.lbNombreTabla.Size = new System.Drawing.Size(0, 29);
             this.lbNombreTabla.TabIndex = 26;
@@ -806,9 +810,7 @@
             // panelPrincipal
             // 
             this.panelPrincipal.BackColor = System.Drawing.Color.Transparent;
-            this.panelPrincipal.Controls.Add(this.lbNombreJugadorPartidas);
-            this.panelPrincipal.Controls.Add(this.label4);
-            this.panelPrincipal.Controls.Add(this.dgvPartidas);
+            this.panelPrincipal.Controls.Add(this.pictureBox7);
             this.panelPrincipal.Controls.Add(this.dgvTablaGenerica);
             this.panelPrincipal.Controls.Add(this.pbMostrarPanelActualizar);
             this.panelPrincipal.Controls.Add(this.pbMostrarVentanEliminar);
@@ -820,16 +822,48 @@
             this.panelPrincipal.TabIndex = 25;
             this.panelPrincipal.Visible = false;
             // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
+            this.pictureBox8.Location = new System.Drawing.Point(530, 137);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(48, 50);
+            this.pictureBox8.TabIndex = 39;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.eliminarPartida);
+            // 
+            // lbNombreJugadorPartidas
+            // 
+            this.lbNombreJugadorPartidas.AutoSize = true;
+            this.lbNombreJugadorPartidas.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombreJugadorPartidas.ForeColor = System.Drawing.Color.Green;
+            this.lbNombreJugadorPartidas.Location = new System.Drawing.Point(241, 1);
+            this.lbNombreJugadorPartidas.Name = "lbNombreJugadorPartidas";
+            this.lbNombreJugadorPartidas.Size = new System.Drawing.Size(186, 31);
+            this.lbNombreJugadorPartidas.TabIndex = 40;
+            this.lbNombreJugadorPartidas.Text = "nombre jugador";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.SlateGray;
+            this.label4.Location = new System.Drawing.Point(92, 1);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 31);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Partidas de ";
+            // 
             // dgvPartidas
             // 
             this.dgvPartidas.AllowUserToAddRows = false;
-            this.dgvPartidas.AllowUserToDeleteRows = false;
             this.dgvPartidas.AllowUserToOrderColumns = true;
             this.dgvPartidas.AllowUserToResizeColumns = false;
             this.dgvPartidas.AllowUserToResizeRows = false;
             this.dgvPartidas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPartidas.BackgroundColor = System.Drawing.Color.Snow;
             this.dgvPartidas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPartidas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -849,7 +883,7 @@
             this.dgvPartidas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPartidas.EnableHeadersVisualStyles = false;
             this.dgvPartidas.GridColor = System.Drawing.SystemColors.Desktop;
-            this.dgvPartidas.Location = new System.Drawing.Point(61, 439);
+            this.dgvPartidas.Location = new System.Drawing.Point(89, 31);
             this.dgvPartidas.Name = "dgvPartidas";
             this.dgvPartidas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -863,31 +897,23 @@
             this.dgvPartidas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Green;
             this.dgvPartidas.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvPartidas.Size = new System.Drawing.Size(801, 116);
+            this.dgvPartidas.Size = new System.Drawing.Size(471, 116);
             this.dgvPartidas.TabIndex = 38;
             this.dgvPartidas.Tag = "";
+            this.dgvPartidas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPartidas_CellClick);
             // 
-            // label4
+            // panelPartidas
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label4.Location = new System.Drawing.Point(56, 407);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(155, 31);
-            this.label4.TabIndex = 39;
-            this.label4.Text = "Partidas de ";
-            // 
-            // lbNombreJugadorPartidas
-            // 
-            this.lbNombreJugadorPartidas.AutoSize = true;
-            this.lbNombreJugadorPartidas.Font = new System.Drawing.Font("MV Boli", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombreJugadorPartidas.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.lbNombreJugadorPartidas.Location = new System.Drawing.Point(201, 407);
-            this.lbNombreJugadorPartidas.Name = "lbNombreJugadorPartidas";
-            this.lbNombreJugadorPartidas.Size = new System.Drawing.Size(186, 31);
-            this.lbNombreJugadorPartidas.TabIndex = 40;
-            this.lbNombreJugadorPartidas.Text = "nombre jugador";
+            this.panelPartidas.BackColor = System.Drawing.Color.Snow;
+            this.panelPartidas.Controls.Add(this.pictureBox8);
+            this.panelPartidas.Controls.Add(this.lbNombreJugadorPartidas);
+            this.panelPartidas.Controls.Add(this.label4);
+            this.panelPartidas.Controls.Add(this.dgvPartidas);
+            this.panelPartidas.Location = new System.Drawing.Point(238, 502);
+            this.panelPartidas.Name = "panelPartidas";
+            this.panelPartidas.Size = new System.Drawing.Size(581, 187);
+            this.panelPartidas.TabIndex = 19;
+            this.panelPartidas.Visible = false;
             // 
             // MenuAdmin
             // 
@@ -897,10 +923,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1213, 712);
+            this.Controls.Add(this.panelPartidas);
             this.Controls.Add(this.panelBuscador);
             this.Controls.Add(this.panelJugador);
             this.Controls.Add(this.panelPalabras);
-            this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pbIconoMensaje);
             this.Controls.Add(this.labelMensaje);
             this.Controls.Add(this.pictureBox3);
@@ -942,7 +968,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaGenerica)).EndInit();
             this.panelPrincipal.ResumeLayout(false);
             this.panelPrincipal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartidas)).EndInit();
+            this.panelPartidas.ResumeLayout(false);
+            this.panelPartidas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1011,5 +1040,7 @@
         private System.Windows.Forms.DataGridView dgvPartidas;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbNombreJugadorPartidas;
+        private System.Windows.Forms.Panel panelPartidas;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }

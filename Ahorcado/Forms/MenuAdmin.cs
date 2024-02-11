@@ -9,7 +9,8 @@ namespace Ahorcado
 
 
         private MenuAdminModel model_admin;
-        private DataGridViewRow filaTabla;
+        private DataGridViewRow filaTablaGenerica;
+        private DataGridViewRow filaTablaPartida;
         private String nombreTabla;
         private String accionARealizar;
 
@@ -35,19 +36,21 @@ namespace Ahorcado
             // Obtengo la fila que ha sido seleccionada en el dataGridView
             if (e.RowIndex >= 0)
             {   // Obtengo la que ha sido seleccionada en el dgv
-                filaTabla = dgvTablaGenerica.Rows[e.RowIndex];
+                filaTablaGenerica = dgvTablaGenerica.Rows[e.RowIndex];
 
                 // Si la tabla en uso es la de jugadores.
                 if (nombreTabla == "jugadores")
                 {
                     // Obtengo el id del jugador.
-                    int idJugador = int.Parse(filaTabla.Cells["idJugador"].Value.ToString());
+                    int idJugador = int.Parse(filaTablaGenerica.Cells["idJugador"].Value.ToString());
                     // Obtengo el nombre 
-                    string nombre = filaTabla.Cells["jugador"].Value.ToString();
+                    string nombre = filaTablaGenerica.Cells["jugador"].Value.ToString();
                     // Muestro nombre jugador
                     lbNombreJugadorPartidas.Text = nombre;
                     // Muestro las partidas del jugador.
                     mostraPartidas(idJugador);
+                    // Muestro el panel que almacena el dgv de partidas.
+                    panelPartidas.Visible = true;
                 }
 
                 // Muestro los botones de eliminar y modificar fila.
@@ -102,13 +105,15 @@ namespace Ahorcado
             panelPrincipal.Visible = true;
             // Muestro la barra de busqueda
             panelBuscador.Visible = true;
+            // Oculto las partidas
+            panelPartidas.Visible = false;
         }
 
         // Muestra el panel para actulizar un usuario o una palabra
         private void pbMostrarPanelActualizar_Click(object sender, EventArgs e)
         {
             // Si hay una fila seleccionada y es diferente de null.
-            if (filaTabla.Cells[0].Value != null)
+            if (filaTablaGenerica.Cells[0].Value != null)
             {
                 // Accion que quiero realizar.
                 accionARealizar = "actualizar";
@@ -128,15 +133,15 @@ namespace Ahorcado
                     panelJugador.Visible = true;
                     // Relleno el formulario con los datos del jugador.
                     // Id del usuario
-                    tbIdJugador.Text = filaTabla.Cells[0].Value.ToString();
+                    tbIdJugador.Text = filaTablaGenerica.Cells[0].Value.ToString();
                     // Mombre del usuario
-                    tbJugador.Text = filaTabla.Cells[1].Value.ToString();
+                    tbJugador.Text = filaTablaGenerica.Cells[1].Value.ToString();
                     // Contraseña 
-                    tbContraseña.Text = filaTabla.Cells[2].Value.ToString();
+                    tbContraseña.Text = filaTablaGenerica.Cells[2].Value.ToString();
                     // La puntuacion
-                    tbPuntuacion.Text = filaTabla.Cells[3].Value.ToString();
+                    tbPuntuacion.Text = filaTablaGenerica.Cells[3].Value.ToString();
                     // Tipo de rol del usuario pueden ser jugador o administrador
-                    cbTipoRol.Text = filaTabla.Cells[4].Value.ToString();
+                    cbTipoRol.Text = filaTablaGenerica.Cells[4].Value.ToString();
                     // Oculto panel
                     panelPalabras.Visible = false;
                     // Muestro el panel
@@ -154,13 +159,13 @@ namespace Ahorcado
                     panelJugador.Visible = true;
                     // Relleno el formulario con los datos.
                     // Id 
-                    tbIdPalabra.Text = filaTabla.Cells[0].Value.ToString();
+                    tbIdPalabra.Text = filaTablaGenerica.Cells[0].Value.ToString();
                     // La palabra
-                    tbPalabra.Text = filaTabla.Cells[1].Value.ToString();
+                    tbPalabra.Text = filaTablaGenerica.Cells[1].Value.ToString();
                     // La pista
-                    tbPista.Text = filaTabla.Cells[2].Value.ToString();
+                    tbPista.Text = filaTablaGenerica.Cells[2].Value.ToString();
                     // Categoria de la palabra
-                    cbCategorias.Text = filaTabla.Cells[3].Value.ToString();
+                    cbCategorias.Text = filaTablaGenerica.Cells[3].Value.ToString();
                     // Oculto panel
                     panelJugador.Visible = false;
                     // Muestro el panel
@@ -246,9 +251,9 @@ namespace Ahorcado
         private void pbEliminar_Click(object sender, EventArgs e)
         {
             // Obtengo el identificador
-            int id = (int)filaTabla.Cells[0].Value;
+            int id = int.Parse(filaTablaGenerica.Cells[0].Value.ToString());
             // Obtengo el nombre
-            String nombre = filaTabla.Cells[1].Value.ToString();
+            String nombre = filaTablaGenerica.Cells[1].Value.ToString();
             // Mensaje que le aparecera al administrador.
             String message = "estas seguro de que quieres eliminar  " + nombre + " ?";
             // Titulo de la ventana emergente.
@@ -490,7 +495,7 @@ namespace Ahorcado
                 if (accionARealizar.Equals("actualizar"))
                 {
                     // Nombre que tenia el usuarios
-                    string nombreAtiguo = filaTabla.Cells[1].Value.ToString();
+                    string nombreAtiguo = filaTablaGenerica.Cells[1].Value.ToString();
 
                     // El usuario quiere cambiar de nombre
                     if (nombreAtiguo.ToLower() != usuario.ToLower())
@@ -568,7 +573,7 @@ namespace Ahorcado
                 if (accionARealizar.Equals("actualizar"))
                 {
                     // Nombre que tenia 
-                    string nombreAtiguo = filaTabla.Cells[1].Value.ToString();
+                    string nombreAtiguo = filaTablaGenerica.Cells[1].Value.ToString();
 
                     // Quiere cambiar la palabra
                     if (nombreAtiguo.ToLower() != palabra.ToLower())
@@ -678,20 +683,20 @@ namespace Ahorcado
         // Buscador jugadores o palabras
         private void tbRealizarBusqueda(object sender, EventArgs e)
         {
-
+            //Obtengo lo que ha escrito
             string texto = tbBuscar.Text;
 
+            // Si estamos en la tabla jugadores
             if (nombreTabla.Equals("jugadores"))
-            {
+            {   // Cargo la lista de jugadores en el dgv
                 dgvTablaGenerica.DataSource = model_admin.buscadorJugadores(texto);
             }
             else if (nombreTabla.Equals("palabras"))
             {
-                Console.WriteLine("buscar palabras por filtrado");
+                // Cargo las palabras en el dgv
                 dgvTablaGenerica.DataSource = model_admin.buscadorPalabras(texto);
 
             }
-
 
         }
 
@@ -703,5 +708,58 @@ namespace Ahorcado
         }
 
 
+
+        // Elimina partida jugador
+        private void eliminarPartida(object sender, EventArgs e)
+        {
+
+            // Obtengo id partida
+            int idPartida = int.Parse(filaTablaPartida.Cells["id"].Value.ToString());
+            // Obtegno id del jugador
+            int idJugador = int.Parse(filaTablaGenerica.Cells["idJugador"].Value.ToString());
+
+            // Mensaje que le aparecera al administrador.
+            String message = "estas seguro de que quieres eliminar la partida con id " + idPartida + " ?";
+            // Titulo de la ventana emergente.
+            String caption = "Eliminar partida";
+            // Obtengo el resultado
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+
+            // Si quiere eliminar 
+            if (result == DialogResult.Yes)
+            {
+                // Para guardar el resultado de la consulta, numero de filas afectadas.
+                if (model_admin.eliminarPartida(idPartida) == 1)
+                {
+                    // Muestro el dgv partida actualizado tras eliminar una partida.
+                    dgvPartidas.DataSource = model_admin.getPartidasJugador(idJugador);
+                    // ACtualizo puntuaciones dgv jugadores
+                    actualizarPuntuacionesJugadores();
+                    // Actualizo la puntuacion del dgv de jugadores
+                    Console.WriteLine("partida " + idPartida + " del jugador " + idJugador + " eliminada");
+                }
+            }
+
+        }
+
+        // Recalcula las puntuaciones de los jugadores
+        private void actualizarPuntuacionesJugadores()
+        {
+            dgvTablaGenerica.DataSource = model_admin.actualizarPuntuaciones();
+            // Muestro mensaje al usuario
+            labelMensaje.Text = "Puntuaciones totales actualizadas.";
+        }
+
+        // Obtengo la fila seleccionada del dgv de partidas.
+        private void dgvPartidas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Obtengo la fila que ha sido seleccionada en el dataGridView
+            if (e.RowIndex >= 0)
+            {   // Obtengo la que ha sido seleccionada en el dgv
+                filaTablaPartida = dgvPartidas.Rows[e.RowIndex];
+                Console.WriteLine("Partida " + filaTablaPartida.Cells["id"].Value.ToString() + " seleccionada");
+            }
+        }
     }
 }
