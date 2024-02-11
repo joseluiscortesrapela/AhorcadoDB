@@ -51,6 +51,8 @@ namespace Ahorcado
                     mostraPartidas(idJugador);
                     // Muestro el panel que almacena el dgv de partidas.
                     panelPartidas.Visible = true;
+                    // Muestro el numero de partidas que tiene el jugador
+                    lbNumeroPartidasJugador.Text = dgvPartidas.RowCount.ToString();
                 }
 
                 // Muestro los botones de eliminar y modificar fila.
@@ -148,6 +150,8 @@ namespace Ahorcado
                     panelJugador.Visible = true;
                     // Permito que se escriba en el campo puntuacion.
                     tbPuntuacion.Enabled = true;
+                    // Oculto las partidas.
+                     panelPartidas.Visible = false;
                 }
                 else if (nombreTabla.Equals("palabras"))
                 {
@@ -208,6 +212,8 @@ namespace Ahorcado
                 panelJugador.Visible = true;
                 // Impido que se pueda añadir puntuacion, por defecto sera cero.
                 tbPuntuacion.Enabled = false;
+                // Oculto las partidas
+                panelPartidas.Visible = false;
 
             } // Muestro el panel palabras para crear y actualizarlas.
             else if (nombreTabla.Equals("palabras"))
@@ -247,7 +253,7 @@ namespace Ahorcado
             lbNombreTabla.Text = nombre;
         }
 
-        // Elimina un registro de la tabla
+        // Elimina un jugador o una palabra
         private void pbEliminar_Click(object sender, EventArgs e)
         {
             // Obtengo el identificador
@@ -302,6 +308,8 @@ namespace Ahorcado
                 }
 
                 ocultarBotonesAccion();
+                // Oculto panel partidas
+                panelPartidas.Visible = false;
 
             }
 
@@ -695,29 +703,19 @@ namespace Ahorcado
             {
                 // Cargo las palabras en el dgv
                 dgvTablaGenerica.DataSource = model_admin.buscadorPalabras(texto);
-
             }
 
+            // Despejo la pantalla y oculto las partidas
+            panelPartidas.Visible = false;
         }
-
-        // Cierra la aplicacion
-        private void pbExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-
-        }
-
-
 
         // Elimina partida jugador
         private void eliminarPartida(object sender, EventArgs e)
         {
-
             // Obtengo id partida
             int idPartida = int.Parse(filaTablaPartida.Cells["id"].Value.ToString());
             // Obtegno id del jugador
             int idJugador = int.Parse(filaTablaGenerica.Cells["idJugador"].Value.ToString());
-
             // Mensaje que le aparecera al administrador.
             String message = "estas seguro de que quieres eliminar la partida con id " + idPartida + " ?";
             // Titulo de la ventana emergente.
@@ -736,6 +734,13 @@ namespace Ahorcado
                     dgvPartidas.DataSource = model_admin.getPartidasJugador(idJugador);
                     // ACtualizo puntuaciones dgv jugadores
                     actualizarPuntuacionesJugadores();
+                    // Oculto botones accion
+                    ocultarBotonesAccionPartida();
+                    // Muestro mensaje
+                    var mensaje = "Acabas de eliminar una partida y actulizada las puntuaciones.";
+                    // Muestro mensaje
+                    mostrarMensaje(mensaje);
+
                     // Actualizo la puntuacion del dgv de jugadores
                     Console.WriteLine("partida " + idPartida + " del jugador " + idJugador + " eliminada");
                 }
@@ -747,8 +752,6 @@ namespace Ahorcado
         private void actualizarPuntuacionesJugadores()
         {
             dgvTablaGenerica.DataSource = model_admin.actualizarPuntuaciones();
-            // Muestro mensaje al usuario
-            labelMensaje.Text = "Puntuaciones totales actualizadas.";
         }
 
         // Obtengo la fila seleccionada del dgv de partidas.
@@ -758,8 +761,32 @@ namespace Ahorcado
             if (e.RowIndex >= 0)
             {   // Obtengo la que ha sido seleccionada en el dgv
                 filaTablaPartida = dgvPartidas.Rows[e.RowIndex];
+
                 Console.WriteLine("Partida " + filaTablaPartida.Cells["id"].Value.ToString() + " seleccionada");
+                // Muestra botones editar y eliminar
+                mostrarBotonesAccionPartida();
             }
         }
+
+        // Muestra botones de accion crud partidas, botones editar y elimianr.
+        private void mostrarBotonesAccionPartida()
+        {
+            pbEliminarPartida.Visible = true;
+        }
+
+        // Oculta botones accion crud partias, botones editar y eliminar.
+        private void ocultarBotonesAccionPartida()
+        {
+            pbEliminarPartida.Visible = false;
+        }
+
+        // Cierra la aplicacion
+        private void pbExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
+
+
     }
 }

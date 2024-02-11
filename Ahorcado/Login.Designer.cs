@@ -307,7 +307,7 @@
             this.tbContraseña.Size = new System.Drawing.Size(165, 32);
             this.tbContraseña.TabIndex = 10;
             this.tbContraseña.TabStop = false;
-            this.tbContraseña.Text = "admin";
+            this.tbContraseña.Text = "1234";
             this.tbContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbContraseña.UseSystemPasswordChar = true;
             // 
@@ -472,13 +472,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(964, 490);
-            this.Controls.Add(this.panelRegistro);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panelContenedor);
+            this.Controls.Add(this.panelRegistro);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
