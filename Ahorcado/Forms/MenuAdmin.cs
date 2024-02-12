@@ -13,7 +13,8 @@ namespace Ahorcado
         private DataGridViewRow filaTablaPartida;
         private String nombreTabla;
         private String accionARealizar;
-
+        private int idJugador;
+       
 
         public MenuAdmin()
         {
@@ -42,17 +43,27 @@ namespace Ahorcado
                 if (nombreTabla == "jugadores")
                 {
                     // Obtengo el id del jugador.
-                    int idJugador = int.Parse(filaTablaGenerica.Cells["idJugador"].Value.ToString());
+                    idJugador = int.Parse(filaTablaGenerica.Cells["idJugador"].Value.ToString());
                     // Obtengo el nombre 
                     string nombre = filaTablaGenerica.Cells["jugador"].Value.ToString();
                     // Muestro nombre jugador
                     lbNombreJugadorPartidas.Text = nombre;
                     // Muestro las partidas del jugador.
                     mostraPartidas(idJugador);
-                    // Muestro el panel que almacena el dgv de partidas.
-                    panelPartidas.Visible = true;
-                    // Muestro el numero de partidas que tiene el jugador
-                    lbNumeroPartidasJugador.Text = dgvPartidas.RowCount.ToString();
+
+                    // Si hay partidas que mostrar
+                    if (dgvPartidas.Rows.Count > 0)
+                    {
+                        // Muestro el panel que almacena el dgv de partidas.
+                        panelPartidas.Visible = true;
+                        // Muestro el numero de partidas que tiene el jugador
+                        lbNumeroPartidasJugador.Text = dgvPartidas.RowCount.ToString();
+                    }
+                    else
+                    {   // Sino hay partidas que mostrar, oculto el panel.
+                        panelPartidas.Visible = false;
+                    }
+
                 }
 
                 // Muestro los botones de eliminar y modificar fila.
@@ -63,17 +74,11 @@ namespace Ahorcado
 
         }
 
-        // Muestra todas las partidas del jugador
-        private void mostraPartidas(int idJugador)
-        {
-            dgvPartidas.DataSource = model_admin.getPartidasJugador(idJugador);
-        }
-
         // Muestra la tabla con los jugadores
         private void lbJugadores_Click(object sender, EventArgs e)
         {
-            // Cargo los jugadores en el tabla con los resultados de la consulta a la base de datos.
-            dgvTablaGenerica.DataSource = model_admin.getJugadores();
+            // Muestro los jugadore en el dgv.
+            mostrarJugadores();
             // Muestro la tablas
             panelPrincipal.Visible = true;
             // Guardo que tabla se ha utilizado
@@ -88,6 +93,12 @@ namespace Ahorcado
             panelPrincipal.Visible = true;
             // Muestro la barra de busqueda
             panelBuscador.Visible = true;
+        }
+
+        public void mostrarJugadores()
+        {
+            // Cargo los jugadores en el tabla con los resultados de la consulta a la base de datos.
+            dgvTablaGenerica.DataSource = model_admin.getJugadores();
         }
 
         // Muestra la tabla con las palabras  
@@ -719,8 +730,6 @@ namespace Ahorcado
         {
             // Obtengo id partida
             int idPartida = int.Parse(filaTablaPartida.Cells["id"].Value.ToString());
-            // Obtegno id del jugador
-            int idJugador = int.Parse(filaTablaGenerica.Cells["idJugador"].Value.ToString());
             // Mensaje que le aparecera al administrador.
             String message = "estas seguro de que quieres eliminar la partida con id " + idPartida + " ?";
             // Titulo de la ventana emergente.
@@ -734,17 +743,19 @@ namespace Ahorcado
             {
                 // Para guardar el resultado de la consulta, numero de filas afectadas.
                 if (model_admin.eliminarPartida(idPartida) == 1)
-                {                 
-                    // ACtualizo puntuaciones dgv jugadores
-                    actualizarPuntuacionesJugadores();
-                    // Muestro el dgv partida actualizado tras eliminar una partida.
-                    dgvPartidas.DataSource = model_admin.getPartidasJugador(idJugador);
+                {
+                    // Muestro las partidas
+                    mostraPartidas(idJugador);
+                    // Cargo los jugadores en el dgv
+                    mostrarJugadores();
                     // Oculto botones accion
                     ocultarBotonesAccionPartida();
                     // Muestro mensaje
                     var mensaje = "Acabas de eliminar una partida y actulizada las puntuaciones.";
                     // Muestro mensaje
                     mostrarMensaje(mensaje);
+                    // Muestro el total de partidas que tien el jugador.
+                    lbNumeroPartidasJugador.Text = dgvPartidas.RowCount.ToString();
                     // Actualizo la puntuacion del dgv de jugadores
                     Console.WriteLine("partida " + idPartida + " del jugador " + idJugador + " eliminada");
                 }
@@ -752,10 +763,10 @@ namespace Ahorcado
 
         }
 
-        // Recalcula las puntuaciones de los jugadores
-        private void actualizarPuntuacionesJugadores()
+        // Muestra todas las partidas del jugador
+        private void mostraPartidas(int idJugador)
         {
-            dgvTablaGenerica.DataSource = model_admin.actualizarPuntuaciones();
+            dgvPartidas.DataSource = model_admin.getPartidasJugador(idJugador);
         }
 
         // Obtengo la fila seleccionada del dgv de partidas.
@@ -765,10 +776,10 @@ namespace Ahorcado
             if (e.RowIndex >= 0)
             {   // Obtengo la que ha sido seleccionada en el dgv
                 filaTablaPartida = dgvPartidas.Rows[e.RowIndex];
-
-                Console.WriteLine("Partida " + filaTablaPartida.Cells["id"].Value.ToString() + " seleccionada");
                 // Muestra botones editar y eliminar
                 mostrarBotonesAccionPartida();
+
+                Console.WriteLine("Partida " + filaTablaPartida.Cells["id"].Value.ToString() + " seleccionada");
             }
         }
 

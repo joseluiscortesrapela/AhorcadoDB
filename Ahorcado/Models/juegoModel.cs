@@ -48,13 +48,16 @@ namespace Ahorcado.Models
             // Mi consulta
             string sql = @"
                         UPDATE jugadores j
-                        JOIN (
+                        LEFT JOIN (
                             SELECT idJugador, SUM(puntuacion) AS total_puntuacion
                             FROM partidas
                             GROUP BY idJugador
                         ) subconsulta ON j.idJugador = subconsulta.idJugador
-                        SET j.puntuacion = subconsulta.total_puntuacion;
-                        ";
+                        SET j.puntuacion = IFNULL(subconsulta.total_puntuacion, 0);
+
+                        SELECT * FROM jugadores;
+                    ";
+
 
 
             MySqlCommand command = new MySqlCommand(sql, conexion);

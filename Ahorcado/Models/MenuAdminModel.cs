@@ -16,7 +16,17 @@ namespace Ahorcado.Models
             // la abro.
             conexion.Open();
             // Consulta sql
-            string sql = "SELECT * FROM jugadores";
+            string sql = @"
+                        UPDATE jugadores j
+                        LEFT JOIN (
+                            SELECT idJugador, SUM(puntuacion) AS total_puntuacion
+                            FROM partidas
+                            GROUP BY idJugador
+                        ) subconsulta ON j.idJugador = subconsulta.idJugador
+                        SET j.puntuacion = IFNULL(subconsulta.total_puntuacion, 0);
+
+                        SELECT * FROM jugadores;
+                    ";
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
             DataTable table = new DataTable();
@@ -251,6 +261,7 @@ namespace Ahorcado.Models
             // Le paso el parametro
             comando.Parameters.AddWithValue("@idPartida", idPartida);
 
+            Console.WriteLine("Partida " + idPartida + " eliminada");
 
             int eliminado;
 
@@ -500,44 +511,8 @@ namespace Ahorcado.Models
             return table;
         }
 
-        // Actualiza las puntuaciones de todos todos lo jugadores.
-        public DataTable actualizarPuntuaciones()
-        {
-            MySqlConnection conexion = ConexionBaseDatos.getConexion();
-            // la abro.
-            conexion.Open();
-            // Mi consulta
-            string sql = @"
-                        UPDATE jugadores j
-                        JOIN (
-                            SELECT idJugador, SUM(puntuacion) AS total_puntuacion
-                            FROM partidas
-                            GROUP BY idJugador
-                        ) subconsulta ON j.idJugador = subconsulta.idJugador
-                        SET j.puntuacion = subconsulta.total_puntuacion;
-                       
-                        SELECT *
-                        FROM jugadores";
-
-
-            MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexion);
-            DataTable table = new DataTable();
-
-            try
-            {
-                adapter.Fill(table);
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
-            return table;
-        }
-
-
+        
+      
     }
 
 

@@ -582,7 +582,7 @@
             this.lbMostrarPanelRanking.BackColor = System.Drawing.Color.Transparent;
             this.lbMostrarPanelRanking.Font = new System.Drawing.Font("MV Boli", 10F, System.Drawing.FontStyle.Bold);
             this.lbMostrarPanelRanking.ForeColor = System.Drawing.Color.PaleGoldenrod;
-            this.lbMostrarPanelRanking.Location = new System.Drawing.Point(163, 564);
+            this.lbMostrarPanelRanking.Location = new System.Drawing.Point(170, 564);
             this.lbMostrarPanelRanking.Name = "lbMostrarPanelRanking";
             this.lbMostrarPanelRanking.Size = new System.Drawing.Size(116, 18);
             this.lbMostrarPanelRanking.TabIndex = 96;

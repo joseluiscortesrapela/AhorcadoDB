@@ -52,7 +52,7 @@ namespace Ahorcado
             // Obtengo las partidas del jugador
             partidas = model_jugador.getPartidas(idJugador);
 
-
+            // Si hay partidas
             if (partidas.Count > 0)
             {
                 lbMostrarPanelPartidas.Visible = true;
