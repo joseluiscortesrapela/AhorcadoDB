@@ -1,10 +1,12 @@
 ﻿using Ahorcado.Entidades;
 using Ahorcado.Models;
 using Mysqlx.Cursor;
+using NAudio.Wave;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Ahorcado
@@ -18,7 +20,9 @@ namespace Ahorcado
         private string nombreJugador;
         private int idJugador, puntuacion;
         private string contraseña;
-
+        // Clases para reproducir musica
+        private IWavePlayer player;
+        private AudioFileReader audioFile;
 
         // Constructor
         public MenuJugador()
@@ -61,6 +65,46 @@ namespace Ahorcado
 
             // Muestro el ranking 
             mostrarRanking(jugadores);
+            // Pongo musica fondo
+            activarMusica();
+
+        }
+
+        // Pongo la musica de fondo
+        private void activarMusica()
+        {
+            player = new WaveOut(); ;
+            string rutaRelativa = @"..\..\Resources\Menu jugador\Musica\atmosphere.mp3";
+            audioFile = new AudioFileReader(rutaRelativa);
+            // Volumen activo
+            audioFile.Volume = 1;
+            player.Init(audioFile);
+            player.Play();
+        }
+
+        // Disminuye el sonido lentamente hasta apagarlo.
+        private async Task apagarMusica()
+        {
+
+            if (audioFile != null && player != null)
+            {
+                int fadeDurationMs = 2000; // Duración del fade-out en milisegundos
+                int fadeIntervalMs = 100;  // Intervalo de ajuste del volumen en milisegundos
+
+                float initialVolume = audioFile.Volume;
+
+                for (int t = 0; t < fadeDurationMs; t += fadeIntervalMs)
+                {
+                    float volume = initialVolume - (float)t / fadeDurationMs;
+                    if (volume < 0) volume = 0;
+
+                    audioFile.Volume = volume;
+                    await Task.Delay(fadeIntervalMs);
+                }
+            }
+
+
+            player.Stop();
 
         }
 
@@ -157,6 +201,9 @@ namespace Ahorcado
         // Vamos a la ventana para jugar
         private void labelJugar_Click(object sender, EventArgs e)
         {
+            // Apago el sonid fondo
+            apagarMusica();
+
             // Oculto el menu
             this.Hide();
             // Muestro ventana del juego
@@ -168,8 +215,13 @@ namespace Ahorcado
         // Salgo de la ventana de administracion y abro la ventana de login
         private void pbSalir_Click(object sender, EventArgs e)
         {
+            // Quito sonido fondo
+            apagarMusica();
+            // Oculto ventana menu jugador
             this.Hide();
+            // Instancio la clase
             Login login = new Login();
+            // Muestro la vengana de login/registro
             login.Show();
         }
 

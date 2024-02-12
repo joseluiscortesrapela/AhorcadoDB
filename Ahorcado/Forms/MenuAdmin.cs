@@ -14,6 +14,7 @@ namespace Ahorcado
         private String nombreTabla;
         private String accionARealizar;
         private int idJugador;
+        private string nombreJugador;
        
 
         public MenuAdmin()
@@ -44,10 +45,7 @@ namespace Ahorcado
                 {
                     // Obtengo el id del jugador.
                     idJugador = int.Parse(filaTablaGenerica.Cells["idJugador"].Value.ToString());
-                    // Obtengo el nombre 
-                    string nombre = filaTablaGenerica.Cells["jugador"].Value.ToString();
-                    // Muestro nombre jugador
-                    lbNombreJugadorPartidas.Text = nombre;
+             
                     // Muestro las partidas del jugador.
                     mostraPartidas(idJugador);
 
@@ -56,6 +54,10 @@ namespace Ahorcado
                     {
                         // Muestro el panel que almacena el dgv de partidas.
                         panelPartidas.Visible = true;
+                        // Obtengo el nombre 
+                        nombreJugador = filaTablaGenerica.Cells["jugador"].Value.ToString();
+                        // Muestro nombre jugador
+                        lbNombreJugadorPartidas.Text = char.ToUpper(nombreJugador[0]) + nombreJugador.Substring(1).ToLower();
                         // Muestro el numero de partidas que tiene el jugador
                         lbNumeroPartidasJugador.Text = dgvPartidas.RowCount.ToString();
                     }
@@ -731,7 +733,7 @@ namespace Ahorcado
             // Obtengo id partida
             int idPartida = int.Parse(filaTablaPartida.Cells["id"].Value.ToString());
             // Mensaje que le aparecera al administrador.
-            String message = "estas seguro de que quieres eliminar la partida con id " + idPartida + " ?";
+            String message = nombreJugador + " quieres eliminar la partida con id " + idPartida + " ?";
             // Titulo de la ventana emergente.
             String caption = "Eliminar partida";
             // Obtengo el resultado
